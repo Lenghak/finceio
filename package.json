@@ -6,6 +6,11 @@
     "commit": "cz",
     "prepare": "husky"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "lint-staged": {
     "*": [
       "pnpm prettier --write --ignore-unknown",
