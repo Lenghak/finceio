@@ -1,5 +1,12 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "main",
-  "nxCloudAccessToken": "NzgzYWVhM2MtZTg4Ny00YWY4LWE5NjItNmUyMDJkZjI1Mzg3fHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "NzgzYWVhM2MtZTg4Ny00YWY4LWE5NjItNmUyMDJkZjI1Mzg3fHJlYWQtd3JpdGU=",
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "cacheableOperations": ["astro", "build"]
+      }
+    }
+  }
 }
