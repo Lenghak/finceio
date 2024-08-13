@@ -1,11 +1,23 @@
-import format from "@commitlint/format";
-
-format(undefined, {
-  signs: [" ", "🟡", "🔴"],
-});
-
 export default {
-  extends: ["@commitlint/config-conventional", "@commitlint/format"],
+  extends: ["@commitlint/config-conventional"],
+  /*
+   * Array of functions that return true if commitlint should ignore the given message.
+   * Given array is merged with predefined functions, which consist of matchers like:
+   *
+   * - 'Merge pull request', 'Merge X into Y' or 'Merge branch X'
+   * - 'Revert X'
+   * - 'v1.2.3' (ie semver matcher)
+   * - 'Automatic merge X' or 'Auto-merged X into Y'
+   *
+   * To see full list, check https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/is-ignored/src/defaults.ts.
+   * To disable those ignores and run rules always, set `defaultIgnores: false` as shown below.
+   */
+  ignores: [(commit) => commit === ""],
+  /*
+   * Whether commitlint uses the default ignore rules, see the description above.
+   */
+  defaultIgnores: true,
+  formatter: "@commitlint/format",
   rules: {
     "type-enum": [
       2,
@@ -38,6 +50,8 @@ export default {
       ],
     ],
     "scope-empty": [1, "never"],
+    "type-case": [1, "always", "lowercase"],
+    "scope-case": [1, "always", "lowercase"],
   },
   prompt: {
     settings: {},
@@ -114,36 +128,37 @@ export default {
           },
         },
       },
-    },
-    scope: {
-      description:
-        "What is the scope of this change (e.g. component or file name)",
-    },
-    subject: {
-      description: "Write a short, imperative tense description of the change",
-    },
-    body: {
-      description: "Provide a longer description of the change",
-    },
-    isBreaking: {
-      description: "Are there any breaking changes?",
-    },
-    breakingBody: {
-      description:
-        "A BREAKING CHANGE commit requires a body. Please enter a longer description of the commit itself",
-    },
-    breaking: {
-      description: "Describe the breaking changes",
-    },
-    isIssueAffected: {
-      description: "Does this change affect any open issues?",
-    },
-    issuesBody: {
-      description:
-        "If issues are closed, the commit requires a body. Please enter a longer description of the commit itself",
-    },
-    issues: {
-      description: 'Add issue references (e.g. "fix #123", "re #123".)',
+      scope: {
+        description:
+          "What is the scope of this change (e.g. component or file name)",
+      },
+      subject: {
+        description:
+          "Write a short, imperative tense description of the change",
+      },
+      body: {
+        description: "Provide a longer description of the change",
+      },
+      isBreaking: {
+        description: "Are there any breaking changes?",
+      },
+      breakingBody: {
+        description:
+          "A BREAKING CHANGE commit requires a body. Please enter a longer description of the commit itself",
+      },
+      breaking: {
+        description: "Describe the breaking changes",
+      },
+      isIssueAffected: {
+        description: "Does this change affect any open issues?",
+      },
+      issuesBody: {
+        description:
+          "If issues are closed, the commit requires a body. Please enter a longer description of the commit itself",
+      },
+      issues: {
+        description: 'Add issue references (e.g. "fix #123", "re #123".)',
+      },
     },
   },
 };
