@@ -1,0 +1,6 @@
+export default {
+  compilerOptions: {
+    // ensure that nobody can accidentally use this config for a build
+    noEmit: true,
+  },
+};
