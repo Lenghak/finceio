@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@app/web",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -12,6 +12,7 @@
   "dependencies": {
     "astro": "^4.12.3",
     "@astrojs/check": "^0.8.3",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "@repo/ui": "workspace:*"
   }
 }
