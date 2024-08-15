@@ -1,11 +1,23 @@
-import fluid, { extract, fontSize, screens } from "fluid-tailwind";
+import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: { files: ["./src/**/*.{html,js,jsx,ts,tsx,astro}"], extract },
+const config = {
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
+  prefix: "",
   theme: {
-    fontSize,
-    screens,
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -63,5 +75,7 @@ export default {
       },
     },
   },
-  plugins: [fluid],
-};
+  plugins: [tailwindcssAnimate],
+} satisfies Config;
+
+export default config;

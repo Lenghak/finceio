@@ -8,13 +8,15 @@
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.codeActionsOnSave": {
+    "source.fixAll": "never",
     "source.fixAll.ts": "never",
-    "source.fixAll.eslint": "always",
+    "source.fixAll.eslint": "never",
     "source.organizeImports": "never",
     "source.addMissingImports.ts": "always",
     "source.removeUnused.ts": "always",
     "source.removeUnusedImports": "always",
-    "source.sortImports": "always"
   }
 }
