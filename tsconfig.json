@@ -6,7 +6,8 @@
       "~/*": ["./*"],
       "~apps/*": ["./apps/*"],
       "~web/*": ["./apps/web/src/*"],
-      "~ui/*": ["./packages/ui/src/*"]
+      "~ui/*": ["./packages/ui/src/*"],
+      "~shadcn-ui/*": ["./packages/ui/src/components/shadcn-ui/*"]
     }
   },
   "exclude": ["node_modules", "**/node_modules", "dist", "**/dist"]
