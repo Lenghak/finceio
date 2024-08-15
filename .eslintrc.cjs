@@ -5,8 +5,8 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:prettier/recommended",
   ],
-  parser: "@typescript-eslint/parser",
   parserOptions: {
+    parser: "@typescript-eslint/parser",
     project: [
       "./tsconfig.eslint.json",
       "./apps/*/tsconfig.json",
