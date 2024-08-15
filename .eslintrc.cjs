@@ -1,15 +1,20 @@
 /* eslint-env node */
 module.exports = {
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:prettier/recommended",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:prettier/recommended',
+    'airbnb',
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ["./tsconfig.eslint.json", "./packages/*/tsconfig.json"],
+    project: [
+      './tsconfig.eslint.json',
+      './apps/*/tsconfig.json',
+      './packages/*/tsconfig.json',
+    ],
     tsconfigRootDir: __dirname,
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ['@typescript-eslint'],
   root: true,
 };
