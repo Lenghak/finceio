@@ -1,4 +1,4 @@
-import { Button } from "@packages/ui";
+import { Button } from "@packages/ui/shadcn";
 import * as React from "react";
 
 export default function App({

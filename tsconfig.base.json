@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ES6",
+    "moduleResolution": "Bundler",
+    "allowArbitraryExtensions": true,
+    "allowImportingTsExtensions": false,
+    "allowSyntheticDefaultImports": true,
+    "allowUnreachableCode": false,
+    "allowUmdGlobalAccess": false,
+    "allowUnusedLabels": false,
     "composite": true,
     "declaration": true,
     "declarationMap": true,
@@ -16,12 +22,13 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
+    "verbatimModuleSyntax": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
       "@apps/*": ["./apps/*"],
       "@apps/web/*": ["./apps/web/src/*"],
-      "@packages/ui": ["./packages/ui/src/index.ts"],
+      "@packages/ui": ["./packages/ui/index"],
       "@packages/ui/*": ["./packages/ui/src/*"]
     }
   },
