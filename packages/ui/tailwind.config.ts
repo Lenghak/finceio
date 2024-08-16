@@ -1,21 +1,30 @@
+import fluid, { extract, fontSize, screens } from "fluid-tailwind";
+import { join } from "path";
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
+import { createGlobPatternsForDependencies } from "@nx/react/tailwind";
 const config = {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: {
+    files: [
+      join(
+        __dirname,
+        "{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}",
+      ),
+      ...createGlobPatternsForDependencies(__dirname),
+    ],
+    extract,
+  },
   prefix: "",
   theme: {
+    fontSize,
+    screens,
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "87.5rem",
       },
     },
     extend: {
@@ -75,7 +84,7 @@ const config = {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [fluid, tailwindcssAnimate],
 } satisfies Config;
 
 export default config;

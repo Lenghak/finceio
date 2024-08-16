@@ -5,8 +5,9 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "~ui/components/ui/toast";
-import { useToast } from "~ui/components/ui/use-toast";
+} from "@packages/ui/components/shadcn-ui/toast";
+import { useToast } from "@packages/ui/components/shadcn-ui/use-toast";
+import React from "react";
 
 export function Toaster() {
   const { toasts } = useToast();
@@ -16,7 +17,7 @@ export function Toaster() {
       {toasts.map(function ({ id, title, description, action, ...props }) {
         return (
           <Toast
-            key={id}
+            key={id as string}
             {...props}
           >
             <div className="grid gap-1">

@@ -1,11 +1,33 @@
 import fluid, { extract, fontSize, screens } from "fluid-tailwind";
+import { join } from "path";
+import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: { files: ["./src/**/*.{html,js,jsx,ts,tsx,astro}"], extract },
+import { createGlobPatternsForDependencies } from "@nx/react/tailwind.js";
+import type { PluginCreator } from "tailwindcss/types/config.js";
+const config = {
+  darkMode: ["class"],
+  content: {
+    files: [
+      join(
+        __dirname,
+        "{apps,packages}/**/*!(*.stories|*.spec).{ts,tsx,html,astro}",
+      ),
+      ...createGlobPatternsForDependencies(__dirname),
+    ],
+    extract,
+  },
+  prefix: "",
   theme: {
     fontSize,
     screens,
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "87.5rem",
+      },
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -44,8 +66,8 @@ export default {
       },
       borderRadius: {
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        md: "calc(var(--radius) - 0.125rem)",
+        sm: "calc(var(--radius) - 0.25rem)",
       },
       keyframes: {
         "accordion-down": {
@@ -63,5 +85,7 @@ export default {
       },
     },
   },
-  plugins: [fluid],
-};
+  plugins: [fluid as unknown as PluginCreator, tailwindcssAnimate],
+} satisfies Config;
+
+export default config;

@@ -1,6 +1,7 @@
 ---
-import "~web/common/styles/global.scss";
-import { Button } from "~ui/components/shacn-ui/button";
+import "@apps/web/common/styles/global.scss";
+import Button from "@apps/web/common/components/button";
+export const prerender = false;
 ---
 
 <html lang="en">
@@ -21,5 +22,7 @@ import { Button } from "~ui/components/shacn-ui/button";
     />
     <title>Astro</title>
   </head>
-  <body><Button client:load>This is a button</Button></body>
+  <body>
+    <Button client:load />
+  </body>
 </html>
