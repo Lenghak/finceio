@@ -17,7 +17,7 @@
     "@packages/ui": "workspace:*",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.12.3",
+    "astro": "^4.14.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "fluid-tailwind": "^1.0.3",

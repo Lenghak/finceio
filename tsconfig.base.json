@@ -3,6 +3,12 @@
     "target": "ES6",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
     "useDefineForClassFields": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -10,6 +16,14 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@apps/*": ["./apps/*"],
+      "@apps/web/*": ["./apps/web/src/*"],
+      "@packages/ui": ["./packages/ui/src/index.ts"],
+      "@packages/ui/*": ["./packages/ui/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "**/node_modules", "dist", "**/dist"]
 }

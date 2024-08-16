@@ -1,14 +1,3 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"],
-      "@apps/*": ["./apps/*"],
-      "@apps/web/*": ["./apps/web/src/*"],
-      "@packages/ui": ["./packages/ui/src/index.ts"],
-      "@packages/ui/*": ["./packages/ui/src/*"]
-    }
-  },
-  "exclude": ["node_modules", "**/node_modules", "dist", "**/dist"]
+  "extends": "./tsconfig.base.json"
 }
