@@ -8,5 +8,11 @@
         "cacheableOperations": ["astro", "build"]
       }
     }
+  },
+  "targetDefaults": {
+    "build": {
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    }
   }
 }
