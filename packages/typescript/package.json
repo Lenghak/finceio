@@ -1,0 +1,14 @@
+{
+  "name": "@packages/typescript",
+  "version": "0.0.1",
+  "description": "",
+  "files": [
+    "tsconfig.*.json"
+  ],
+  "dependencies": {
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.3.0"
+  }
+}

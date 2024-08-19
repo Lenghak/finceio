@@ -26,6 +26,7 @@
     "@commitlint/read": "^19.4.0",
     "@eslint/compat": "^1.1.1",
     "@nx/react": "^19.6.0",
+    "@packages/typescript": "workspace:*",
     "@types/eslint": "^9.6.0",
     "@types/node": "^22.3.0",
     "@typescript-eslint/eslint-plugin": "^8.1.0",
