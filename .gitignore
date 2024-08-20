@@ -44,5 +44,5 @@ yarn-error.log*
 .nx/cache
 .nx/workspace-data
 
-# Vs Code
-.vscode
+# # Vs Code
+# .vscode
