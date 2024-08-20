@@ -14,5 +14,9 @@
       "outputs": ["{projectRoot}/dist"],
       "cache": true
     }
+  },
+  "plugins": ["@nx-go/nx-go"],
+  "namedInputs": {
+    "sharedGlobals": ["{workspaceRoot}/go.work"]
   }
 }

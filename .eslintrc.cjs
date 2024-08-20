@@ -66,7 +66,7 @@ module.exports = {
         "check-file/filename-naming-convention": [
           "error",
           {
-            "**/*.{ts,tsx}": "KEBAB_CASE",
+            "**/*.{js,cjs,mjs,jsx,ts,tsx,mts}": "KEBAB_CASE",
           },
         ],
       },

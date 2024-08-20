@@ -25,6 +25,7 @@
     "@commitlint/prompt-cli": "^19.4.0",
     "@commitlint/read": "^19.4.0",
     "@eslint/compat": "^1.1.1",
+    "@nx-go/nx-go": "^3.2.0",
     "@nx/react": "^19.6.0",
     "@packages/typescript": "workspace:*",
     "@types/eslint": "^9.6.0",

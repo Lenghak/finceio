@@ -8,6 +8,17 @@
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go",
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
+    }
+  },
+  "[go.work]": {
+    "editor.defaultFormatter": "golang.go"
+  },
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.codeActionsOnSave": {
@@ -17,6 +28,6 @@
     "source.organizeImports": "never",
     "source.addMissingImports.ts": "always",
     "source.removeUnused.ts": "always",
-    "source.removeUnusedImports": "always",
+    "source.removeUnusedImports": "always"
   }
 }
