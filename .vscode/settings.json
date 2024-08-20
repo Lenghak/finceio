@@ -1,5 +1,5 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "trunk.io",
   "eslint.workingDirectories": [
     {
       "mode": "auto"
@@ -9,15 +9,7 @@
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "[go]": {
-    "editor.defaultFormatter": "golang.go",
-    "editor.insertSpaces": false,
-    "editor.formatOnSave": true,
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "always"
-    }
-  },
-  "[go.work]": {
-    "editor.defaultFormatter": "golang.go"
+    "editor.defaultFormatter": "trunk.io"
   },
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modificationsIfAvailable",
