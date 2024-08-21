@@ -102,7 +102,7 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
 
-  apps/web:
+  frontend/web:
     dependencies:
       '@astrojs/check':
         specifier: ^0.8.3

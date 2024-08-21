@@ -1,7 +1,6 @@
 {
   "name": "frontend",
   "private": true,
-  "type": "module",
   "scripts": {
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "commit": "cz",

@@ -26,8 +26,8 @@
     "baseUrl": "../../",
     "paths": {
       "@/*": ["./*"],
-      "@apps/*": ["./apps/*"],
-      "@apps/web/*": ["./apps/web/src/*"],
+      "@frontend/*": ["./frontend/*"],
+      "@frontend/web/*": ["./frontend/web/src/*"],
       "@packages/ui": ["./packages/ui/index"],
       "@packages/ui/*": ["./packages/ui/src/*"]
     }
