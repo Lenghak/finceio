@@ -15,8 +15,8 @@
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.codeActionsOnSave": {
     "source.fixAll": "never",
-    "source.fixAll.ts": "never",
-    "source.fixAll.eslint": "never",
+    "source.fixAll.ts": "always",
+    "source.fixAll.eslint": "always",
     "source.organizeImports": "never",
     "source.addMissingImports.ts": "always",
     "source.removeUnused.ts": "always",

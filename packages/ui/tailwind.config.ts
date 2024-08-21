@@ -3,7 +3,6 @@ import { join } from "path";
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
 
-import { createGlobPatternsForDependencies } from "@nx/react/tailwind";
 const config = {
   darkMode: ["class"],
   content: {
@@ -12,7 +11,7 @@ const config = {
         __dirname,
         "{src,pages,components,app}/**/*!(*.stories|*.spec).{ts,tsx,html}",
       ),
-      ...createGlobPatternsForDependencies(__dirname),
+      // ...createGlobPatternsForDependencies(__dirname),
     ],
     extract,
   },
