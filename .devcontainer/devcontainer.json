@@ -1,0 +1,51 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+{
+  "name": "Debian",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/go:1": {},
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+
+  "customizations": {
+    "vscode": {
+      "editor.defaultFormatter": "trunk.io",
+      "eslint.workingDirectories": [
+        {
+          "mode": "auto"
+        }
+      ],
+      "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+      },
+      "[go]": {
+        "editor.defaultFormatter": "trunk.io"
+      },
+      "editor.formatOnSave": true,
+      "editor.formatOnSaveMode": "modificationsIfAvailable",
+      "editor.codeActionsOnSave": {
+        "source.fixAll": "never",
+        "source.fixAll.ts": "always",
+        "source.fixAll.eslint": "always",
+        "source.organizeImports": "never",
+        "source.addMissingImports.ts": "always",
+        "source.removeUnused.ts": "always",
+        "source.removeUnusedImports": "always"
+      }
+    }
+  },
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Configure tool-specific properties.
+  // "customizations": {},
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "root"
+}
