@@ -1,40 +1,13 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+// README at: https://github.com/devcontainers/templates/tree/main/src/go
 {
-  "name": "Debian",
+  "name": "Go",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "image": "mcr.microsoft.com/devcontainers/go:1-1.22-bookworm",
   "features": {
     "ghcr.io/devcontainers/features/go:1": {},
-    "ghcr.io/devcontainers/features/node:1": {}
-  },
-
-  "customizations": {
-    "vscode": {
-      "editor.defaultFormatter": "trunk.io",
-      "eslint.workingDirectories": [
-        {
-          "mode": "auto"
-        }
-      ],
-      "[astro]": {
-        "editor.defaultFormatter": "astro-build.astro-vscode"
-      },
-      "[go]": {
-        "editor.defaultFormatter": "trunk.io"
-      },
-      "editor.formatOnSave": true,
-      "editor.formatOnSaveMode": "modificationsIfAvailable",
-      "editor.codeActionsOnSave": {
-        "source.fixAll": "never",
-        "source.fixAll.ts": "always",
-        "source.fixAll.eslint": "always",
-        "source.organizeImports": "never",
-        "source.addMissingImports.ts": "always",
-        "source.removeUnused.ts": "always",
-        "source.removeUnusedImports": "always"
-      }
-    }
+    "ghcr.io/devcontainers/features/node:1": {},
+    "ghcr.io/prulloac/devcontainer-features/bun:1": {}
   },
 
   // Features to add to the dev container. More info: https://containers.dev/features.
@@ -43,9 +16,49 @@
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 
-  // Configure tool-specific properties.
-  // "customizations": {},
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "go version",
 
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "astro-build.astro-vscode",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "trunk.io",
+        "mintlify.document",
+        "nrwl.angular-console",
+        "oven.bun-vscode",
+        "YoavBls.pretty-ts-errors"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "trunk.io",
+        "eslint.workingDirectories": [
+          {
+            "mode": "auto"
+          }
+        ],
+        "[astro]": {
+          "editor.defaultFormatter": "astro-build.astro-vscode"
+        },
+        "[go]": {
+          "editor.defaultFormatter": "trunk.io"
+        },
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "modificationsIfAvailable",
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "never",
+          "source.fixAll.ts": "always",
+          "source.fixAll.eslint": "always",
+          "source.organizeImports": "never",
+          "source.addMissingImports.ts": "always",
+          "source.removeUnused.ts": "always",
+          "source.removeUnusedImports": "always"
+        }
+      }
+    }
+  }
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  "remoteUser": "root"
+  // "remoteUser": "root"
 }
