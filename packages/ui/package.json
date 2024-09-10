@@ -59,7 +59,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@nx/react": "^19.6.5",
+    "@nx/react": "^19.7.0",
     "@types/node": "^22.5.4",
     "scss": "^0.2.4"
   }

@@ -18,7 +18,7 @@
     "@packages/ui": "workspace:*",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.15.3",
+    "astro": "^4.15.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "fluid-tailwind": "^1.0.3",
@@ -27,10 +27,10 @@
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "^3.4.10",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   },
   "devDependencies": {
-    "@nx/react": "^19.6.5",
+    "@nx/react": "^19.7.0",
     "sass": "^1.78.0"
   }
 }
