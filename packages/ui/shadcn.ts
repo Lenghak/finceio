@@ -4,12 +4,12 @@ export {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./src/components/shadcn-ui/accordion";
+} from "./src/components/shadcn/accordion";
 export {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "./src/components/shadcn-ui/alert";
+} from "./src/components/shadcn/alert";
 export {
   AlertDialog,
   AlertDialogAction,
@@ -22,19 +22,19 @@ export {
   AlertDialogPortal,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "./src/components/shadcn-ui/alert-dialog";
-export { AspectRatio } from "./src/components/shadcn-ui/aspect-ratio";
+} from "./src/components/shadcn/alert-dialog";
+export { AspectRatio } from "./src/components/shadcn/aspect-ratio";
 export {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "./src/components/shadcn-ui/avatar";
+} from "./src/components/shadcn/avatar";
 
 export {
   Badge,
   type BadgeProps,
   badgeVariants,
-} from "./src/components/shadcn-ui/badge";
+} from "./src/components/shadcn/badge";
 export {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -43,17 +43,14 @@ export {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "./src/components/shadcn-ui/breadcrumb";
+} from "./src/components/shadcn/breadcrumb";
 export {
   Button,
   type ButtonProps,
   buttonVariants,
-} from "./src/components/shadcn-ui/button";
+} from "./src/components/shadcn/button";
 
-export {
-  Calendar,
-  type CalendarProps,
-} from "./src/components/shadcn-ui/calendar";
+export { Calendar, type CalendarProps } from "./src/components/shadcn/calendar";
 export {
   Card,
   CardContent,
@@ -61,7 +58,7 @@ export {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "./src/components/shadcn-ui/card";
+} from "./src/components/shadcn/card";
 export {
   Carousel,
   type CarouselApi,
@@ -69,7 +66,7 @@ export {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "./src/components/shadcn-ui/carousel";
+} from "./src/components/shadcn/carousel";
 export {
   ChartTooltipContent,
   type ChartConfig,
@@ -78,13 +75,13 @@ export {
   ChartLegendContent,
   ChartStyle,
   ChartTooltip,
-} from "./src/components/shadcn-ui/chart";
-export { Checkbox } from "./src/components/shadcn-ui/checkbox";
+} from "./src/components/shadcn/chart";
+export { Checkbox } from "./src/components/shadcn/checkbox";
 export {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "./src/components/shadcn-ui/collapsible";
+} from "./src/components/shadcn/collapsible";
 export {
   Command,
   CommandDialog,
@@ -95,7 +92,7 @@ export {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "./src/components/shadcn-ui/command";
+} from "./src/components/shadcn/command";
 export {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -112,7 +109,7 @@ export {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "./src/components/shadcn-ui/context-menu";
+} from "./src/components/shadcn/context-menu";
 
 export {
   Dialog,
@@ -125,7 +122,7 @@ export {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-} from "./src/components/shadcn-ui/dialog";
+} from "./src/components/shadcn/dialog";
 export {
   Drawer,
   DrawerClose,
@@ -137,7 +134,7 @@ export {
   DrawerPortal,
   DrawerTitle,
   DrawerTrigger,
-} from "./src/components/shadcn-ui/drawer";
+} from "./src/components/shadcn/drawer";
 export {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -154,7 +151,7 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "./src/components/shadcn-ui/dropdown-menu";
+} from "./src/components/shadcn/dropdown-menu";
 
 export {
   Form,
@@ -165,23 +162,23 @@ export {
   FormLabel,
   FormMessage,
   useFormField,
-} from "./src/components/shadcn-ui/form";
+} from "./src/components/shadcn/form";
 
 export {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "./src/components/shadcn-ui/hover-card";
+} from "./src/components/shadcn/hover-card";
 
-export { Input, type InputProps } from "./src/components/shadcn-ui/input";
+export { Input, type InputProps } from "./src/components/shadcn/input";
 export {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "./src/components/shadcn-ui/input-otp";
+} from "./src/components/shadcn/input-otp";
 
-export { Label } from "./src/components/shadcn-ui/label";
+export { Label } from "./src/components/shadcn/label";
 
 export {
   Menubar,
@@ -200,7 +197,7 @@ export {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "./src/components/shadcn-ui/menubar";
+} from "./src/components/shadcn/menubar";
 
 export {
   NavigationMenu,
@@ -212,7 +209,7 @@ export {
   NavigationMenuTrigger,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
-} from "./src/components/shadcn-ui/navigation-menu";
+} from "./src/components/shadcn/navigation-menu";
 
 export {
   Pagination,
@@ -222,25 +219,25 @@ export {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "./src/components/shadcn-ui/pagination";
+} from "./src/components/shadcn/pagination";
 export {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "./src/components/shadcn-ui/popover";
-export { Progress } from "./src/components/shadcn-ui/progress";
+} from "./src/components/shadcn/popover";
+export { Progress } from "./src/components/shadcn/progress";
 
 export {
   RadioGroup,
   RadioGroupItem,
-} from "./src/components/shadcn-ui/radio-group";
+} from "./src/components/shadcn/radio-group";
 export {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "./src/components/shadcn-ui/resizable";
+} from "./src/components/shadcn/resizable";
 
-export { ScrollArea, ScrollBar } from "./src/components/shadcn-ui/scroll-area";
+export { ScrollArea, ScrollBar } from "./src/components/shadcn/scroll-area";
 export {
   Select,
   SelectContent,
@@ -252,8 +249,8 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-} from "./src/components/shadcn-ui/select";
-export { Separator } from "./src/components/shadcn-ui/separator";
+} from "./src/components/shadcn/select";
+export { Separator } from "./src/components/shadcn/separator";
 export {
   Sheet,
   SheetClose,
@@ -265,11 +262,11 @@ export {
   SheetPortal,
   SheetTitle,
   SheetTrigger,
-} from "./src/components/shadcn-ui/sheet";
-export { Skeleton } from "./src/components/shadcn-ui/skeleton";
-export { Slider } from "./src/components/shadcn-ui/slider";
-export { Toaster as SonnerToaster } from "./src/components/shadcn-ui/sonner";
-export { Switch } from "./src/components/shadcn-ui/switch";
+} from "./src/components/shadcn/sheet";
+export { Skeleton } from "./src/components/shadcn/skeleton";
+export { Slider } from "./src/components/shadcn/slider";
+export { Toaster as SonnerToaster } from "./src/components/shadcn/sonner";
+export { Switch } from "./src/components/shadcn/switch";
 
 export {
   Table,
@@ -280,17 +277,14 @@ export {
   TableHead,
   TableHeader,
   TableRow,
-} from "./src/components/shadcn-ui/table";
+} from "./src/components/shadcn/table";
 export {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "./src/components/shadcn-ui/tabs";
-export {
-  Textarea,
-  type TextareaProps,
-} from "./src/components/shadcn-ui/textarea";
+} from "./src/components/shadcn/tabs";
+export { Textarea, type TextareaProps } from "./src/components/shadcn/textarea";
 export {
   Toast,
   ToastAction,
@@ -301,20 +295,20 @@ export {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "./src/components/shadcn-ui/toast";
-export { Toaster } from "./src/components/shadcn-ui/toaster";
-export { Toggle, toggleVariants } from "./src/components/shadcn-ui/toggle";
+} from "./src/components/shadcn/toast";
+export { Toaster } from "./src/components/shadcn/toaster";
+export { Toggle, toggleVariants } from "./src/components/shadcn/toggle";
 export {
   ToggleGroup,
   ToggleGroupItem,
-} from "./src/components/shadcn-ui/toggle-group";
+} from "./src/components/shadcn/toggle-group";
 export {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./src/components/shadcn-ui/tooltip";
+} from "./src/components/shadcn/tooltip";
 
-export { reducer, toast, useToast } from "./src/components/shadcn-ui/use-toast";
+export { reducer, toast, useToast } from "./src/components/shadcn/use-toast";
 
 export { cn } from "./src/lib/utils";

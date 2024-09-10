@@ -1,13 +1,13 @@
 import * as React from "react";
 import { LaptopMinimalIcon, MoonStarIcon, Sun, SunIcon } from "lucide-react";
 
-import { Button } from "@packages/ui/components/shadcn-ui/button";
+import { Button } from "@/packages/ui/src/components/shadcn/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@packages/ui/components/shadcn-ui/dropdown-menu";
+} from "@/packages/ui/src/components/shadcn/dropdown-menu";
 
 export function ThemeToggle() {
   const [theme, setThemeState] = React.useState<

@@ -7,7 +7,7 @@ import { cn } from "@packages/ui/lib/utils";
 import {
   Dialog,
   DialogContent,
-} from "@packages/ui/components/shadcn-ui/dialog";
+} from "@/packages/ui/src/components/shadcn/dialog";
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,

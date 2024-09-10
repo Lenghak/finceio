@@ -1,1 +1,1 @@
-export * from "./src/components/custom/theme-toggle";
+export { ThemeToggle } from "./src/components/custom/theme-toggle";
