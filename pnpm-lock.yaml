@@ -166,6 +166,12 @@ importers:
         specifier: ^1.78.0
         version: 1.78.0
 
+  packages/lib:
+    dependencies:
+      ky:
+        specifier: ^1.7.2
+        version: 1.7.2
+
   packages/typescript:
     dependencies:
       typescript:
@@ -5039,6 +5045,10 @@ packages:
     resolution: {integrity: sha512-j/8tY9j5t+GVMLeioLaxweJiKUayFhlGqNTzf2ZGwL0ZCQijd2RLHK0SLW5Tsko8YyyqCZC2cojIb0/s62qTAg==}
     engines: {node: ^4.8.4 || ^6.10.1 || ^7.10.1 || >= 8.1.4}
 
+  ky@1.7.2:
+    resolution: {integrity: sha512-OzIvbHKKDpi60TnF9t7UUVAF1B4mcqc02z5PIvrm08Wyb+yOcz63GRvEuVxNT18a9E1SrNouhB4W2NNLeD7Ykg==}
+    engines: {node: '>=18'}
+
   language-subtag-registry@0.3.23:
     resolution: {integrity: sha512-0K65Lea881pHotoGEa5gDlMxt3pctLi2RplBb7Ezh4rRdLEOtgi7n4EwK9lamnUCkKBqaeKRVebTq6BAxSkpXQ==}
 
@@ -8692,21 +8702,6 @@ snapshots:
     transitivePeerDependencies:
       - nx
 
-  '@nrwl/js@19.7.0(@babel/traverse@7.25.6)(@types/node@22.5.4)(nx@19.6.0)(typescript@5.4.5)':
-    dependencies:
-      '@nx/js': 19.7.0(@babel/traverse@7.25.6)(@types/node@22.5.4)(nx@19.6.0)(typescript@5.4.5)
-    transitivePeerDependencies:
-      - '@babel/traverse'
-      - '@swc-node/register'
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - debug
-      - nx
-      - supports-color
-      - typescript
-      - verdaccio
-
   '@nrwl/js@19.7.0(@babel/traverse@7.25.6)(@types/node@22.5.4)(nx@19.6.0)(typescript@5.6.2)':
     dependencies:
       '@nx/js': 19.7.0(@babel/traverse@7.25.6)(@types/node@22.5.4)(nx@19.6.0)(typescript@5.6.2)
@@ -8936,7 +8931,7 @@ snapshots:
       '@babel/preset-env': 7.25.4(@babel/core@7.25.2)
       '@babel/preset-typescript': 7.24.7(@babel/core@7.25.2)
       '@babel/runtime': 7.25.6
-      '@nrwl/js': 19.7.0(@babel/traverse@7.25.6)(@types/node@22.5.4)(nx@19.6.0)(typescript@5.4.5)
+      '@nrwl/js': 19.7.0(@babel/traverse@7.25.6)(@types/node@22.5.4)(nx@19.6.0)(typescript@5.6.2)
       '@nx/devkit': 19.7.0(nx@19.6.0)
       '@nx/workspace': 19.7.0
       babel-plugin-const-enum: 1.2.0(@babel/core@7.25.2)
@@ -13064,6 +13059,8 @@ snapshots:
       vary: 1.1.2
     transitivePeerDependencies:
       - supports-color
+
+  ky@1.7.2: {}
 
   language-subtag-registry@0.3.23: {}
 
