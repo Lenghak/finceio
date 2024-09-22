@@ -9,7 +9,7 @@ const config = {
   darkMode: ["class"],
   content: {
     files: [
-      join(__dirname, "./**/*!(*.stories|*.spec).{ts,tsx,html,astro}"),
+      join(__dirname, "./**/*!(*.stories|*.spec).{tsx,html,astro}"),
       ...createGlobPatternsForDependencies(__dirname),
     ],
     extract,

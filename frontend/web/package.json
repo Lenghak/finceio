@@ -10,15 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.8.3",
-    "@astrojs/node": "^8.3.3",
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/node": "9.0.0-beta.2",
     "@astrojs/react": "^3.6.2",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/tailwind": "^5.1.1",
     "@packages/typescript": "workspace:*",
     "@packages/ui": "workspace:*",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.15.4",
+    "astro": "5.0.0-beta.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "fluid-tailwind": "^1.0.3",
@@ -31,6 +31,10 @@
   },
   "devDependencies": {
     "@nx/react": "^19.7.2",
+    "@typescript-eslint/parser": "^8.5.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-astro": "^1.2.4",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
     "sass": "^1.78.0"
   }
 }
