@@ -5,8 +5,7 @@
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/base:bullseye",
   "features": {
-    "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/astronomer/devcontainer-features/astro-cli:1": {}
+    "ghcr.io/devcontainers/features/node:1": {}
   },
 
   // Features to add to the dev container. More info: https://containers.dev/features.
@@ -22,7 +21,9 @@
         "astro-build.astro-vscode",
         "esbenp.prettier-vscode",
         "YoavBls.pretty-ts-errors",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "Trunk.io",
+        "million.million-lint"
       ],
       "settings": {
         "eslint.validate": [
@@ -31,11 +32,15 @@
           "astro", // Enable .astro
           "typescript", // Enable .ts
           "typescriptreact" // Enable .tsx
-        ]
+        ],
+        "[astro]": {
+          "editor.defaultFormatter": "astro-build.astro-vscode"
+        }
       }
     }
-  }
-
+  },
+  "workspaceFolder": "/workspace/frontend/web",
+  "workspaceMount": "source=${localWorkspaceFolder}/../../,target=/workspace,type=bind"
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  // "remoteUser": "root",
 }
