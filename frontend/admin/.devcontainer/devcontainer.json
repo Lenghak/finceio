@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-  "name": "web.persistio.ai",
+  "name": "admin.persistio.ai",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/base:bullseye",
   "features": {
@@ -18,28 +18,22 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "astro-build.astro-vscode",
         "YoavBls.pretty-ts-errors",
         "bradlc.vscode-tailwindcss",
-        "million.million-lint",
-        "Trunk.io"
+        "million.million-lint"
       ],
       "settings": {
         "eslint.validate": [
-          "astro",
           "javascript",
           "javascriptreact",
           "typescript", // Enable .ts
           "typescriptreact" // Enable .tsx
-        ],
-        "[astro]": {
-          "editor.defaultFormatter": "astro-build.astro-vscode"
-        }
+        ]
       }
     }
   },
-  "workspaceFolder": "/persistio/frontend/web",
-  "workspaceMount": "source=${localWorkspaceFolder},target=/persistio/frontend/web,type=bind",
+  "workspaceFolder": "/persistio/frontend/admin",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/persistio/frontend/admin,type=bind",
   "mounts": [
     {
       "source": "${localWorkspaceFolder}/../../packages",

@@ -1,11 +1,11 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/debian
 {
-  "name": "Debian",
+  "name": "persistio.ai",
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "image": "mcr.microsoft.com/devcontainers/base:bullseye",
   "features": {
-    "ghcr.io/devcontainers/features/go:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/node:1": {}
   },
 
@@ -18,40 +18,9 @@
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
-      "extensions": [
-        "astro-build.astro-vscode",
-        "bradlc.vscode-tailwindcss",
-        "esbenp.prettier-vscode",
-        "trunk.io",
-        "mintlify.document",
-        "nrwl.angular-console",
-        "oven.bun-vscode",
-        "YoavBls.pretty-ts-errors"
-      ],
+      "extensions": ["Trunk.io", "biomejs.biome"],
       "settings": {
-        "editor.defaultFormatter": "trunk.io",
-        "eslint.workingDirectories": [
-          {
-            "mode": "auto"
-          }
-        ],
-        "[astro]": {
-          "editor.defaultFormatter": "astro-build.astro-vscode"
-        },
-        "[go]": {
-          "editor.defaultFormatter": "trunk.io"
-        },
-        "editor.formatOnSave": true,
-        "editor.formatOnSaveMode": "modificationsIfAvailable",
-        "editor.codeActionsOnSave": {
-          "source.fixAll": "never",
-          "source.fixAll.ts": "always",
-          "source.fixAll.eslint": "always",
-          "source.organizeImports": "never",
-          "source.addMissingImports.ts": "always",
-          "source.removeUnused.ts": "always",
-          "source.removeUnusedImports": "always"
-        }
+        "editor.defaultFormatter": "biomejs.biome"
       }
     }
   }
