@@ -20,7 +20,8 @@
     "vscode": {
       "extensions": ["Trunk.io", "biomejs.biome"],
       "settings": {
-        "editor.defaultFormatter": "biomejs.biome"
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.formatOnSave": true
       }
     }
   }

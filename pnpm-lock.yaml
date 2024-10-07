@@ -9847,39 +9847,9 @@ snapshots:
     transitivePeerDependencies:
       - nx
 
-  '@nrwl/js@19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.6.0)(typescript@5.4.5)':
-    dependencies:
-      '@nx/js': 19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.6.0)(typescript@5.4.5)
-    transitivePeerDependencies:
-      - '@babel/traverse'
-      - '@swc-node/register'
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - debug
-      - nx
-      - supports-color
-      - typescript
-      - verdaccio
-
   '@nrwl/js@19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.6.0)(typescript@5.6.2)':
     dependencies:
       '@nx/js': 19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.6.0)(typescript@5.6.2)
-    transitivePeerDependencies:
-      - '@babel/traverse'
-      - '@swc-node/register'
-      - '@swc/core'
-      - '@swc/wasm'
-      - '@types/node'
-      - debug
-      - nx
-      - supports-color
-      - typescript
-      - verdaccio
-
-  '@nrwl/js@19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.8.4)(typescript@5.4.5)':
-    dependencies:
-      '@nx/js': 19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.8.4)(typescript@5.4.5)
     transitivePeerDependencies:
       - '@babel/traverse'
       - '@swc-node/register'
@@ -10095,7 +10065,7 @@ snapshots:
       '@babel/preset-env': 7.25.7(@babel/core@7.25.7)
       '@babel/preset-typescript': 7.25.7(@babel/core@7.25.7)
       '@babel/runtime': 7.25.7
-      '@nrwl/js': 19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.6.0)(typescript@5.4.5)
+      '@nrwl/js': 19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.6.0)(typescript@5.6.2)
       '@nx/devkit': 19.8.4(nx@19.6.0)
       '@nx/workspace': 19.8.4
       babel-plugin-const-enum: 1.2.0(@babel/core@7.25.7)
@@ -10181,7 +10151,7 @@ snapshots:
       '@babel/preset-env': 7.25.7(@babel/core@7.25.7)
       '@babel/preset-typescript': 7.25.7(@babel/core@7.25.7)
       '@babel/runtime': 7.25.7
-      '@nrwl/js': 19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.8.4)(typescript@5.4.5)
+      '@nrwl/js': 19.8.4(@babel/traverse@7.25.7)(@types/node@22.7.4)(nx@19.6.0)(typescript@5.6.2)
       '@nx/devkit': 19.8.4(nx@19.8.4)
       '@nx/workspace': 19.8.4
       babel-plugin-const-enum: 1.2.0(@babel/core@7.25.7)

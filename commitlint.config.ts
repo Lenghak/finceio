@@ -1,3 +1,56 @@
+import { format } from "@commitlint/format";
+
+type Problem = {
+  /*
+   * Level of the problem hint | warning | error
+   */
+  level: 0 | 1 | 2;
+  /*
+   * Name of the problem to annotate the message with
+   */
+  name: string;
+  /*
+   * Message to print
+   */
+  message: string;
+};
+
+type Report = {
+  results: ReportResult[];
+};
+
+type ReportResult = {
+  errors: Problem[];
+  warnings: Problem[];
+};
+
+class FormatOptions {
+  /**
+   * Color the output
+   **/
+  color: boolean = false;
+
+  /**
+   * Signs to use as decoration for messages with severity 0, 1, 2
+   **/
+  signs: readonly [string, string, string] = [" ", "⚠", "✖"];
+
+  /**
+   * Colors to use for messages with severity 0, 1, 2
+   **/
+  colors: readonly [string, string, string] = ["white", "yellow", "red"];
+
+  /**
+   * Print summary and inputs for reports without problems
+   **/
+  verbose: boolean = false;
+
+  /**
+   * URL to print as help for reports with problems
+   **/
+  helpUrl: string = "";
+}
+
 export default {
   extends: ["@commitlint/config-conventional"],
   /*
@@ -12,7 +65,7 @@ export default {
    * To see full list, check https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/is-ignored/src/defaults.ts.
    * To disable those ignores and run rules always, set `defaultIgnores: false` as shown below.
    */
-  ignores: [(commit) => commit === ""],
+  ignores: [(commit: string) => commit.trim() === ""],
   /*
    * Whether commitlint uses the default ignore rules, see the description above.
    */
@@ -162,3 +215,34 @@ export default {
     },
   },
 };
+
+format(
+  {
+    results: [
+      {
+        warnings: [
+          {
+            level: 0,
+            name: "some-hint",
+            message: "This will not show up as it has level 0",
+          },
+          {
+            level: 1,
+            name: "some-warning",
+            message: "This will show up yellow as it has level 1",
+          },
+        ],
+        errors: [
+          {
+            level: 2,
+            name: "some-error",
+            message: "This will show up red as it has level 2",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    color: false,
+  },
+);

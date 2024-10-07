@@ -5,7 +5,7 @@
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
-    "formatWithErrors": true,
+    "formatWithErrors": false,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
@@ -51,7 +51,11 @@
         "useValidForDirection": "error",
         "useYield": "error"
       },
-      "style": { "noNamespace": "error", "useAsConstAssertion": "error" },
+      "style": {
+        "recommended": true,
+        "noNamespace": "error",
+        "useAsConstAssertion": "error"
+      },
       "suspicious": {
         "noAsyncPromiseExecutor": "error",
         "noCatchAssign": "error",
