@@ -20,7 +20,8 @@
       "extensions": [
         "YoavBls.pretty-ts-errors",
         "bradlc.vscode-tailwindcss",
-        "million.million-lint"
+        "million.million-lint",
+        "dbaeumer.vscode-eslint"
       ],
       "settings": {
         "eslint.validate": [
