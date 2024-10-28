@@ -1,36 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "allowArbitraryExtensions": true,
-    "allowImportingTsExtensions": false,
-    "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false,
-    "allowUmdGlobalAccess": false,
-    "allowUnusedLabels": false,
-    "composite": true,
-    "declaration": true,
-    "declarationMap": true,
-    "incremental": true,
-    "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true,
-    "noUncheckedIndexedAccess": true,
-    "useDefineForClassFields": true,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "sourceMap": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
     "strict": true,
-    "verbatimModuleSyntax": false,
-    "baseUrl": "../../",
-    "paths": {
-      "@/*": ["./*"],
-      "@frontend/*": ["./frontend/*"],
-      "@frontend/web/*": ["./frontend/web/src/*"],
-      "@packages/ui": ["./packages/ui/index"],
-      "@packages/ui/*": ["./packages/ui/src/*"]
-    }
-  },
-  "exclude": ["**/*/node_modules", "**/*/dist"]
+    "noUncheckedIndexedAccess": true,
+    "module": "NodeNext"
+  }
 }

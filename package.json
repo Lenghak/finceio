@@ -1,49 +1,30 @@
 {
-  "name": "frontend",
+  "name": "persistio",
+  "version": "1.0.0",
+  "description": "",
   "private": true,
   "scripts": {
-    "format": "pnpm biome format --write \"**/*.{ts,tsx,md}\"",
-    "commit": "cz"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts,css,scss,json,jsonc}": [
       "pnpm biome format --write --staged"
     ]
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "@biomejs/biome": "^1.9.3",
-    "@changesets/cli": "^2.27.9",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@commitlint/format": "^19.5.0",
     "@commitlint/prompt-cli": "^19.5.0",
     "@commitlint/read": "^19.5.0",
-    "@nx-go/nx-go": "^3.2.0",
-    "@nx/react": "^19.8.4",
-    "@packages/typescript": "workspace:*",
-    "@types/node": "^22.7.4",
-    "autoprefixer": "^10.4.20",
-    "commitizen": "^4.3.1",
-    "fluid-tailwind": "^1.0.3",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
-    "nx": "19.6.0",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.13",
-    "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.6.2"
+    "turbo": "^2.2.3"
   },
-  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b",
-  "engines": {
-    "node": ">=20"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  }
+  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
 }

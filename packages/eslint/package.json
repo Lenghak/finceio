@@ -1,0 +1,10 @@
+{
+  "name": "@packages/eslint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "devDependencies": {
+    "eslint-config-turbo": "^2.2.3"
+  }
+}
