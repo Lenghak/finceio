@@ -69,6 +69,7 @@
     },
   ],
   "material-icon-theme.files.customClones" : [
+    // config files
     {
       "name": "auth-config",
       "color": "yellow-700",
@@ -88,7 +89,7 @@
       "color": "blue-600",
       "base": "tsconfig",
       "fileExtensions": ["*.json"],
-      "fileNames": ["tsconfig.biome.json", "tsconfig.next.json"]
+      "fileNames": ["tsconfig.next.json", "tsconfig.react.json"]
     },
     {
       "name": "eslint",
@@ -96,6 +97,13 @@
       "base": "eslint",
       "fileExtensions": ["*.cjs","*.json"],
       "fileNames": [".eslintrc.biome.cjs", ".eslintrc.base.cjs"]
+    },
+    {
+      "name": "vscode",
+      "color": "blue-400",
+      "base": "vscode",
+      "fileExtensions": ["*.json"],
+      "fileNames": ["extensions.json", "settings.json"]
     }
   ]
 }
