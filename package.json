@@ -2,7 +2,7 @@
   "name": "frontend",
   "private": true,
   "scripts": {
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "pnpm biome format --write \"**/*.{ts,tsx,md}\"",
     "commit": "cz",
     "prepare": "husky"
   },
@@ -12,7 +12,9 @@
     }
   },
   "lint-staged": {
-    "*": ["pnpm trunk fmt"]
+    "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts,css,scss,json,jsonc}": [
+      "pnpm biome format --write --staged"
+    ]
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.3",
@@ -22,14 +24,10 @@
     "@commitlint/format": "^19.5.0",
     "@commitlint/prompt-cli": "^19.5.0",
     "@commitlint/read": "^19.5.0",
-    "@eslint/compat": "^1.2.0",
     "@nx-go/nx-go": "^3.2.0",
     "@nx/react": "^19.8.4",
     "@packages/typescript": "workspace:*",
-    "@types/eslint": "^9.6.1",
     "@types/node": "^22.7.4",
-    "@typescript-eslint/eslint-plugin": "^8.8.0",
-    "@typescript-eslint/parser": "^8.8.0",
     "autoprefixer": "^10.4.20",
     "commitizen": "^4.3.1",
     "fluid-tailwind": "^1.0.3",

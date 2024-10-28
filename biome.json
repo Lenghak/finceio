@@ -90,7 +90,7 @@
       "nursery": {
         "recommended": true,
         "useSortedClasses": {
-          "level": "error",
+          "level": "warn",
           "fix": "safe",
           "options": {
             "attributes": ["class", "className"],
@@ -143,6 +143,9 @@
       "attributePosition": "auto",
       "bracketSpacing": true
     }
+  },
+  "json": {
+    "formatter": { "enabled": true }
   },
   "overrides": [
     {

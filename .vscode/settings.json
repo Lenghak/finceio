@@ -1,0 +1,90 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "always",
+    "source.fixAll.biome": "always"
+  },
+  "material-icon-theme.folders.customClones": [
+    // roles
+    {
+      "name": "users-admin",
+      "base": "admin",
+      "color": "light-green-500",
+      "lightColor": "light-green-700",
+      "folderNames": ["users"]
+    },
+    {
+      "name": "roles-admin",
+      "base": "admin",
+      "color": "purple-400",
+      "folderNames": ["roles"]
+    },
+    // moudles
+    {
+      "name": "features-modules",
+      "base": "plugin",
+      "color": "purple-400",
+      "folderNames": ["feature", "features"]
+    },
+    {
+      "name": "server-actions",
+      "base": "functions",
+      "color": "green-600",
+      "folderNames": ["action", "actions"]
+    },
+    {
+      "name": "providers",
+      "base": "context",
+      "color": "pink-400",
+      "folderNames": ["providers", "provider"]
+    },
+
+    // ui
+    {
+      "name": "magic-ui",
+      "base": "ui",
+      "color": "yellow-900",
+      "folderNames": ["magic-ui"]
+    },
+    {
+      "name": "shadcn-ui",
+      "base": "ui",
+      "color": "gray-700",
+      "folderNames": ["shadcn-ui"]
+    },
+    {
+      "name": "plate-ui",
+      "base": "ui",
+      "color": "blue-700",
+      "folderNames": ["plate-ui"]
+    },
+    {
+      "name": "custom-ui",
+      "base": "ui",
+      "color": "red-700",
+      "folderNames": ["custom-ui"]
+    },
+    {
+      "name": "extension-ui",
+      "base": "ui",
+      "color": "silver",
+      "folderNames": ["extension-ui"]
+    }
+  ],
+
+  "material-icon-theme.files.customClones": [
+    {
+      "name": "auth-config",
+      "color": "yellow-700",
+      "base": "lock",
+      "fileExtensions": [".ts"],
+      "fileNames": ["auth.config.ts"]
+    },
+    {
+      "name": "depdencies-cruiser",
+      "color": "silver",
+      "base": "pipeline",
+      "fileExtensions": [".cjs", ".mjs", ".ts"],
+      "fileNames": [".dependency-cruiser.cjs"]
+    }
+  ]
+}
