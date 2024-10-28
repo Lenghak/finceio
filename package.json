@@ -3,8 +3,7 @@
   "private": true,
   "scripts": {
     "format": "pnpm biome format --write \"**/*.{ts,tsx,md}\"",
-    "commit": "cz",
-    "prepare": "husky"
+    "commit": "cz"
   },
   "config": {
     "commitizen": {
