@@ -5,8 +5,8 @@
   "private": true,
   "devDependencies": {
     "@biomejs/biome": "catalog:",
-    "@typescript-eslint/eslint-plugin": "^7.13.1",
-    "@typescript-eslint/parser": "^7.13.1",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "eslint": "catalog:",
     "eslint-config-biome": "^1.9.3",
     "eslint-config-next": "15.0.1",

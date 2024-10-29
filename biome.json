@@ -25,7 +25,7 @@
   },
   "overrides": [
     {
-      "ignore": ["frontend", "backend", "packages", "node_modules"]
+      "ignore": ["frontend", "backend", "packages", "node_modules/**/*"]
     }
   ]
 }

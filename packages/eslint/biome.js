@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["./index.js", "biome"],
+  extends: ["eslint:recommended", "turbo", "biome"],
 }
