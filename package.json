@@ -7,7 +7,7 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "check-types": "tsc --noEmit"
+    "check-types": "pnpm --noEmit"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts,css,scss,json,jsonc}": [
@@ -18,11 +18,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@biomejs/biome": "catalog:",
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@commitlint/format": "^19.5.0",
     "@commitlint/prompt-cli": "^19.5.0",
     "@commitlint/read": "^19.5.0",
+    "@packages/typescript": "workspace:^",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "syncpack": "^13.0.0",

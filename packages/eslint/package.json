@@ -2,9 +2,16 @@
   "name": "@packages/eslint",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "private": true,
   "devDependencies": {
-    "eslint-config-turbo": "^2.2.3"
-  }
+    "@biomejs/biome": "catalog:",
+    "@typescript-eslint/eslint-plugin": "^7.13.1",
+    "@typescript-eslint/parser": "^7.13.1",
+    "eslint": "catalog:",
+    "eslint-config-biome": "^1.9.3",
+    "eslint-config-next": "15.0.1",
+    "eslint-config-turbo": "^2.2.3",
+    "eslint-plugin-only-warn": "^1.1.0"
+  },
+  "files": ["index.js", "biome.js", "next.js", "library.js"]
 }

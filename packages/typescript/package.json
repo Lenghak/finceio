@@ -1,9 +1,6 @@
 {
   "name": "@packages/typescript",
   "version": "1.0.0",
-  "description": "",
-  "private" :true,
-  "files": [
-    "tsconfig.base.json"
-  ]
+  "private": true,
+  "files": ["index.json", "next.json", "react.json", "eslint.json"]
 }

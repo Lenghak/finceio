@@ -1,6 +1,10 @@
 {
   "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "always",
+    "quickfix.biome": "always"
+  },
   "material-icon-theme.folders.customClones": [
     // roles
     {
@@ -41,34 +45,34 @@
       "base": "custom",
       "lightColor": "gray-700",
       "color": "gray-900",
-      "folderNames": ["shadcn","shadcn-ui"]
+      "folderNames": ["shadcn", "shadcn-ui"]
     },
     {
       "name": "core-ui",
       "base": "core",
       "color": "red-600",
-      "folderNames": ["core","core-ui"]
+      "folderNames": ["core", "core-ui"]
     },
     {
       "name": "plate-ui",
       "base": "base",
       "color": "blue-700",
-      "folderNames": ["plate","plate-ui"]
+      "folderNames": ["plate", "plate-ui"]
     },
     {
       "name": "magic-ui",
       "base": "helper",
       "color": "yellow-900",
-      "folderNames": ["magic","magic-ui"]
+      "folderNames": ["magic", "magic-ui"]
     },
     {
       "name": "extension-ui",
       "base": "plugin",
       "color": "yellow-700",
-      "folderNames": ["extension","extension-ui"]
-    },
+      "folderNames": ["extension", "extension-ui"]
+    }
   ],
-  "material-icon-theme.files.customClones" : [
+  "material-icon-theme.files.customClones": [
     // config files
     {
       "name": "auth-config",
@@ -83,20 +87,6 @@
       "base": "pipeline",
       "fileExtensions": [".cjs", ".mjs", ".ts"],
       "fileNames": [".dependency-cruiser.cjs"]
-    },
-    {
-      "name": "tsconfig",
-      "color": "blue-600",
-      "base": "tsconfig",
-      "fileExtensions": ["*.json"],
-      "fileNames": ["tsconfig.next.json", "tsconfig.react.json"]
-    },
-    {
-      "name": "eslint",
-      "color": "blue-700",
-      "base": "eslint",
-      "fileExtensions": ["*.cjs","*.json"],
-      "fileNames": [".eslintrc.biome.cjs", ".eslintrc.base.cjs"]
     },
     {
       "name": "vscode",
