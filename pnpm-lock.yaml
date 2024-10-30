@@ -85,6 +85,9 @@ importers:
       '@packages/eslint':
         specifier: workspace:*
         version: link:../../packages/eslint
+      '@packages/shadcn':
+        specifier: workspace:*
+        version: link:../../packages/shadcn
       '@packages/typescript':
         specifier: workspace:*
         version: link:../../packages/typescript

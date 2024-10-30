@@ -1,13 +1,14 @@
 import tailwindcssAnimate from "tailwindcss-animate"
 import { fontFamily } from "tailwindcss/defaultTheme"
+import type { Config } from "tailwindcss/types"
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: ["class"],
-  content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     container: {
-      center: "true",
+      center: true,
       padding: "2rem",
       screens: {
         "2xl": "1400px",
@@ -92,4 +93,4 @@ module.exports = {
     },
   },
   plugins: [tailwindcssAnimate],
-}
+} satisfies Config

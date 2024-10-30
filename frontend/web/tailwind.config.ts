@@ -1,19 +1,8 @@
+import shadcn from "@packages/shadcn/tailwind.config"
 import type { Config } from "tailwindcss"
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
-  },
-  plugins: [],
+  ...shadcn,
+  content: ["app/**/*.{ts,tsx}", "**/@packages/shadcn/**/*.{ts,tsx}"],
 }
 export default config

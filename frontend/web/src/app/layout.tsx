@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import "@packages/shadcn/globals.css"
 import "@/app/globals.css"
 
 export const metadata: Metadata = {
