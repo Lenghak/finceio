@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border bg-opacity-100 text-opacity-100;
+  }
+
+  html {
+    @apply flex min-h-dvh w-full overflow-hidden bg-card p-2 font-sans antialiased dark:bg-black;
+  }
+
+  body {
+    @apply flex h-[calc(100dvh-1rem)] max-h-full w-full flex-col items-center overflow-auto rounded-md border bg-background text-foreground shadow-md;
+  }
+}
