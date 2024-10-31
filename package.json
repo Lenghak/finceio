@@ -9,11 +9,6 @@
     "lint": "turbo run lint",
     "check-types": "pnpm --noEmit"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts,css,scss,json,jsonc}": [
-      "pnpm biome format --write --staged"
-    ]
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
