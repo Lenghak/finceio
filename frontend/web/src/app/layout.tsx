@@ -1,17 +1,17 @@
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
-import { sans } from "@/app/fonts"
-import { QueryClientProvider } from "@/providers/queryclient-provider"
-import { SessionProvider } from "@/providers/session-provider"
-import { ThemeProvider } from "@/providers/themes-provider"
+import { sans } from "@/app/fonts";
+import { QueryClientProvider } from "@/providers/queryclient-provider";
+import { SessionProvider } from "@/providers/session-provider";
+import { ThemeProvider } from "@/providers/themes-provider";
 
-import "@packages/shadcn/globals.css"
-import "@/app/globals.css"
+import "@packages/shadcn/globals.css";
+import "@/app/globals.css";
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -66,5 +66,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

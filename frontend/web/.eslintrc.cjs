@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["@packages/eslint/next.js"],
-}
+  extends: [require.resolve("@packages/eslint/next.js")],
+};
