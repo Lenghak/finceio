@@ -2,7 +2,7 @@
 
 import { type PropsWithChildren, useMemo, useState } from "react";
 
-import { getQueryClient } from "@/lib/queryclient";
+import { getQueryClient } from "@/lib/query-client";
 
 // Since QueryClientProvider relies on useContext under the hood, we have to put 'use client' on top
 import { QueryClientProvider as QueryClientPrimitiveProvider } from "@tanstack/react-query";

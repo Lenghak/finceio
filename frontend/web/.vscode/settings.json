@@ -1,10 +1,102 @@
 {
+  "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.addMissingImports.ts": "always",
-    "source.fixAll.biome": "always",
     "source.organizeImports.biome": "always",
-    "source.removeUnusedImports": "always"
+    "quickfix.biome": "always"
   },
-  "editor.defaultFormatter": "biomejs.biome"
+  "material-icon-theme.folders.customClones": [
+    // roles
+    {
+      "name": "users-admin",
+      "base": "admin",
+      "color": "light-green-500",
+      "lightColor": "light-green-700",
+      "folderNames": ["users"]
+    },
+    {
+      "name": "roles-admin",
+      "base": "admin",
+      "color": "purple-400",
+      "folderNames": ["roles"]
+    },
+    // modules
+    {
+      "name": "features-modules",
+      "base": "plugin",
+      "color": "purple-400",
+      "folderNames": ["feature", "features"]
+    },
+    {
+      "name": "server-actions",
+      "base": "functions",
+      "color": "green-600",
+      "folderNames": ["action", "actions"]
+    },
+    {
+      "name": "providers",
+      "base": "context",
+      "color": "pink-400",
+      "folderNames": ["providers", "provider"]
+    },
+    // ui
+    {
+      "name": "shadcn-ui",
+      "base": "custom",
+      "lightColor": "gray-700",
+      "color": "gray-900",
+      "folderNames": ["shadcn", "shadcn-ui"]
+    },
+    {
+      "name": "core-ui",
+      "base": "core",
+      "color": "red-600",
+      "folderNames": ["core", "core-ui"]
+    },
+    {
+      "name": "plate-ui",
+      "base": "base",
+      "color": "blue-700",
+      "folderNames": ["plate", "plate-ui"]
+    },
+    {
+      "name": "magic-ui",
+      "base": "helper",
+      "color": "yellow-900",
+      "folderNames": ["magic", "magic-ui"]
+    },
+    {
+      "name": "extension-ui",
+      "base": "plugin",
+      "color": "yellow-700",
+      "folderNames": ["extension", "extension-ui"]
+    }
+  ],
+  "material-icon-theme.files.customClones": [
+    // config files
+    {
+      "name": "auth-config",
+      "color": "yellow-700",
+      "base": "lock",
+      "fileExtensions": [".ts"],
+      "fileNames": ["auth.config.ts"]
+    },
+    {
+      "name": "dependencies-cruiser",
+      "color": "silver",
+      "base": "pipeline",
+      "fileExtensions": [".cjs", ".mjs", ".ts"],
+      "fileNames": [".dependency-cruiser.cjs"]
+    },
+    {
+      "name": "vscode",
+      "color": "blue-400",
+      "base": "vscode",
+      "fileExtensions": ["*.json"],
+      "fileNames": ["extensions.json", "settings.json"]
+    }
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

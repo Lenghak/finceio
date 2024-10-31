@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 import { sans } from "@/app/fonts";
-import { QueryClientProvider } from "@/providers/queryclient-provider";
+import { QueryClientProvider } from "@/providers/query-client-provider";
 import { SessionProvider } from "@/providers/session-provider";
 import { ThemeProvider } from "@/providers/themes-provider";
 
