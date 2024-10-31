@@ -8,10 +8,10 @@
   }
 
   html {
-    @apply flex min-h-dvh w-full overflow-hidden bg-card p-2 font-sans antialiased dark:bg-black;
+    @apply flex min-h-dvh w-full overflow-hidden bg-card p-1 font-sans antialiased dark:bg-black;
   }
 
   body {
-    @apply flex h-[calc(100dvh-1rem)] max-h-full w-full flex-col items-center overflow-auto rounded-md border bg-background text-foreground shadow-md;
+    @apply flex h-[calc(100dvh-0.75rem)] max-h-full w-full flex-col items-center overflow-auto rounded-md border bg-background text-foreground shadow-md;
   }
 }
