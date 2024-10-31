@@ -1,9 +1,9 @@
-import * as React from "react"
+import * as React from "react";
 
-import { cn } from "@packages/shadcn/lib/utils"
+import { cn } from "@packages/shadcn/lib/utils";
 
-import { Slot, Slottable } from "@radix-ui/react-slot"
-import { type VariantProps, cva } from "class-variance-authority"
+import { Slot, Slottable } from "@radix-ui/react-slot";
+import { type VariantProps, cva } from "class-variance-authority";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center rounded-full text-sm font-bold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -778,24 +778,24 @@ const buttonVariants = cva(
       color: "default",
     },
   },
-)
+);
 
 interface IconProps {
-  Icon: React.ElementType
-  iconPlacement: "left" | "right"
+  Icon: React.ElementType;
+  iconPlacement: "left" | "right";
 }
 
 interface IconRefProps {
-  Icon?: never
-  iconPlacement?: undefined
+  Icon?: never;
+  iconPlacement?: undefined;
 }
 
-export type ButtonIconProps = IconProps | IconRefProps
+export type ButtonIconProps = IconProps | IconRefProps;
 
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color">,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+  asChild?: boolean;
 }
 
 const Button = React.forwardRef<
@@ -815,7 +815,7 @@ const Button = React.forwardRef<
     },
     ref,
   ) => {
-    const Comp = asChild ? Slot : "button"
+    const Comp = asChild ? Slot : "button";
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, color, className }))}
@@ -834,9 +834,9 @@ const Button = React.forwardRef<
           </div>
         )}
       </Comp>
-    )
+    );
   },
-)
-Button.displayName = "Button"
+);
+Button.displayName = "Button";
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

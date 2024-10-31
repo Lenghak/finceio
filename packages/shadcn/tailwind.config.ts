@@ -1,17 +1,18 @@
-import tailwindcssAnimate from "tailwindcss-animate"
-import { fontFamily } from "tailwindcss/defaultTheme"
-import type { Config } from "tailwindcss/types"
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
+import tailwindcssAnimate from "tailwindcss-animate";
+import { fontFamily } from "tailwindcss/defaultTheme";
+import type { Config } from "tailwindcss/types";
 
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
-  content: ["./src/**/*.{ts,tsx}"],
+  content: { files: ["./src/**/*.{ts,tsx}"], extract },
   theme: {
     container: {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        ...screens,
       },
     },
     extend: {
@@ -67,6 +68,11 @@ export default {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        serif: ["var(--font-serif)", ...fontFamily.serif],
+        mono: ["var(--font-mono)", ...fontFamily.mono],
+      },
+      fontSize: {
+        ...fontSize,
       },
       keyframes: {
         "accordion-down": {
@@ -92,5 +98,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindcssAnimate],
-} satisfies Config
+  plugins: [fluid, tailwindcssAnimate],
+} satisfies Config;

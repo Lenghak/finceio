@@ -1,9 +1,0 @@
-{
-  "name": "@packages/biome",
-  "version": "1.0.0",
-  "private": true,
-  "files": ["./base.json", "./next.json"],
-  "devDependencies": {
-    "@biomejs/biome": "catalog:"
-  }
-}

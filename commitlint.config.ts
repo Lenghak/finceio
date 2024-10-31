@@ -1,54 +1,54 @@
-import { format } from "@commitlint/format"
+import { format } from "@commitlint/format";
 
 type Problem = {
   /*
    * Level of the problem hint | warning | error
    */
-  level: 0 | 1 | 2
+  level: 0 | 1 | 2;
   /*
    * Name of the problem to annotate the message with
    */
-  name: string
+  name: string;
   /*
    * Message to print
    */
-  message: string
-}
+  message: string;
+};
 
 type Report = {
-  results: ReportResult[]
-}
+  results: ReportResult[];
+};
 
 type ReportResult = {
-  errors: Problem[]
-  warnings: Problem[]
-}
+  errors: Problem[];
+  warnings: Problem[];
+};
 
 class FormatOptions {
   /**
    * Color the output
    **/
-  color = false
+  color = false;
 
   /**
    * Signs to use as decoration for messages with severity 0, 1, 2
    **/
-  signs: readonly [string, string, string] = [" ", "⚠", "✖"]
+  signs: readonly [string, string, string] = [" ", "⚠", "✖"];
 
   /**
    * Colors to use for messages with severity 0, 1, 2
    **/
-  colors: readonly [string, string, string] = ["white", "yellow", "red"]
+  colors: readonly [string, string, string] = ["white", "yellow", "red"];
 
   /**
    * Print summary and inputs for reports without problems
    **/
-  verbose = false
+  verbose = false;
 
   /**
    * URL to print as help for reports with problems
    **/
-  helpUrl = ""
+  helpUrl = "";
 }
 
 export default {
@@ -214,7 +214,7 @@ export default {
       },
     },
   },
-}
+};
 
 format(
   {
@@ -245,4 +245,4 @@ format(
   {
     color: false,
   },
-)
+);

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Toast,
@@ -7,16 +7,19 @@ import {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-} from "@packages/shadcn/components/toast"
-import { useToast } from "@packages/shadcn/hooks/use-toast"
+} from "@packages/shadcn/components/toast";
+import { useToast } from "@packages/shadcn/hooks/use-toast";
 
 export function Toaster() {
-  const { toasts } = useToast()
+  const { toasts } = useToast();
 
   return (
     <ToastProvider>
       {toasts.map(({ id, title, description, action, ...props }) => (
-        <Toast key={id} {...props}>
+        <Toast
+          key={id}
+          {...props}
+        >
           <div className="grid gap-1">
             {title && <ToastTitle>{title}</ToastTitle>}
             {description && <ToastDescription>{description}</ToastDescription>}
@@ -27,5 +30,5 @@ export function Toaster() {
       ))}
       <ToastViewport />
     </ToastProvider>
-  )
+  );
 }

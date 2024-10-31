@@ -28,7 +28,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@packages/biome": "workspace:*",
     "@packages/eslint": "workspace:^",
     "@packages/shadcn": "workspace:^",
     "@packages/typescript": "workspace:^",

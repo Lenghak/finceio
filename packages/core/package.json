@@ -1,7 +1,27 @@
 {
   "name": "@packages/core",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "private": true
+  "private": true,
+  "exports": {
+    "./globals.css": "./src/globals.css",
+    "./postcss.config": "./postcss.config.mjs",
+    "./tailwind.config": "./tailwind.config.ts",
+    "./lib/*": "./src/lib/*.ts",
+    "./hooks/*": ["./src/hooks/*.ts", "./src/hooks/*.tsx"],
+    "./components/*": "./src/components/*.tsx",
+    "./modules/*": "./src/modules/*.tsx"
+  },
+  "dependencies": {
+    "@packages/shadcn": "workspace:^",
+    "react": "catalog:react18",
+    "react-dom": "catalog:react18"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@packages/typescript": "workspace:^",
+    "@types/react": "catalog:react18",
+    "@types/react-dom": "catalog:react18",
+    "tailwindcss": "catalog:",
+    "tailwindcss-animate": "^1.0.7"
+  }
 }

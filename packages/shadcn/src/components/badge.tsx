@@ -1,9 +1,9 @@
-import type * as React from "react"
+import type * as React from "react";
 
-import { cn } from "@packages/shadcn/lib/utils"
+import { cn } from "@packages/shadcn/lib/utils";
 
-import { type VariantProps, cva } from "class-variance-authority"
-import { Circle } from "lucide-react"
+import { type VariantProps, cva } from "class-variance-authority";
+import { Circle } from "lucide-react";
 
 const badgeVariants = cva(
   "inline-flex items-center rounded-full text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
@@ -373,7 +373,7 @@ const badgeVariants = cva(
       size: "default",
     },
   },
-)
+);
 
 export interface BadgeProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, "color">,
@@ -396,7 +396,7 @@ function Badge({
       {dot && <Circle className="mr-1.5 h-1.5 w-1.5 fill-current" />}
       {children}
     </div>
-  )
+  );
 }
 
-export { Badge, badgeVariants }
+export { Badge, badgeVariants };

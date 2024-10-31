@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import type * as React from "react"
-import { DayPicker } from "react-day-picker"
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import type * as React from "react";
+import { DayPicker } from "react-day-picker";
 
-import { buttonVariants } from "@packages/shadcn/components/button"
-import { cn } from "@packages/shadcn/lib/utils"
+import { buttonVariants } from "@packages/shadcn/components/button";
+import { cn } from "@packages/shadcn/lib/utils";
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>
+export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
 function Calendar({
   className,
@@ -56,15 +56,15 @@ function Calendar({
       components={{
         Chevron: (props) => {
           if (props.orientation === "left") {
-            return <ChevronLeft {...props} />
+            return <ChevronLeft {...props} />;
           }
-          return <ChevronRight {...props} />
+          return <ChevronRight {...props} />;
         },
       }}
       {...props}
     />
-  )
+  );
 }
-Calendar.displayName = "Calendar"
+Calendar.displayName = "Calendar";
 
-export { Calendar }
+export { Calendar };
