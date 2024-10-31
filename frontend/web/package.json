@@ -28,9 +28,10 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@packages/eslint": "workspace:*",
-    "@packages/shadcn": "workspace:*",
-    "@packages/typescript": "workspace:*",
+    "@packages/biome": "workspace:*",
+    "@packages/eslint": "workspace:^",
+    "@packages/shadcn": "workspace:^",
+    "@packages/typescript": "workspace:^",
     "@types/node": "^20.17.4",
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
