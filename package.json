@@ -1,17 +1,6 @@
 {
-  "name": "persistio",
-  "version": "1.0.0",
-  "description": "",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "check-types": "pnpm --noEmit"
-  },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
+  "description": "",
   "devDependencies": {
     "@biomejs/biome": "catalog:",
     "@commitlint/cli": "^19.5.0",
@@ -25,5 +14,16 @@
     "syncpack": "^13.0.0",
     "turbo": "^2.2.3"
   },
-  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
+  "keywords": [],
+  "license": "ISC",
+  "name": "persistio",
+  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "check-types": "pnpm --noEmit",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint"
+  },
+  "version": "1.0.0"
 }

@@ -1,7 +1,7 @@
 {
-  "name": "@packages/plate",
-  "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "private": true
+  "name": "@packages/plate",
+  "private": true,
+  "version": "1.0.0"
 }

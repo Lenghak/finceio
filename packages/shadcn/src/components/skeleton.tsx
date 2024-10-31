@@ -1,4 +1,5 @@
 import { cn } from "@packages/shadcn/lib/utils";
+import type React from "react";
 
 function Skeleton({
   className,

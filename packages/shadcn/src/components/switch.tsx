@@ -1,7 +1,7 @@
 "use client";
 
-import * as SwitchPrimitives from "@radix-ui/react-switch";
-import * as React from "react";
+import SwitchPrimitives from "@radix-ui/react-switch";
+import React from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
 

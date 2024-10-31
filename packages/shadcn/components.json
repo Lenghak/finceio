@@ -1,18 +1,18 @@
 {
-  "style": "default",
-  "tailwind": {
-    "config": "tailwind.config.ts",
-    "css": "./src/globals.css",
-    "baseColor": "neutral",
-    "cssVariables": true
-  },
-  "rsc": true,
-  "tsx": true,
   "aliases": {
     "components": "@packages/shadcn/components",
-    "ui": "@packages/shadcn/components/ui",
-    "utils": "@packages/shadcn/lib/utils",
+    "hooks": "@packages/shadcn/hooks",
     "lib": "@packages/shadcn/lib",
-    "hooks": "@packages/shadcn/hooks"
-  }
+    "ui": "@packages/shadcn/components/ui",
+    "utils": "@packages/shadcn/lib/utils"
+  },
+  "rsc": true,
+  "style": "default",
+  "tailwind": {
+    "baseColor": "neutral",
+    "config": "tailwind.config.ts",
+    "css": "./src/globals.css",
+    "cssVariables": true
+  },
+  "tsx": true
 }

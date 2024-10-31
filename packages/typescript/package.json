@@ -1,6 +1,6 @@
 {
+  "files": ["index.json", "next.json", "react.json", "eslint.json"],
   "name": "@packages/typescript",
-  "version": "1.0.0",
   "private": true,
-  "files": ["index.json", "next.json", "react.json", "eslint.json"]
+  "version": "1.0.0"
 }

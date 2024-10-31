@@ -1,4 +1,5 @@
 /** @type {import('dependency-cruiser').IConfiguration} */
+// biome-ignore lint/nursery/noCommonJs: <explanation>
 module.exports = {
   forbidden: [
     {

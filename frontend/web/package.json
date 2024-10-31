@@ -1,14 +1,4 @@
 {
-  "name": "@frontend/web",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "format": "pnpm biome format --write"
-  },
   "dependencies": {
     "@auth/core": "^0.37.2",
     "@hono/auth-js": "^1.0.13",
@@ -40,5 +30,15 @@
     "postcss": "^8.4.47",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
-  }
+  },
+  "name": "@frontend/web",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbopack",
+    "format": "pnpm biome format --write",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "version": "0.1.0"
 }

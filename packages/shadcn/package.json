@@ -1,9 +1,4 @@
 {
-  "name": "@packages/shadcn",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.1",
@@ -64,11 +59,14 @@
     "tailwindcss": "catalog:"
   },
   "exports": {
+    "./components/*": "./src/components/*.tsx",
     "./globals.css": "./src/globals.css",
-    "./postcss.config": "./postcss.config.mjs",
-    "./tailwind.config": "./tailwind.config.ts",
-    "./lib/*": "./src/lib/*.ts",
     "./hooks/*": ["./src/hooks/*.ts", "./src/hooks/*.tsx"],
-    "./components/*": "./src/components/*.tsx"
-  }
+    "./lib/*": "./src/lib/*.ts",
+    "./postcss.config": "./postcss.config.mjs",
+    "./tailwind.config": "./tailwind.config.ts"
+  },
+  "name": "@packages/shadcn",
+  "private": true,
+  "version": "1.0.0"
 }

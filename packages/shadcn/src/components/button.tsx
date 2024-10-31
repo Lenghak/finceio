@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
 
@@ -823,7 +823,7 @@ const Button = React.forwardRef<
         {...props}
       >
         {Icon && iconPlacement === "left" && (
-          <div className="group-hover:translate-x-100 w-0 translate-x-[0%] pr-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:pr-2 group-hover:opacity-100">
+          <div className="w-0 translate-x-[0%] pr-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-100 group-hover:pr-2 group-hover:opacity-100">
             <Icon />
           </div>
         )}

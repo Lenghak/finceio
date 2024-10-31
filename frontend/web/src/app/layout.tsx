@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/providers/themes-provider";
 
 import "@packages/shadcn/globals.css";
 import "@/app/globals.css";
+import type React from "react";
 
 export default function RootLayout({
   children,
@@ -16,70 +17,70 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning
+      suppressHydrationWarning={true}
     >
       <head>
         <title>Home | Finceio</title>
         <meta charSet="utf-8" />
         <meta
-          name="viewport"
           content="width=device-width, initial-scale=1"
+          name="viewport"
         />
         <meta
+          content="Take charge of your finances with Finceio! Our user-friendly app offers expense tracking, budgeting tools, and financial education to help you thrive in today's economy."
           name="description"
-          content="Take charge of your finances with Finceio! Our user-friendly app offers expense tracking, budgeting tools, and financial education to help you thrive in today's economy."
         />
         <meta
-          name="keywords"
           content="financial management app, budgeting tool, expense tracking, personal finance, savings goals, debt management, financial education, web3 finance, cryptocurrency tracking, financial planning, gamification in finance, money management, smart budgeting, investment tracking, user-friendly finance app, financial goal setting, income tracking, receipt scanning app, DeFi integration, NFT management"
+          name="keywords"
         />
         <meta
-          name="author"
           content="Bling-io"
+          name="author"
         />
         <meta
+          content="Home | Finceio"
           property="og:title"
-          content="Home | Finceio"
         />
         <meta
+          content="Take charge of your finances with Finceio! Our user-friendly app offers expense tracking, budgeting tools, and financial education to help you thrive in today's economy."
           property="og:description"
-          content="Take charge of your finances with Finceio! Our user-friendly app offers expense tracking, budgeting tools, and financial education to help you thrive in today's economy."
         />
         <meta
-          property="og:image"
           content="/svg/logo-light-background.svg"
+          property="og:image"
         />
         <meta
-          property="og:url"
           content="https://www.finceio.com"
+          property="og:url"
         />
         <meta
-          name="twitter:title"
           content="Home | Finceio"
+          name="twitter:title"
         />
         <meta
-          name="twitter:description"
           content="Take charge of your finances with Finceio! Our user-friendly app offers expense tracking, budgeting tools, and financial education to help you thrive in today's economy."
+          name="twitter:description"
         />
         <link
-          rel="icon"
-          type="image/svg+xml"
           href="/svg/logo-light-background.svg"
           media="(prefers-color-scheme: light)"
-        />
-        <link
           rel="icon"
           type="image/svg+xml"
+        />
+        <link
           href="/svg/logo-dark-background.svg"
           media="(prefers-color-scheme: dark)"
+          rel="icon"
+          type="image/svg+xml"
         />
       </head>
       <body className={cn(sans.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+          disableTransitionOnChange={true}
+          enableSystem={true}
         >
           <SessionProvider>
             <QueryClientProvider>{children}</QueryClientProvider>

@@ -1,8 +1,11 @@
+// biome-ignore lint/nursery/noCommonJs: <explanation>
+// biome-ignore lint/correctness/noNodejsModules: <explanation>
 const { resolve } = require("node:path");
 
 const project = resolve(process.cwd(), "tsconfig.json");
 
 /** @type {import("eslint").Linter.Config} */
+// biome-ignore lint/nursery/noCommonJs: <explanation>
 module.exports = {
   extends: ["eslint:recommended", "turbo"],
   plugins: ["only-warn"],

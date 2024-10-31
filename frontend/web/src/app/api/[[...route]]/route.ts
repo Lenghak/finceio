@@ -2,6 +2,7 @@ import { authHandler, initAuthConfig } from "@hono/auth-js";
 import { Hono } from "hono";
 import { env } from "hono/adapter";
 import { handle } from "hono/vercel";
+
 import authConfig from "~/auth.config";
 
 const app = new Hono();

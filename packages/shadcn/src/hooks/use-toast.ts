@@ -1,7 +1,7 @@
 "use client";
 
 // Inspired by react-hot-toast library
-import * as React from "react";
+import React from "react";
 
 import type {
   ToastActionElement,
@@ -75,6 +75,7 @@ const addToRemoveQueue = (toastId: string) => {
 };
 
 export const reducer = (state: State, action: Action): State => {
+  // biome-ignore lint/style/useDefaultSwitchClause: <explanation>
   switch (action.type) {
     case "ADD_TOAST":
       return {
@@ -115,17 +116,19 @@ export const reducer = (state: State, action: Action): State => {
         ),
       };
     }
-    case "REMOVE_TOAST":
+    case "REMOVE_TOAST": {
       if (action.toastId === undefined) {
         return {
           ...state,
           toasts: [],
         };
       }
+
       return {
         ...state,
         toasts: state.toasts.filter((t) => t.id !== action.toastId),
       };
+    }
   }
 };
 
@@ -159,7 +162,9 @@ function toast({ ...props }: Toast) {
       id,
       open: true,
       onOpenChange: (open) => {
-        if (!open) dismiss();
+        if (!open) {
+          dismiss();
+        }
       },
     },
   });

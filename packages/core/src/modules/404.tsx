@@ -8,7 +8,7 @@ export const NotFound = forwardRef<
 >(({ children, className, ...props }, ref) => (
   <section
     ref={ref}
-    className="flex min-h-screen flex-col space-y-6 text-center w-full"
+    className="flex min-h-screen w-full flex-col space-y-6 text-center"
     {...props}
   >
     {children}

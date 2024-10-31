@@ -1,16 +1,4 @@
 {
-  "name": "@packages/core",
-  "version": "1.0.0",
-  "private": true,
-  "exports": {
-    "./globals.css": "./src/globals.css",
-    "./postcss.config": "./postcss.config.mjs",
-    "./tailwind.config": "./tailwind.config.ts",
-    "./lib/*": "./src/lib/*.ts",
-    "./hooks/*": ["./src/hooks/*.ts", "./src/hooks/*.tsx"],
-    "./components/*": "./src/components/*.tsx",
-    "./modules/*": "./src/modules/*.tsx"
-  },
   "dependencies": {
     "@packages/shadcn": "workspace:^",
     "react": "catalog:react18",
@@ -23,5 +11,17 @@
     "@types/react-dom": "catalog:react18",
     "tailwindcss": "catalog:",
     "tailwindcss-animate": "^1.0.7"
-  }
+  },
+  "exports": {
+    "./components/*": "./src/components/*.tsx",
+    "./globals.css": "./src/globals.css",
+    "./hooks/*": ["./src/hooks/*.ts", "./src/hooks/*.tsx"],
+    "./lib/*": "./src/lib/*.ts",
+    "./modules/*": "./src/modules/*.tsx",
+    "./postcss.config": "./postcss.config.mjs",
+    "./tailwind.config": "./tailwind.config.ts"
+  },
+  "name": "@packages/core",
+  "private": true,
+  "version": "1.0.0"
 }

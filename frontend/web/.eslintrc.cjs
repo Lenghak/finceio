@@ -1,3 +1,3 @@
-module.exports = {
+"use strict";module.exports = {
   extends: [require.resolve("@packages/eslint/next.js")],
 };

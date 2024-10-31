@@ -1,47 +1,24 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "a11y": {
-        "recommended": true
-      },
-      "complexity": {
-        "recommended": true
-      },
-      "correctness": {
-        "recommended": true
-      },
-      "nursery": {
-        "recommended": true
-      },
-      "performance": {
-        "recommended": true
-      },
-      "security": {
-        "recommended": true
-      },
-      "style": {
-        "recommended": true
-      },
-      "suspicious": {
-        "recommended": true
+  "assists": {
+    "actions": {
+      "source": {
+        "sortJsxProps": "on",
+        "useSortedKeys": "on"
       }
-    }
+    },
+    "ignore": ["**/node_modules/**/*", "**/.next/**/*", "*.config.ts"]
   },
   "formatter": {
     "attributePosition": "multiline",
     "bracketSpacing": true,
     "enabled": true,
     "formatWithErrors": true,
+    "ignore": ["**/node_modules/**/*", "**/.next/**/*", "*.config.ts"],
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 80,
-    "lineEnding": "lf"
+    "lineEnding": "lf",
+    "lineWidth": 80
   },
   "javascript": {
     "formatter": {
@@ -50,17 +27,47 @@
       "semicolons": "always"
     }
   },
-  "assists": {
-    "actions": {
-      "source": {
-        "sortJsxProps": "on",
-        "useSortedKeys": "on"
+  "linter": {
+    "enabled": true,
+    "ignore": ["**/node_modules/**/*", "**/.next/**/*", "*.config.ts"],
+    "rules": {
+      "a11y": {
+        "all": true
+      },
+      "all": true,
+      "complexity": {
+        "all": true
+      },
+      "correctness": {
+        "all": true,
+        "noUndeclaredDependencies": "off",
+        "useImportExtensions": "off"
+      },
+      "nursery": {
+        "all": true,
+        "noProcessEnv": "off",
+        "noSecrets": "off",
+        "useComponentExportOnlyModules": "off",
+        "useExplicitType": "off"
+      },
+      "performance": {
+        "all": true
+      },
+      "security": {
+        "all": true
+      },
+      "style": {
+        "all": true,
+        "noDefaultExport": "off",
+        "useNamingConvention": "off"
+      },
+      "suspicious": {
+        "all": true,
+        "noReactSpecificProps": "off"
       }
     }
   },
-  "overrides": [
-    {
-      "ignore": ["node_modules", ".next"]
-    }
-  ]
+  "organizeImports": {
+    "enabled": true
+  }
 }

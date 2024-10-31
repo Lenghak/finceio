@@ -10,6 +10,7 @@ export default middleware(function middleware(req) {
 
   const isAuthPath = currPathname.startsWith("/auth");
 
-  if (isUserSignedIn && isAuthPath)
+  if (isUserSignedIn && isAuthPath) {
     return NextResponse.redirect(new URL("/", req.url));
+  }
 });
