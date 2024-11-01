@@ -47,7 +47,7 @@ export default function RootLayout({
           property="og:description"
         />
         <meta
-          content="/svg/logo-light-background.svg"
+          content="/svg/logo-dark-no-background.svg"
           property="og:image"
         />
         <meta
@@ -63,13 +63,13 @@ export default function RootLayout({
           name="twitter:description"
         />
         <link
-          href="/svg/logo-light-background.svg"
+          href="/svg/logo-light-with-background.svg"
           media="(prefers-color-scheme: light)"
           rel="icon"
           type="image/svg+xml"
         />
         <link
-          href="/svg/logo-dark-background.svg"
+          href="/svg/logo-dark-with-background.svg"
           media="(prefers-color-scheme: dark)"
           rel="icon"
           type="image/svg+xml"

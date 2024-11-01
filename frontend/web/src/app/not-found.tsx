@@ -1,3 +1,3 @@
-export default function _404() {
+export default function NotFound() {
   return "";
 }
