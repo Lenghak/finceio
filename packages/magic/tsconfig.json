@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@packages/shadcn/*": ["./src/*"]
+      "@packages/magic/*": ["./src/*"]
     }
   },
   "exclude": ["node_modules"],

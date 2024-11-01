@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "clsx": "^2.1.1",
     "react": "catalog:react18",
-    "react-dom": "catalog:react18"
+    "react-dom": "catalog:react18",
+    "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
     "@packages/tailwindcss": "workspace:^",
@@ -11,6 +13,13 @@
     "fluid-tailwind": "catalog:tailwindcss",
     "tailwindcss": "catalog:tailwindcss",
     "tailwindcss-animate": "catalog:tailwindcss"
+  },
+  "exports": {
+    "./components/*": "./src/components/*.tsx",
+    "./hooks/*": ["./src/hooks/*.ts", "./src/hooks/*.tsx"],
+    "./lib/*": "./src/lib/*.ts",
+    "./postcss.config": "./postcss.config.mjs",
+    "./tailwind.config": "./tailwind.config.ts"
   },
   "name": "@packages/magic",
   "private": true,
