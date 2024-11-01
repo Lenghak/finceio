@@ -4,5 +4,5 @@
     "jsx": "react-jsx"
   },
   "display": "React Library",
-  "extends": "./index.json"
+  "extends": "./base.json"
 }
