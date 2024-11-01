@@ -6,15 +6,13 @@
         "sortJsxProps": "on",
         "useSortedKeys": "on"
       }
-    },
-    "ignore": ["**/node_modules/**/*", "**/.next/**/*", "*.config.ts"]
+    }
   },
   "formatter": {
     "attributePosition": "multiline",
     "bracketSpacing": true,
     "enabled": true,
     "formatWithErrors": true,
-    "ignore": ["**/node_modules/**/*", "**/.next/**/*", "*.config.ts"],
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
@@ -29,7 +27,6 @@
   },
   "linter": {
     "enabled": true,
-    "ignore": ["**/node_modules/**/*", "**/.next/**/*", "*.config.ts"],
     "rules": {
       "a11y": {
         "all": true
@@ -69,5 +66,10 @@
   },
   "organizeImports": {
     "enabled": true
-  }
+  },
+  "overrides": [
+    {
+      "ignore": ["**/node_modules/**/*", "**/*/.next/**/*"]
+    }
+  ]
 }

@@ -5,11 +5,11 @@
     "react-dom": "catalog:react18"
   },
   "devDependencies": {
-    "@biomejs/biome": "catalog:",
+    "@packages/tailwindcss": "workspace:^",
     "@packages/typescript": "workspace:^",
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
-    "tailwindcss": "catalog:",
+    "tailwindcss": "catalog:tailwindcss",
     "tailwindcss-animate": "^1.0.7"
   },
   "exports": {

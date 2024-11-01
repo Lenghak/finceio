@@ -3,7 +3,7 @@
     "components": "@packages/shadcn/components",
     "hooks": "@packages/shadcn/hooks",
     "lib": "@packages/shadcn/lib",
-    "ui": "@packages/shadcn/components/ui",
+    "ui": "@packages/shadcn/components",
     "utils": "@packages/shadcn/lib/utils"
   },
   "rsc": true,

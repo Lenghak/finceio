@@ -1,6 +1,17 @@
 {
-  "description": "",
-  "main": "index.js",
+  "dependencies": {
+    "react": "catalog:react18",
+    "react-dom": "catalog:react18"
+  },
+  "devDependencies": {
+    "@packages/tailwindcss": "workspace:^",
+    "@packages/typescript": "workspace:^",
+    "@types/react": "catalog:react18",
+    "@types/react-dom": "catalog:react18",
+    "fluid-tailwind": "catalog:tailwindcss",
+    "tailwindcss": "catalog:tailwindcss",
+    "tailwindcss-animate": "catalog:tailwindcss"
+  },
   "name": "@packages/magic",
   "private": true,
   "version": "1.0.0"

@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@packages/shadcn/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "extends": "@packages/typescript/react.json",
+  "include": ["src"]
+}
