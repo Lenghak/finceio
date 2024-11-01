@@ -4,6 +4,7 @@
     "@enalmada/env-valibot": "^0.0.15",
     "@hono/auth-js": "^1.0.13",
     "@hono/node-server": "^1.13.3",
+    "@million/lint": "^1.0.11",
     "@packages/core": "workspace:^",
     "@packages/shadcn": "workspace:^",
     "@t3-oss/env-nextjs": "^0.11.1",
@@ -39,7 +40,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "format": "pnpm biome format --write",
     "lint": "next lint",
     "start": "next start"
