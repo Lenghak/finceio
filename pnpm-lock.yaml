@@ -12,6 +12,9 @@ catalogs:
     eslint:
       specifier: ^8.57.1
       version: 8.57.1
+    lucide-react:
+      specifier: ^0.454.0
+      version: 0.454.0
     typescript:
       specifier: ^5
       version: 5.6.3
@@ -94,6 +97,12 @@ importers:
       '@hono/node-server':
         specifier: ^1.13.3
         version: 1.13.3(hono@4.6.8)
+      '@packages/core':
+        specifier: workspace:^
+        version: link:../../packages/core
+      '@packages/shadcn':
+        specifier: workspace:^
+        version: link:../../packages/shadcn
       '@t3-oss/env-nextjs':
         specifier: ^0.11.1
         version: 0.11.1(typescript@5.6.3)(zod@3.23.8)
@@ -112,6 +121,9 @@ importers:
       ky:
         specifier: ^1.7.2
         version: 1.7.2
+      lucide-react:
+        specifier: 'catalog:'
+        version: 0.454.0(react@18.3.1)
       next:
         specifier: 15.0.2
         version: 15.0.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -137,9 +149,6 @@ importers:
       '@packages/eslint':
         specifier: workspace:^
         version: link:../../packages/eslint
-      '@packages/shadcn':
-        specifier: workspace:^
-        version: link:../../packages/shadcn
       '@packages/typescript':
         specifier: workspace:^
         version: link:../../packages/typescript
@@ -176,6 +185,12 @@ importers:
       '@packages/shadcn':
         specifier: workspace:^
         version: link:../shadcn
+      lucide-react:
+        specifier: 'catalog:'
+        version: 0.454.0(react@18.3.1)
+      next-themes:
+        specifier: ^0.3.0
+        version: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: catalog:react18
         version: 18.3.1

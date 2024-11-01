@@ -1,13 +1,12 @@
+import { display, mono, sans, serif } from "@/app/fonts";
 import { cn } from "@/lib/utils";
-
-import { sans } from "@/app/fonts";
 import { QueryClientProvider } from "@/providers/query-client-provider";
 import { SessionProvider } from "@/providers/session-provider";
 import { ThemeProvider } from "@/providers/themes-provider";
+import type React from "react";
 
 import "@packages/shadcn/globals.css";
 import "@/app/globals.css";
-import type React from "react";
 
 export default function RootLayout({
   children,
@@ -16,11 +15,17 @@ export default function RootLayout({
 }>) {
   return (
     <html
+      className={cn(
+        sans.variable,
+        serif.variable,
+        mono.variable,
+        display.variable,
+      )}
       lang="en"
       suppressHydrationWarning={true}
     >
       <head>
-        <title>Home | Finceio</title>
+        <title>Finceio</title>
         <meta charSet="utf-8" />
         <meta
           content="width=device-width, initial-scale=1"
@@ -39,7 +44,7 @@ export default function RootLayout({
           name="author"
         />
         <meta
-          content="Home | Finceio"
+          content="Finceio"
           property="og:title"
         />
         <meta
@@ -55,7 +60,7 @@ export default function RootLayout({
           property="og:url"
         />
         <meta
-          content="Home | Finceio"
+          content="Finceio"
           name="twitter:title"
         />
         <meta
@@ -75,11 +80,10 @@ export default function RootLayout({
           type="image/svg+xml"
         />
       </head>
-      <body className={cn(sans.className)}>
+      <body className={cn("font-sans")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          disableTransitionOnChange={true}
           enableSystem={true}
         >
           <SessionProvider>

@@ -22,9 +22,22 @@ export default {
       padding: "2rem",
       screens: {
         ...screens,
+        xxs: "21.875rem",
+        xs: "29.7rem",
+        "3xl": "100rem",
+        "4xl": "112.5rem",
+        "5xl": "118.75rem",
       },
     },
     extend: {
+      screens: {
+        ...screens,
+        xxs: "21.875rem",
+        xs: "29.7rem",
+        "3xl": "100rem",
+        "4xl": "112.5rem",
+        "5xl": "118.75rem",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -79,6 +92,7 @@ export default {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         serif: ["var(--font-serif)", ...fontFamily.serif],
         mono: ["var(--font-mono)", ...fontFamily.mono],
+        display: ["var(--font-display)"],
       },
       fontSize: {
         ...fontSize,

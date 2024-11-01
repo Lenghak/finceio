@@ -1,4 +1,4 @@
-import { env as clientEnv } from "./client.ts";
-import { env as serverEnv } from "./server.ts";
+import { env as clientEnv } from "./client";
+import { env as serverEnv } from "./server";
 
 export const env = { ...clientEnv, ...serverEnv };
