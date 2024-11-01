@@ -1,0 +1,5 @@
+{
+  "exclude": ["./node_modules"],
+  "extends": "@packages/typescript/react.json",
+  "include": ["*.ts"]
+}
