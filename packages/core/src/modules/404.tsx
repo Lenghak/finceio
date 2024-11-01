@@ -7,8 +7,8 @@ export const NotFound = forwardRef<
   HTMLAttributes<HTMLDivElement>
 >(({ children, className, ...props }, ref) => (
   <section
-    ref={ref}
     className="flex min-h-screen w-full flex-col space-y-6 text-center"
+    ref={ref}
     {...props}
   >
     {children}
