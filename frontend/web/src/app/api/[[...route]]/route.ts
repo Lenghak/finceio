@@ -7,6 +7,8 @@ import authConfig from "~/auth.config";
 
 const app = new Hono();
 
+export const runtime = "edge";
+
 app.use(
   "*",
   initAuthConfig((c) => ({

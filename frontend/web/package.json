@@ -40,6 +40,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "cruise": "pnpm dependency-cruiser src -p",
     "dev": "next dev",
     "format": "pnpm biome format --write",
     "lint": "next lint",
