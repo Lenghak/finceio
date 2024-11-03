@@ -9,6 +9,6 @@
   },
   "name": "@backend/client",
   "scripts": {
-    "dev": "pnpm bun run --hot src/index.ts"
+    "dev": "pnpm bun run --hot src/app.ts"
   }
 }
