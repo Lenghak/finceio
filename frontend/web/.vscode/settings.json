@@ -1,4 +1,6 @@
 {
+  "biome.lspBin": "./../../node_modules/@biomejs/biome/bin/biome",
+  "biome.searchInPath": false,
   "editor.codeActionsOnSave": {
     "quickfix.biome": "always",
     "source.fixAll.biome": "always",
@@ -18,7 +20,7 @@
     {
       "base": "pipeline",
       "color": "silver",
-      "fileExtensions": [".cjs", ".mjs", ".ts"],
+      "fileExtensions": [".js", ".cjs", ".mjs", ".ts"],
       "fileNames": [".dependency-cruiser.cjs"],
       "name": "dependencies-cruiser"
     },
