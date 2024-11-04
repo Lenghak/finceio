@@ -8,5 +8,11 @@ const nextConfig: NextConfig = {
 };
 
 export default process.env.NODE_ENV === "development"
-  ? MillionLint.next({ enabled: true, rsc: true })(nextConfig)
+  ? MillionLint.next({
+      enabled: true,
+      rsc: true,
+      turbo: false,
+    })({
+      ...nextConfig,
+    })
   : nextConfig;
