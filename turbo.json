@@ -3,6 +3,16 @@
   "daemon": true,
   "envMode": "strict",
   "tasks": {
+    "@frontend/web#build": {
+      "env": ["AUTH_URL", "AUTH_SECRET", "SKIP_ENV_VALIDATION"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env.production.local",
+        ".env.local",
+        ".env.production",
+        ".env"
+      ]
+    },
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "!.next/cache/**"]

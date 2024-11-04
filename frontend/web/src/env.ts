@@ -1,4 +1,5 @@
 import { createEnvSchema, required, validateEnv } from "@enalmada/env-valibot";
+import { isServer } from "@tanstack/react-query";
 
 const serverSchema = createEnvSchema({
   AUTH_URL: required("AUTH_URL"),
@@ -10,14 +11,16 @@ const clientSchema = createEnvSchema({
   NEXT_PUBLIC_API_URL: required("NEXT_PUBLIC_API_URL"),
 });
 
-const serverEnv = validateEnv(
-  serverSchema,
-  {
-    AUTH_URL: process.env.AUTH_URL,
-    AUTH_SECRET: process.env.AUTH_SECRET,
-  },
-  process.env.SKIP_ENV_VALIDATION,
-);
+const serverEnv = isServer
+  ? validateEnv(
+      serverSchema,
+      {
+        AUTH_URL: process.env.AUTH_URL,
+        AUTH_SECRET: process.env.AUTH_SECRET,
+      },
+      process.env.SKIP_ENV_VALIDATION,
+    )?.output
+  : {};
 
 const clientEnv = validateEnv(
   clientSchema,
@@ -26,6 +29,9 @@ const clientEnv = validateEnv(
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
   process.env.SKIP_ENV_VALIDATION,
-);
+)?.output;
 
-export { serverEnv, clientEnv };
+export const env = {
+  ...clientEnv,
+  ...serverEnv,
+};
