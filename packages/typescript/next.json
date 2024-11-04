@@ -7,9 +7,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "NodeNext",
+    "module": "ESNext",
     "moduleDetection": "force",
-    "moduleResolution": "NodeNext",
+    "moduleResolution": "Bundler",
     "noEmit": true,
     "plugins": [
       {

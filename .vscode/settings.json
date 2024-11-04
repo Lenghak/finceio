@@ -14,15 +14,13 @@
     {
       "base": "lock",
       "color": "yellow-700",
-      "fileExtensions": [".ts"],
       "fileNames": ["auth.config.ts"],
       "name": "auth-config"
     },
     {
       "base": "pipeline",
       "color": "silver",
-      "fileExtensions": [".cjs", ".mjs", ".ts"],
-      "fileNames": [".dependency-cruiser.cjs"],
+      "fileNames": [".dependency-cruiser.cjs", ".dependency-cruiser.mjs"],
       "name": "dependencies-cruiser"
     },
     {

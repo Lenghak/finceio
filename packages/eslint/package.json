@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@biomejs/biome": "catalog:",
+    "@types/eslint": "^9.6.1",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "eslint": "catalog:",
@@ -12,5 +13,6 @@
   "files": ["index.js", "biome.js", "next.js", "library.js"],
   "name": "@packages/eslint",
   "private": true,
+  "type": "module",
   "version": "1.0.0"
 }
