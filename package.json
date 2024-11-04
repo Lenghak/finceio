@@ -29,6 +29,8 @@
     "build": "turbo run build",
     "check-types": "pnpm --noEmit",
     "dev": "turbo run dev",
+    "f:web:build": "pnpm turbo run build --filter=@frontend/web",
+    "f:web:dev": "pnpm turbo run dev --filter=@frontend/web",
     "lint": "turbo run lint"
   },
   "version": "1.0.0"

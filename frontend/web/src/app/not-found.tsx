@@ -11,10 +11,8 @@ export default function NotFound() {
     >
       <Status
         description="Looks like you have stumbled across that page that does not exist. You can always find your back down below."
-        icon={
-          <TrafficConeIcon className="size-36 fill-primary/10 stroke-1 stroke-primary" />
-        }
-        title="Page Not Found"
+        icon={<TrafficConeIcon />}
+        title="Page not Found"
       >
         <ErrorCta />
       </Status>

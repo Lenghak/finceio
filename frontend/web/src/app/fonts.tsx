@@ -1,6 +1,6 @@
 import {
   Fira_Code,
-  Playfair_Display,
+  Lobster_Two,
   Source_Sans_3,
   Source_Serif_4,
 } from "next/font/google";
@@ -26,9 +26,10 @@ export const mono = Fira_Code({
   variable: "--font-mono",
 });
 
-export const display = Playfair_Display({
+export const display = Lobster_Two({
   subsets: ["latin"],
   preload: true,
   display: "swap",
   variable: "--font-display",
+  weight: ["400", "700"],
 });

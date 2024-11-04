@@ -1,4 +1,3 @@
-// biome-ignore lint/nursery/noCommonJs: <explanation>
-module.exports = {
+export default {
   extends: ["eslint:recommended", "turbo", "biome"],
 };

@@ -4,7 +4,6 @@ import {
   TypographyP,
 } from "@packages/shadcn/components/typography";
 import { cn } from "@packages/shadcn/lib/utils";
-import { TrafficConeIcon } from "lucide-react";
 import type React from "react";
 import type { HTMLAttributes } from "react";
 
@@ -23,18 +22,20 @@ export const Status = ({
   ...props
 }: StatusProps) => (
   <Flex
-    className={cn("h-full w-full space-y-6 text-center", className)}
+    className={cn(
+      "h-full w-full space-y-6 text-center",
+      "[&>svg]:size-36 [&>svg]:fill-primary/10 [&>svg]:stroke-1 [&>svg]:stroke-primary",
+      className,
+    )}
     direction="col"
     items="center"
     justify="center"
     {...props}
   >
-    {icon ?? (
-      <TrafficConeIcon className="size-36 fill-primary/10 stroke-1 stroke-primary" />
-    )}
+    {icon}
 
     {typeof title === "string" ? (
-      <TypographyH1 className="text-primary">{title}</TypographyH1>
+      <TypographyH1 className="font-display text-primary">{title}</TypographyH1>
     ) : (
       title
     )}

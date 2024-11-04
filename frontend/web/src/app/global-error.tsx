@@ -13,9 +13,7 @@ export default function GlobalError() {
     >
       <Status
         description="Looks like there was a problem on our end. Hang tight! We are fixing this as fast as possible."
-        icon={
-          <UnplugIcon className="size-36 fill-primary/10 stroke-1 stroke-primary" />
-        }
+        icon={<UnplugIcon />}
         title="Internal Server Error"
       >
         <ErrorCta />
