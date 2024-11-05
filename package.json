@@ -1,8 +1,5 @@
 {
   "author": "",
-  "dependencies": {
-    "vercel": "^37.14.0"
-  },
   "description": "",
   "devDependencies": {
     "@biomejs/biome": "catalog:",
