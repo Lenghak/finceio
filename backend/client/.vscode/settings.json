@@ -1,7 +1,6 @@
 {
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
+  "biome.lspBin": "./../../node_modules/@biomejs/biome/bin/biome",
+  "biome.searchInPath": false,
   "editor.codeActionsOnSave": {
     "quickfix.biome": "always",
     "source.fixAll.biome": "always",

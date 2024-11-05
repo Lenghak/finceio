@@ -1,14 +1,19 @@
 {
   "dependencies": {
+    "@enalmada/env-valibot": "^0.0.15",
     "bun": "^1.1.34",
-    "hono": "^4.6.8"
+    "hono": "^4.6.9",
+    "hono-rate-limiter": "^0.4.0",
+    "valibot": "^0.42.1"
   },
   "devDependencies": {
     "@packages/typescript": "workspace:^",
-    "@types/bun": "latest"
+    "@types/bun": "^1.1.13"
   },
   "name": "@backend/client",
   "scripts": {
-    "dev": "pnpm bun run --hot src/app.ts"
+    "build": "pnpm bun build --minify --entrypoints ./src/app.ts --outdir dist",
+    "dev": "pnpm bun run --hot ./src/app.ts",
+    "start": "pnpm bun run -b dist/app.js"
   }
 }
