@@ -1,4 +1,10 @@
 {
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
   "exclude": ["dist"],
   "extends": ["@packages/typescript/hono.json"]
 }
