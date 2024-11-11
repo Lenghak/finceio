@@ -3,7 +3,7 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "editor.codeActionsOnSave": {
-    "quickfix.biome": "always",
+    "quickfix.biome": "explicit",
     "source.fixAll.biome": "always",
     "source.organizeImports.biome": "always"
   },

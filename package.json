@@ -1,6 +1,5 @@
 {
-  "author": "",
-  "description": "",
+  "author": "Bling-io",
   "devDependencies": {
     "@biomejs/biome": "catalog:",
     "@commitlint/cli": "^19.5.0",
@@ -23,11 +22,15 @@
   "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
   "private": true,
   "scripts": {
+    "b:build": "pnpm turbo run build --filter=@backend/client",
+    "b:client": "pnpm --filter=@backend/client",
+    "b:dev": "pnpm turbo run dev --filter=@backend/client",
     "build": "turbo run build",
     "check-types": "pnpm --noEmit",
     "dev": "turbo run dev",
+    "f:web": "pnpm --filter=@frontend/web",
     "f:web:build": "pnpm turbo run build --filter=@frontend/web",
-    "f:web:dev": "pnpm turbo run dev --filter=@frontend/web",
+    "f:web:dev": "pnpm turbo run dev --filter=@frontend/web -- --turbo",
     "lint": "turbo run lint"
   },
   "version": "1.0.0"

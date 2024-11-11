@@ -6,7 +6,7 @@ import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-full text-sm font-bold ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center rounded-full font-bold text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -25,25 +25,25 @@ const buttonVariants = cva(
       effect: {
         expandIcon: "group relative",
         ringHover:
-          "hover:ring-current/90 transition-all duration-300 hover:ring-2 hover:ring-offset-2",
+          "transition-all duration-300 hover:ring-2 hover:ring-current/90 hover:ring-offset-2",
         shine:
-          "animate-shine bg-gradient-to-r from-current to-current bg-[length:400%_100%]",
+          "animate-shine bg-[length:400%_100%] bg-gradient-to-r from-current to-current",
         gooeyRight:
-          "relative z-0 overflow-hidden transition-all duration-500 before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-gradient-to-r before:transition-transform before:duration-1000 hover:before:translate-x-[0%] hover:before:translate-y-[0%]",
+          "before:-z-10 relative z-0 overflow-hidden transition-all duration-500 before:absolute before:inset-0 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-gradient-to-r before:transition-transform before:duration-1000 hover:before:translate-x-[0%] hover:before:translate-y-[0%]",
         gooeyLeft:
-          "relative z-0 overflow-hidden transition-all duration-500 after:absolute after:inset-0 after:-z-10 after:translate-x-[-150%] after:translate-y-[150%] after:scale-[2.5] after:rounded-[100%] after:bg-gradient-to-l after:transition-transform after:duration-1000 hover:after:translate-x-[0%] hover:after:translate-y-[0%]",
+          "after:-z-10 relative z-0 overflow-hidden transition-all duration-500 after:absolute after:inset-0 after:translate-x-[-150%] after:translate-y-[150%] after:scale-[2.5] after:rounded-[100%] after:bg-gradient-to-l after:transition-transform after:duration-1000 hover:after:translate-x-[0%] hover:after:translate-y-[0%]",
         linkHover1:
-          "relative after:absolute after:bottom-2 after:h-[1px] after:w-2/3 after:origin-bottom-left after:scale-x-100 after:bg-primary after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-right hover:after:scale-x-0",
+          "relative after:absolute after:bottom-2 after:h-[1px] after:w-2/3 after:origin-bottom-left after:scale-x-100 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-right hover:after:scale-x-0",
         linkHover2:
-          "relative after:absolute after:bottom-2 after:h-[1px] after:w-2/3 after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100",
+          "relative after:absolute after:bottom-2 after:h-[1px] after:w-2/3 after:origin-bottom-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-left hover:after:scale-x-100",
       },
       color: {
         default:
-          "border-input bg-primary text-primary-foreground focus-visible:ring-primary",
+          "border-primary bg-primary text-primary-foreground focus-visible:ring-primary",
         secondary:
-          "border-secondary-200 dark:border-secondary-900 bg-secondary text-secondary-foreground focus-visible:ring-secondary",
+          "border-secondary bg-secondary text-secondary-foreground focus-visible:ring-primary",
         destructive:
-          "border-destructive-200 dark:border-destructive-900 bg-destructive text-destructive-foreground focus-visible:ring-destructive",
+          "border-destructive-200 bg-destructive text-destructive-foreground focus-visible:ring-destructive dark:border-destructive-900",
         slate:
           "border-slate-200 bg-slate-500 text-slate-50 focus-visible:ring-slate-500 dark:border-slate-900",
         gray: "border-gray-200 bg-gray-500 text-gray-50 focus-visible:ring-gray-500 dark:border-gray-900",
@@ -784,7 +784,7 @@ const buttonVariants = cva(
 
 interface IconProps {
   icon: React.ElementType;
-  iconPlacement: "left" | "right";
+  iconPlacement?: "left" | "right";
 }
 
 interface IconRefProps {
@@ -812,7 +812,7 @@ const Button = React.forwardRef<
       color,
       asChild = false,
       effect,
-      iconPlacement,
+      iconPlacement = "left",
       ...props
     },
     ref,

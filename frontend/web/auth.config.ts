@@ -1,15 +1,14 @@
-import type { Provider } from "@auth/core/providers";
-import Credentials from "@auth/core/providers/credentials";
+import type { OAuthSignInRequest } from "@/types/auth";
 import type { NextAuthConfig } from "next-auth";
+
+import Credentials from "next-auth/providers/credentials";
 
 export default {
   providers: [
     Credentials({
       authorize: (credentials, _req) => {
-        const { provider: _provider, email: _email } = credentials as {
-          provider: Provider;
-          email: string | undefined | null;
-        };
+        const { provider: _provider, email: _email } =
+          credentials as OAuthSignInRequest;
 
         // Magic Link Sign In
 

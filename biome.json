@@ -46,7 +46,19 @@
         "noProcessEnv": "off",
         "noSecrets": "off",
         "useComponentExportOnlyModules": "off",
-        "useExplicitType": "off"
+        "useConsistentCurlyBraces": {
+          "fix": "safe",
+          "level": "error"
+        },
+        "useExplicitType": "off",
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "error",
+          "options": {
+            "attributes": ["className"],
+            "functions": ["cn", "cva"]
+          }
+        }
       },
       "performance": {
         "all": true

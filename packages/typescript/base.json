@@ -4,12 +4,13 @@
     "allowJs": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "module": "NodeNext",
+    "module": "ES6",
     "moduleDetection": "force",
+    "moduleResolution": "Bundler",
     "noUncheckedIndexedAccess": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2022"
+    "target": "ES5"
   }
 }

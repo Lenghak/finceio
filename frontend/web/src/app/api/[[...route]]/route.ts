@@ -1,5 +1,3 @@
-import authConfig from "~/auth.config";
-
 import { authHandler, initAuthConfig } from "@hono/auth-js";
 import { Hono } from "hono";
 import { env } from "hono/adapter";
@@ -23,7 +21,7 @@ app.use(
   "*",
   initAuthConfig((c) => ({
     secret: env(c).AUTH_SECRET,
-    ...authConfig,
+    providers: [],
   })),
 );
 

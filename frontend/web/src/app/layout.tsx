@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { QueryClientProvider } from "@/providers/query-client-provider";
 import { SessionProvider } from "@/providers/session-provider";
 import { ThemeProvider } from "@/providers/themes-provider";
+import { DotPattern } from "@packages/magic/components/dot-pattern";
 import type React from "react";
 
 import "@packages/shadcn/globals.css";
@@ -87,7 +88,14 @@ export default function RootLayout({
           enableSystem={true}
         >
           <SessionProvider>
-            <QueryClientProvider>{children}</QueryClientProvider>
+            <QueryClientProvider>
+              <DotPattern
+                className={cn(
+                  "fill-zinc-300 [mask-image:radial-gradient(75dvw_circle_at_center,white,transparent)] dark:fill-zinc-600",
+                )}
+              />
+              <main className="relative z-10 h-full w-full">{children}</main>
+            </QueryClientProvider>
           </SessionProvider>
         </ThemeProvider>
       </body>
