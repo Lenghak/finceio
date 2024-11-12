@@ -1,4 +1,4 @@
-import React from "react";
+import { type ButtonHTMLAttributes, type ReactNode, forwardRef } from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
 
@@ -17,10 +17,10 @@ const buttonVariants = cva(
         link: "underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 px-4",
-        lg: "h-11 px-9",
-        icon: "h-10 w-10",
+        default: "h-10 px-4 py-2 [&_svg]:size-4",
+        sm: "h-9 px-4 [&_svg]:size-4",
+        lg: "h-11 px-9 [&_svg]:size-5",
+        icon: "h-10 w-10 [&_svg]:size-4",
       },
       effect: {
         expandIcon: "group relative",
@@ -36,6 +36,9 @@ const buttonVariants = cva(
           "relative after:absolute after:bottom-2 after:h-[1px] after:w-2/3 after:origin-bottom-left after:scale-x-100 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-right hover:after:scale-x-0",
         linkHover2:
           "relative after:absolute after:bottom-2 after:h-[1px] after:w-2/3 after:origin-bottom-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-left hover:after:scale-x-100",
+        loading:
+          "group relative transition-all [&_svg]:animate-spin [&_svg]:transition-all",
+        hideIcon: "transition-all [&_svg]:size-0 [&_svg]:transition-all",
       },
       color: {
         default:
@@ -783,7 +786,7 @@ const buttonVariants = cva(
 );
 
 interface IconProps {
-  icon: React.ElementType;
+  icon: ReactNode;
   iconPlacement?: "left" | "right";
 }
 
@@ -795,15 +798,12 @@ interface IconRefProps {
 export type ButtonIconProps = IconProps | IconRefProps;
 
 export interface ButtonProps
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color">,
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
-const Button = React.forwardRef<
-  HTMLButtonElement,
-  ButtonProps & ButtonIconProps
->(
+const Button = forwardRef<HTMLButtonElement, ButtonProps & ButtonIconProps>(
   (
     {
       className,
@@ -854,26 +854,26 @@ type IconDisplayProps = Pick<
   "effect" | "icon" | "iconPlacement"
 >;
 
-function IconDisplay(props: IconDisplayProps) {
-  if (!props.icon) {
+function IconDisplay({ icon, effect, iconPlacement }: IconDisplayProps) {
+  if (!icon) {
     return;
   }
 
-  if (props.effect !== "expandIcon" && props.icon) {
-    return <props.icon />;
+  if (effect !== "expandIcon" && icon) {
+    return icon;
   }
 
-  if (props.iconPlacement === "left") {
+  if (iconPlacement === "left") {
     return (
       <div className="w-0 translate-x-[0%] pr-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-100 group-hover:pr-2 group-hover:opacity-100">
-        <props.icon />
+        {icon}
       </div>
     );
   }
 
   return (
     <div className="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-2 group-hover:opacity-100">
-      <props.icon />
+      {icon}
     </div>
   );
 }

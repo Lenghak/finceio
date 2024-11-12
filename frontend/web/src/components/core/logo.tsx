@@ -74,14 +74,56 @@ export const LogoDarkNoBackground = memo(
 );
 LogoDarkNoBackground.displayName = "LogoDarkNoBackground";
 
-export type LogoTextProps = ComponentPropsWithoutRef<"span">;
+export const LogoBlackPure = memo(
+  ({ ...props }: Omit<LogoImageProps, "src">) => (
+    <LogoImage
+      src="/svg/logo-black-pure.svg"
+      {...props}
+    />
+  ),
+);
+LogoBlackPure.displayName = "LogoBlackPure";
 
+export const LogoWhitePure = memo(
+  ({ ...props }: Omit<LogoImageProps, "src">) => (
+    <LogoImage
+      src="/svg/logo-white-pure.svg"
+      {...props}
+    />
+  ),
+);
+LogoWhitePure.displayName = "LogoBlackWithBackground";
+
+export const LogoColorLightPure = memo(
+  ({ ...props }: Omit<LogoImageProps, "src">) => (
+    <LogoImage
+      src="/svg/logo-color-light-pure.svg"
+      {...props}
+    />
+  ),
+);
+LogoColorLightPure.displayName = "LogoColorLightPure";
+
+export const LogoColorDarkPure = memo(
+  ({ ...props }: Omit<LogoImageProps, "src">) => (
+    <LogoImage
+      src="/svg/logo-color-dark-pure.svg"
+      {...props}
+    />
+  ),
+);
+LogoColorDarkPure.displayName = "LogoColorDarkPure";
+
+export type LogoTextProps = ComponentPropsWithoutRef<"span">;
 export const LogoText = memo(({ className, ...props }: LogoTextProps) => (
   <span
-    className={cn("text-pretty font-bold text-lg text-primary", className)}
+    className={cn(
+      "text-pretty font-bold font-display text-lg text-primary",
+      className,
+    )}
     {...props}
   >
-    Insight the Mind
+    Finceio
   </span>
 ));
-LogoText.displayName = "LogoContent";
+LogoText.displayName = "LogoText";

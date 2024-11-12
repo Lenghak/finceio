@@ -8,10 +8,10 @@
   }
 
   html {
-    @apply flex min-h-dvh w-full overflow-hidden p-1.5 font-sans antialiased;
+    @apply flex h-dvh w-full p-1.5 font-sans antialiased;
   }
 
   body {
-    @apply flex h-[calc(100dvh-0.8rem)] max-h-full w-full flex-col items-center overflow-auto rounded-md border bg-background text-foreground relative;
+    @apply flex h-[calc(100dvh-0.8rem)] min-h-full w-full flex-col items-center overflow-visible rounded-md border bg-background text-foreground relative;
   }
 }

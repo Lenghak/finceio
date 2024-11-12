@@ -1,28 +1,30 @@
 import { Button, type ButtonProps } from "@packages/shadcn/components/button";
 
 import { cn } from "@/lib/utils";
-
-import type { Icon } from "@tabler/icons-react";
+import type { ReactNode } from "react";
 
 type OAuthButtonProps = {
-  icon: Icon;
+  icon: ReactNode;
 } & ButtonProps;
 export function OAuthButton({
   className,
-
   children,
   ...props
 }: OAuthButtonProps) {
   return (
     <Button
-      className={cn("relative w-full rounded-full", className)}
+      className={cn(
+        "group relative w-full rounded-full",
+        "[&_svg]:absolute [&_svg]:left-4 [&_svg]:size-5 [&_svg]:text-muted-foreground [&_svg]:group-hover:text-foreground [&_svg]:dark:fill-current [&_svg]:dark:stroke-none",
+        className,
+      )}
       color="secondary"
+      iconPlacement="left"
       size="lg"
       variant="outline"
       {...props}
-      icon={undefined}
     >
-      <props.icon className="absolute left-6 size-5 dark:fill-current dark:stroke-0" />
+      {/* <props.icon /> */}
       {children}
     </Button>
   );

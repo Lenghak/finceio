@@ -11,8 +11,9 @@ import type { Session } from "next-auth";
 
 export const getSession = async () => await auth();
 
-export const updateSession = async (args?: Partial<Session>) =>
-  await unstable_update(args ?? {});
+export const updateSession = async ({
+  session,
+}: { session: Partial<Session> }) => await unstable_update(session ?? {});
 
 export const signIn = async (req: OAuthSignInRequest) =>
   await authSignIn("credentials", req);

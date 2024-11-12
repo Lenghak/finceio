@@ -12,9 +12,9 @@ import { type HTMLAttributes, memo } from "react";
 
 import {
   Logo,
-  LogoDarkNoBackground,
+  LogoColorDarkPure,
+  LogoColorLightPure,
   type LogoImageProps,
-  LogoLightNoBackground,
   type LogoProps,
 } from "@/components/core/logo";
 import { cn } from "@/lib/utils";
@@ -22,6 +22,7 @@ import {
   ThemesDropdownMenu,
   ThemesTrigger,
 } from "@packages/core/components/themes-toggle";
+import { BorderBeam } from "@packages/magic/components/border-beam";
 
 export const AuthCard = memo(
   ({ children, className, ...props }: HTMLAttributes<HTMLDivElement>) => (
@@ -38,6 +39,7 @@ export const AuthCard = memo(
         </ThemesDropdownMenu>
       </Box>
       {children}
+      <BorderBeam />
     </Card>
   ),
 );
@@ -46,7 +48,7 @@ AuthCard.displayName = "AuthCard";
 export const AuthCardHeader = memo(
   ({ children, className, ...props }: HTMLAttributes<HTMLDivElement>) => (
     <CardHeader
-      className={cn("items-center justify-center text-center", className)}
+      className={cn("items-start justify-center", className)}
       {...props}
     >
       {children}
@@ -58,7 +60,7 @@ AuthCardHeader.displayName = "AuthCardHeader";
 export const AuthCardTitle = memo(
   ({ children, className, ...props }: HTMLAttributes<HTMLHeadingElement>) => (
     <CardTitle
-      className={cn("font-bold text-3xl", className)}
+      className={cn("font-bold", className)}
       {...props}
     >
       {children}
@@ -88,7 +90,7 @@ export const AuthCardLogo = memo(
   }: LogoProps & Omit<LogoImageProps, "src" | "alt">) => (
     <Logo
       className={cn(
-        "m-2 aspect-square overflow-hidden rounded-full",
+        "my-4 aspect-square overflow-hidden bg-background",
         className,
       )}
       style={{
@@ -97,13 +99,13 @@ export const AuthCardLogo = memo(
       }}
       {...props}
     >
-      <LogoDarkNoBackground
+      <LogoColorDarkPure
         className="absolute opacity-0 transition-all dark:opacity-100"
         height={height}
         width={width}
       />
 
-      <LogoLightNoBackground
+      <LogoColorLightPure
         className="absolute opacity-100 transition-all dark:opacity-0"
         height={height}
         width={width}

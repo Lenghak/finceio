@@ -8,6 +8,7 @@ import { prettyJSON } from "hono/pretty-json";
 import { secureHeaders } from "hono/secure-headers";
 import { trimTrailingSlash } from "hono/trailing-slash";
 import { handle } from "hono/vercel";
+import authConfig from "~/auth.config";
 
 const app = new Hono();
 
@@ -20,8 +21,8 @@ app.use(prettyJSON());
 app.use(
   "*",
   initAuthConfig((c) => ({
+    ...authConfig,
     secret: env(c).AUTH_SECRET,
-    providers: [],
   })),
 );
 

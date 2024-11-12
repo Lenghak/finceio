@@ -1,23 +1,34 @@
-import type { OAuthSignInRequest } from "@/types/auth";
-import type { NextAuthConfig } from "next-auth";
-
-import Credentials from "next-auth/providers/credentials";
+import Credentials from "@auth/core/providers/credentials";
+import type { AuthConfig } from "@auth/core/types";
 
 export default {
   providers: [
     Credentials({
-      authorize: (credentials, _req) => {
-        const { provider: _provider, email: _email } =
-          credentials as OAuthSignInRequest;
-
-        // Magic Link Sign In
-
-        // OAuth Sign In
-
+      credentials: {
+        email: {},
+        provider: {},
+      },
+      authorize: (_credentials) => {
         return null;
       },
     }),
   ],
-  callbacks: {},
+  callbacks: {
+    jwt: ({ token }) => {
+      return token;
+    },
+
+    session: ({ session }) => {
+      return session;
+    },
+  },
   session: { strategy: "jwt" },
-} satisfies NextAuthConfig;
+  pages: {
+    signIn: "/auth/sign-in",
+    error: undefined,
+    newUser: "/onboarding",
+    verifyRequest: "/verify-email",
+    signOut: "/",
+  },
+  trustHost: true,
+} as AuthConfig;

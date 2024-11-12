@@ -28,15 +28,23 @@ export type OAuthProvider = InferInput<typeof OAuthProvidersSchema>;
 export type MagicLinkProvider = InferInput<typeof MagicLinkProvidersSchema>;
 export type AuthProvider = InferInput<typeof AuthProvidersSchema>;
 
+export const MagicLinkSignInRequestSchema = object({
+  provider: MagicLinkProvidersSchema,
+  email: pipe(string(), email("Please input a valid email address")),
+});
+
+export const SocialSignInRequestSchema = object({
+  provider: OAuthProvidersSchema,
+  email: undefinedable(string()),
+});
+
 export const OAuthSignInRequestSchema = variant("provider", [
-  object({
-    provider: OAuthProvidersSchema,
-    email: undefinedable(string()),
-  }),
-  object({
-    provider: MagicLinkProvidersSchema,
-    email: pipe(string(), email()),
-  }),
+  SocialSignInRequestSchema,
+  MagicLinkSignInRequestSchema,
 ]);
 
+export type MagicLinkSignInRequest = InferInput<
+  typeof MagicLinkSignInRequestSchema
+>;
+export type SocialSignInRequest = InferInput<typeof SocialSignInRequestSchema>;
 export type OAuthSignInRequest = InferInput<typeof OAuthSignInRequestSchema>;

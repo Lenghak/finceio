@@ -14,6 +14,7 @@ import {
 
 import { Label } from "@packages/shadcn/components/label";
 import { cn } from "@packages/shadcn/lib/utils";
+import { XIcon } from "lucide-react";
 
 const Form = FormProvider;
 
@@ -158,11 +159,15 @@ const FormMessage = React.forwardRef<
 
   return (
     <p
-      className={cn("font-medium text-destructive text-sm", className)}
+      className={cn(
+        "ml-4 inline-flex items-center gap-2 font-semibold text-destructive text-sm",
+        className,
+      )}
       id={formMessageId}
       ref={ref}
       {...props}
     >
+      <XIcon className="size-3" />
       {body}
     </p>
   );
@@ -171,7 +176,7 @@ FormMessage.displayName = "FormMessage";
 
 export {
   useFormField,
-  Form,
+  Form as FormProvider,
   FormItem,
   FormLabel,
   FormControl,
