@@ -11,13 +11,16 @@ import type React from "react";
 import "@packages/shadcn/globals.css";
 import "@/app/globals.css";
 
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Finceio",
   metadataBase: new URL("https://www.finceio.com"),
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
   description:
     "Take charge of your finances with Finceio! Our user-friendly app offers expense tracking, budgeting tools, and financial education to help you thrive in today's economy.",
   keywords:

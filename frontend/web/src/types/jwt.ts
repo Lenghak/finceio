@@ -1,7 +1,7 @@
-import v from "valibot";
+import { type InferInput, object, string } from "valibot";
 
-export const tokensSchema = v.object({
-  accessToken: v.string(),
-  refreshToken: v.string(),
+export const tokensSchema = object({
+  accessToken: string(),
+  refreshToken: string(),
 });
-export type Tokens = v.InferInput<typeof tokensSchema>;
+export type Tokens = InferInput<typeof tokensSchema>;
