@@ -3,6 +3,7 @@ import {
   AuthCardDescription,
   AuthCardFooter,
   AuthCardHeader,
+  AuthCardLogo,
   AuthCardTitle,
 } from "@/features/auth/components/auth-card";
 import { cn } from "@/lib/utils";
@@ -19,6 +20,7 @@ export default function SignUpLayout({ children }: PropsWithChildren) {
   return (
     <>
       <AuthCardHeader>
+        <AuthCardLogo />
         <AuthCardTitle>Create an Account</AuthCardTitle>
         <AuthCardDescription>
           Happy to see you joining us. Let&apos;s get you started.

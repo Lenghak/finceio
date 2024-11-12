@@ -3,6 +3,7 @@ import {
   AuthCardDescription,
   AuthCardFooter,
   AuthCardHeader,
+  AuthCardLogo,
   AuthCardTitle,
 } from "@/features/auth/components/auth-card";
 import { cn } from "@/lib/utils";
@@ -19,6 +20,7 @@ export default function SignInLayout({ children }: PropsWithChildren) {
   return (
     <>
       <AuthCardHeader>
+        <AuthCardLogo />
         <AuthCardTitle>Welcome back</AuthCardTitle>
         <AuthCardDescription>
           Glad to see you again! Let&apos;s get started.

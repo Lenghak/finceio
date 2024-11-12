@@ -6,6 +6,6 @@ tput setaf 1; echo -e "${LIGHT_BLUE}!${NO_COLOR} Formatter is Formatting Staged 
 pnpm lint-staged
 
 tput setaf 1; echo -e "${GREEN} Staged Linted${NO_COLOR}"; tput sgr0;
-tput setaf 1; echo -e "${GREEN}🗸${NO_COLOR} Done Running Lint-staged"; tput sgr0;
+tput setaf 1; echo -e "${GREEN}✓${NO_COLOR} Done Running Lint-staged"; tput sgr0;
 
-tput setaf 1; echo -e "${GREEN}🗸${NO_COLOR} Done Running Pre-commit\n"; tput sgr0;
+tput setaf 1; echo -e "${GREEN}✓${NO_COLOR} Done Running Pre-commit\n"; tput sgr0;

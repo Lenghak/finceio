@@ -1,6 +1,6 @@
-import { signIn } from "@/actions/auth";
+import { signIn } from "@/services/auth/actions";
 import type { OAuthSignInRequest } from "@/types/auth";
 
-export const postSignIn = (req: OAuthSignInRequest) => {
-  return signIn(req);
+export const postSignIn = async (req: OAuthSignInRequest) => {
+  return await signIn(req);
 };

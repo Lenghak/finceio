@@ -48,7 +48,7 @@ AuthCard.displayName = "AuthCard";
 export const AuthCardHeader = memo(
   ({ children, className, ...props }: HTMLAttributes<HTMLDivElement>) => (
     <CardHeader
-      className={cn("items-start justify-center", className)}
+      className={cn("items-center justify-center", className)}
       {...props}
     >
       {children}
@@ -84,8 +84,8 @@ AuthCardTitle.displayName = "AuthCardTitle";
 export const AuthCardLogo = memo(
   ({
     className,
-    width = 48,
-    height = 48,
+    width = 32,
+    height = 32,
     ...props
   }: LogoProps & Omit<LogoImageProps, "src" | "alt">) => (
     <Logo

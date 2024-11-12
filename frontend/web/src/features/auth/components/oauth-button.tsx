@@ -20,11 +20,9 @@ export function OAuthButton({
       )}
       color="secondary"
       iconPlacement="left"
-      size="lg"
       variant="outline"
       {...props}
     >
-      {/* <props.icon /> */}
       {children}
     </Button>
   );

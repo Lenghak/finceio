@@ -4,6 +4,6 @@ NO_COLOR='\033[0m';
 
 tput setaf 1; echo -e "${LIGHT_BLUE}!${NO_COLOR} Testing Build push to Preview"; tput sgr0;
 pnpm build
-tput setaf 1; echo -e "${GREEN}🗸${NO_COLOR} Done Running Build"; tput sgr0;
+tput setaf 1; echo -e "${GREEN}✓${NO_COLOR} Done Running Build"; tput sgr0;
 
-tput setaf 1; echo -e "${GREEN}🗸${NO_COLOR} Done Running Pre-push\n"; tput sgr0;
+tput setaf 1; echo -e "${GREEN}✓${NO_COLOR} Done Running Pre-push\n"; tput sgr0;

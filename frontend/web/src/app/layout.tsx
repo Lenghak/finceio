@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Finceio",
-  metadataBase: new URL("https://www.finceio.com"),
+  metadataBase: new URL("https://app.finceio.com"),
   description:
     "Take charge of your finances with Finceio! Our user-friendly app offers expense tracking, budgeting tools, and financial education to help you thrive in today's economy.",
   keywords:
@@ -77,7 +77,7 @@ export default function RootLayout({
               <QueryClientProvider>
                 <DotPattern
                   className={cn(
-                    "fill-slate-300 [mask-image:radial-gradient(75dvw_circle_at_center,white,transparent)] dark:fill-slate-600",
+                    "fill-slate-300 [mask-image:radial-gradient(75dvw_circle_at_center,white,transparent)] dark:fill-slate-800",
                   )}
                 />
                 <main className="relative z-10 h-full w-full">{children}</main>

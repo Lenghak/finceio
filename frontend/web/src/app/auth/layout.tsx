@@ -7,12 +7,9 @@ export default function AuthLayout({ children }: PropsWithChildren) {
   return (
     <Container
       as="section"
-      className="flex h-full flex-col items-center justify-center"
+      className="relative flex h-full flex-col items-center justify-center"
     >
-      <AuthCard>
-        {/* <AuthCardLogo className="mx-auto my-2 mt-8" /> */}
-        {children}
-      </AuthCard>
+      <AuthCard>{children}</AuthCard>
       <TermsPrivacyLinks className="absolute bottom-6" />
     </Container>
   );
