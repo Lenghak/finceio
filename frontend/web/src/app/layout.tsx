@@ -1,7 +1,6 @@
 import { display, mono, sans, serif } from "@/app/fonts";
 import { cn } from "@/lib/utils";
 import { QueryClientProvider } from "@/providers/query-client-provider";
-import { RouteProgressProvider } from "@/providers/route-progress-provider";
 import { SessionProvider } from "@/providers/session-provider";
 import { ThemeProvider } from "@/providers/themes-provider";
 import { DotPattern } from "@packages/magic/components/dot-pattern";
@@ -36,18 +35,6 @@ export const metadata: Metadata = {
     description:
       "Take charge of your finances with Finceio! Our user-friendly app offers expense tracking, budgeting tools, and financial education to help you thrive in today's economy.",
   },
-  icons: {
-    icon: [
-      {
-        url: "/svg/logo-color-light-no-background.svg",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/svg/logo-color-dark-no-background.svg",
-        media: "(prefers-color-scheme: dark)",
-      },
-    ],
-  },
 };
 
 export default function RootLayout({
@@ -70,20 +57,20 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
+          disableTransitionOnChange={true}
+          enableColorScheme={true}
           enableSystem={true}
         >
-          <RouteProgressProvider>
-            <SessionProvider>
-              <QueryClientProvider>
-                <DotPattern
-                  className={cn(
-                    "fill-slate-300 [mask-image:radial-gradient(75dvw_circle_at_center,white,transparent)] dark:fill-slate-800",
-                  )}
-                />
-                <main className="relative z-10 h-full w-full">{children}</main>
-              </QueryClientProvider>
-            </SessionProvider>
-          </RouteProgressProvider>
+          <SessionProvider>
+            <QueryClientProvider>
+              <DotPattern
+                className={cn(
+                  "fill-slate-300 [mask-image:radial-gradient(75dvw_circle_at_center,white,transparent)] dark:fill-slate-800",
+                )}
+              />
+              <main className="relative z-10 h-full w-full">{children}</main>
+            </QueryClientProvider>
+          </SessionProvider>
         </ThemeProvider>
       </body>
     </html>

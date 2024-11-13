@@ -3,7 +3,7 @@
     "@packages/shadcn": "workspace:^",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
     "lucide-react": "catalog:",
-    "next-themes": "^0.3.0",
+    "next-themes": "0.4.3",
     "react": "catalog:react18",
     "react-dom": "catalog:react18"
   },
@@ -13,7 +13,7 @@
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
     "tailwindcss": "catalog:tailwindcss",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "catalog:tailwindcss"
   },
   "exports": {
     "./components/*": "./src/components/*.tsx",

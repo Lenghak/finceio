@@ -1,6 +1,5 @@
-import MillionLint from "@million/lint";
+import { next } from "@million/lint";
 import type { NextConfig } from "next";
-
 import "@/env";
 
 const nextConfig: NextConfig = {
@@ -8,7 +7,7 @@ const nextConfig: NextConfig = {
 };
 
 export default process.env.NODE_ENV === "development"
-  ? MillionLint.next({
+  ? next({
       enabled: true,
       rsc: true,
       turbo: false,

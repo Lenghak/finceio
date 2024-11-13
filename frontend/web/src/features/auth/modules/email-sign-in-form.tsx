@@ -26,7 +26,10 @@ type EmailSignInFormProps = ComponentPropsWithoutRef<"form">;
 export function EmailSignInForm({ className, ...props }: EmailSignInFormProps) {
   const form = useForm<MagicLinkSignInPipe>({
     resolver: MagicLinkSignInResovler,
-    defaultValues: { email: "", provider: "resend" },
+    defaultValues: {
+      email: "",
+      provider: "resend",
+    },
   });
 
   const { mutate: signIn, isPending, isIdle } = useSignIn();

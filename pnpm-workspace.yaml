@@ -4,12 +4,12 @@ packages:
   - packages/*
 
 catalog:
-  lucide-react: ^0.454.0
-  eslint: ^8.57.1
+  lucide-react: ^0.456.0
+  eslint: ^9
   typescript: ^5
   '@biomejs/biome': latest
   '@types/node': ^20
-  '@types/eslint': ^8
+  '@types/eslint': ^9
 
 catalogs:
   react18:
@@ -19,10 +19,10 @@ catalogs:
     '@types/react-dom': ^18.3.1
 
   react19:
-    react: 19.0.0-rc-69d4b800-20241021
-    react-dom: 19.0.0-rc-69d4b800-20241021
-    '@types/react': ^18.3.12
-    '@types/react-dom': ^18.3.1
+    react: 19.0.0-rc-66855b96-20241106
+    react-dom: 19.0.0-rc-66855b96-20241106
+    '@types/react': npm:types-react@rc
+    '@types/react-dom': npm:types-react-dom@rc
 
   tailwindcss:
     autoprefixer: latest

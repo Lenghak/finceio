@@ -36,7 +36,7 @@ export default function SignUpLayout({ children }: PropsWithChildren) {
               color: "secondary",
               size: "sm",
               variant: "link",
-              effect: "linkHover1",
+              effect: "linkHover2",
             }),
           )}
           href="/auth/sign-in"
