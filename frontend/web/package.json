@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "@auth/core": "^0.37.3",
-    "@enalmada/env-valibot": "^0.0.15",
     "@hono/auth-js": "^1.0.15",
     "@hono/node-server": "^1.13.7",
     "@hookform/resolvers": "^3.9.1",
