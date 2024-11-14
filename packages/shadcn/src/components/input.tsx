@@ -10,7 +10,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         className={cn(
-          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background transition-all duration-200 ease-in-out file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
           className,
         )}
         ref={ref}
@@ -22,56 +22,104 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 );
 Input.displayName = "Input";
 
-export interface CustomInputProps
+export interface InputAddonsProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  iconLeft?: React.ReactNode;
-  iconRight?: React.ReactNode;
-  iconSeparator?: boolean;
+  leftAddon?: React.ReactNode;
+  rightAddon?: React.ReactNode;
 }
 
-const IconInput = React.forwardRef<HTMLInputElement, CustomInputProps>(
-  ({ className, iconLeft, iconRight, iconSeparator, type, ...props }, ref) => {
+const InputInlineAddons = React.forwardRef<HTMLInputElement, InputAddonsProps>(
+  ({ className, leftAddon, rightAddon, ...props }, ref) => {
     return (
-      <div className="relative flex items-center [&_svg]:size-4 [&_svg]:text-muted-foreground">
-        {iconLeft && (
-          <div className="pointer-events-none absolute left-4 flex items-center">
-            {iconLeft}
+      <div className="flex rounded-md shadow-sm [&_svg]:size-[1.125rem]">
+        {leftAddon && (
+          <div className="flex items-center justify-center rounded-l-full border border-input border-r-0 pr-3 pl-4 text-muted-foreground text-sm">
+            {leftAddon}
           </div>
         )}
         <Input
           className={cn(
-            iconLeft && "pl-12",
-            iconRight && "pr-12",
-            iconSeparator && iconLeft && "pl-14",
-            iconSeparator && iconRight && "pr-14",
-            "font-semibold",
+            "flex-grow",
             className,
+            leftAddon && "rounded-l-none",
+            rightAddon && "rounded-r-none",
           )}
           ref={ref}
-          type={type}
           {...props}
         />
-        {iconLeft && iconSeparator && (
-          <Separator
-            className="absolute left-11 h-5"
-            orientation="vertical"
-          />
-        )}
-        {iconRight && (
-          <div className="pointer-events-none absolute right-4 flex items-center">
-            {iconRight}
+        {rightAddon && (
+          <div className="flex items-center justify-center rounded-r-md border border-input border-l-0 bg-background px-3 text-muted-foreground text-sm">
+            {rightAddon}
           </div>
-        )}
-        {iconRight && iconSeparator && (
-          <Separator
-            className="absolute right-11 h-5"
-            orientation="vertical"
-          />
         )}
       </div>
     );
   },
 );
-IconInput.displayName = "CustomInput";
+InputInlineAddons.displayName = "InputAddons";
 
-export { Input, IconInput };
+export interface InputAbsoluteAddonProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
+  leftAddon?: React.ReactNode;
+  rightAddon?: React.ReactNode;
+  leftSeparator?: boolean;
+  rightSeparator?: boolean;
+}
+
+const InputAbsoluteAddon = React.forwardRef<
+  HTMLInputElement,
+  InputAbsoluteAddonProps
+>(
+  (
+    {
+      className,
+      leftAddon,
+      rightAddon,
+      leftSeparator,
+      rightSeparator,
+      ...props
+    },
+    ref,
+  ) => {
+    return (
+      <div className="relative">
+        {leftAddon && (
+          <div className="absolute top-0 bottom-0 left-0 flex items-center pl-4 text-muted-foreground">
+            {leftAddon}
+            {leftSeparator && (
+              <Separator
+                className="ml-3.5 h-5"
+                orientation="vertical"
+              />
+            )}
+          </div>
+        )}
+        <Input
+          className={cn(
+            leftAddon && "pl-12",
+            leftAddon && leftSeparator && "pl-[3.75rem]",
+            rightAddon && "pr-12",
+            rightAddon && rightSeparator && "pr-[3.75rem]",
+            className,
+          )}
+          ref={ref}
+          {...props}
+        />
+        {rightAddon && (
+          <div className="absolute top-0 right-0 bottom-0 flex items-center pr-4 text-muted-foreground">
+            {rightSeparator && (
+              <Separator
+                className="mr-3.5 h-5"
+                orientation="vertical"
+              />
+            )}
+            {rightAddon}
+          </div>
+        )}
+      </div>
+    );
+  },
+);
+InputAbsoluteAddon.displayName = "InputAbsoluteAddon";
+
+export { Input, InputInlineAddons, InputAbsoluteAddon };

@@ -41,7 +41,7 @@ export function SocialSignInForm({
     <FormProvider {...form}>
       <Flex
         as="form"
-        className={cn("mx-auto max-w-xs gap-4", className)}
+        className={cn("gap-4", className)}
         direction="col"
         items="center"
         justify="center"
