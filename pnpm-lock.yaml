@@ -101,13 +101,13 @@ importers:
         specifier: ^1.1.34
         version: 1.1.34
       hono:
-        specifier: ^4.6.9
-        version: 4.6.9
+        specifier: ^4.6.10
+        version: 4.6.10
       hono-rate-limiter:
         specifier: ^0.4.0
-        version: 0.4.0(hono@4.6.9)
+        version: 0.4.0(hono@4.6.10)
       valibot:
-        specifier: ^1.0.0-beta.3
+        specifier: 1.0.0-beta.3
         version: 1.0.0-beta.3(typescript@5.6.3)
     devDependencies:
       '@packages/typescript':
@@ -124,10 +124,10 @@ importers:
         version: 0.37.3
       '@hono/auth-js':
         specifier: ^1.0.15
-        version: 1.0.15(@auth/core@0.37.3)(hono@4.6.9)(react@18.3.1)
+        version: 1.0.15(@auth/core@0.37.3)(hono@4.6.10)(react@18.3.1)
       '@hono/node-server':
         specifier: ^1.13.7
-        version: 1.13.7(hono@4.6.9)
+        version: 1.13.7(hono@4.6.10)
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.9.1(react-hook-form@7.53.2(react@18.3.1))
@@ -147,7 +147,7 @@ importers:
         specifier: ^0.11.1
         version: 0.11.1(typescript@5.6.3)(zod@3.23.8)
       '@tabler/icons-react':
-        specifier: ^3.21.0
+        specifier: ^3.22.0
         version: 3.22.0(react@18.3.1)
       '@tanstack/react-query':
         specifier: ^5.59.20
@@ -162,8 +162,8 @@ importers:
         specifier: ^4.1.0
         version: 4.1.0
       hono:
-        specifier: ^4.6.9
-        version: 4.6.9
+        specifier: ^4.6.10
+        version: 4.6.10
       ky:
         specifier: ^1.7.2
         version: 1.7.2
@@ -198,7 +198,7 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(react@18.3.1)
       valibot:
-        specifier: ^1.0.0-beta.3
+        specifier: 1.0.0-beta.3
         version: 1.0.0-beta.3(typescript@5.6.3)
       zod:
         specifier: ^3.23.8
@@ -405,7 +405,7 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-scroll-area':
-        specifier: ^1.2.0
+        specifier: ^1.2.1
         version: 1.2.1(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-select':
         specifier: ^2.1.2
@@ -435,7 +435,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-tooltip':
-        specifier: ^1.1.3
+        specifier: ^1.1.4
         version: 1.1.4(@types/react-dom@18.3.1)(@types/react@18.3.12)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       class-variance-authority:
         specifier: ^0.7.0
@@ -2437,6 +2437,7 @@ packages:
 
   bun@1.1.34:
     resolution: {integrity: sha512-ULiiLQG+bQC6YHW6u9jisGtwVn8msgqvDvurwsEs26mKtcAl7lRS+5yKfo/xxxnrcSIqx1QFM4vqki42s6GDVw==}
+    cpu: [arm64, x64]
     os: [darwin, linux, win32]
     hasBin: true
 
@@ -2801,8 +2802,8 @@ packages:
   effect@3.6.5:
     resolution: {integrity: sha512-NhopZTAKljaAlR0CEroOAJJngdqg7bzlnWcDrCwh4d2WNVohVbBtUS4SGqLt8tUy7IFsTWATYiUtmhDG+YELjA==}
 
-  electron-to-chromium@1.5.56:
-    resolution: {integrity: sha512-7lXb9dAvimCFdvUMTyucD4mnIndt/xhRKFAlky0CyFogdnNmdPQNoHI23msF/2V4mpTxMzgMdjK4+YRlFlRQZw==}
+  electron-to-chromium@1.5.57:
+    resolution: {integrity: sha512-xS65H/tqgOwUBa5UmOuNSLuslDo7zho0y/lgQw35pnrqiZh7UOWHCeL/Bt6noJATbA6tpQJGCifsFsIRZj1Fqg==}
 
   embla-carousel-react@8.3.1:
     resolution: {integrity: sha512-gBY0zM+2ASvKFwRpTIOn2SLifFqOKKap9R/y0iCpJWS3bc8OHVEn2gAThGYl2uq0N+hu9aBiswffL++OYZOmDQ==}
@@ -3284,8 +3285,8 @@ packages:
     peerDependencies:
       hono: ^4.1.1
 
-  hono@4.6.9:
-    resolution: {integrity: sha512-p/pN5yZLuZaHzyAOT2nw2/Ud6HhJHYmDNGH6Ck1OWBhPMVeM1r74jbCRwNi0gyFRjjbsGgoHbOyj7mT1PDNbTw==}
+  hono@4.6.10:
+    resolution: {integrity: sha512-IXXNfRAZEahFnWBhUUlqKEGF9upeE6hZoRZszvNkyAz/CYp+iVbxm3viMvStlagRJohjlBRGOQ7f4jfcV0XMGg==}
     engines: {node: '>=16.9.0'}
 
   hosted-git-info@7.0.2:
@@ -4773,14 +4774,9 @@ packages:
     resolution: {integrity: sha512-uNaeirEPvpZWSgzwsPGtU2zVSTrn/8L5q/IexZmH0eH6SA73CmAA5U4GwORTxQAZs95TAXLNqeLoPPNO5gZfWg==}
     engines: {node: '>=8'}
 
-  unplugin@1.15.0:
-    resolution: {integrity: sha512-jTPIs63W+DUEDW207ztbaoO7cQ4p5aVaB823LSlxpsFEU3Mykwxf3ZGC/wzxFJeZlASZYgVrWeo7LgOrqJZ8RA==}
+  unplugin@1.16.0:
+    resolution: {integrity: sha512-5liCNPuJW8dqh3+DM6uNM2EI3MLLpCKp/KY+9pB5M2S2SR2qvvDHhKgBOaTWEbZTAws3CXfB0rKTIolWKL05VQ==}
     engines: {node: '>=14.0.0'}
-    peerDependencies:
-      webpack-sources: ^3
-    peerDependenciesMeta:
-      webpack-sources:
-        optional: true
 
   update-browserslist-db@1.1.1:
     resolution: {integrity: sha512-R8UzCaa9Az+38REPiJ1tXlImTJXlVfgHZsglwBD/k6nj76ctsH1E3q4doGrukiLQd3sGQYu56r5+lo5r94l29A==}
@@ -5466,15 +5462,15 @@ snapshots:
 
   '@floating-ui/utils@0.2.8': {}
 
-  '@hono/auth-js@1.0.15(@auth/core@0.37.3)(hono@4.6.9)(react@18.3.1)':
+  '@hono/auth-js@1.0.15(@auth/core@0.37.3)(hono@4.6.10)(react@18.3.1)':
     dependencies:
       '@auth/core': 0.37.3
-      hono: 4.6.9
+      hono: 4.6.10
       react: 18.3.1
 
-  '@hono/node-server@1.13.7(hono@4.6.9)':
+  '@hono/node-server@1.13.7(hono@4.6.10)':
     dependencies:
-      hono: 4.6.9
+      hono: 4.6.10
 
   '@hookform/resolvers@3.9.1(react-hook-form@7.53.2(react@18.3.1))':
     dependencies:
@@ -5622,7 +5618,7 @@ snapshots:
       '@axiomhq/js': 1.0.0-rc.3
       '@babel/core': 7.26.0
       '@babel/types': 7.26.0
-      '@hono/node-server': 1.13.7(hono@4.6.9)
+      '@hono/node-server': 1.13.7(hono@4.6.10)
       '@million/install': 1.0.12
       '@rollup/pluginutils': 5.1.3
       '@rrweb/types': 2.0.0-alpha.16
@@ -5630,7 +5626,7 @@ snapshots:
       ci-info: 4.1.0
       esbuild: 0.20.2
       faster-babel-types: 0.1.0(@babel/types@7.26.0)
-      hono: 4.6.9
+      hono: 4.6.10
       isomorphic-fetch: 3.0.0
       nanoid: 5.0.8
       pako: 2.1.0
@@ -5642,7 +5638,7 @@ snapshots:
       semver: 7.6.3
       socket.io-client: 4.8.1
       tmp: 0.2.3
-      unplugin: 1.15.0
+      unplugin: 1.16.0
       update-notifier-cjs: 5.1.6
     transitivePeerDependencies:
       - bufferutil
@@ -5650,7 +5646,6 @@ snapshots:
       - rollup
       - supports-color
       - utf-8-validate
-      - webpack-sources
 
   '@napi-rs/nice-android-arm-eabi@1.0.1':
     optional: true
@@ -6601,7 +6596,7 @@ snapshots:
 
   '@types/ws@8.5.13':
     dependencies:
-      '@types/node': 22.9.0
+      '@types/node': 20.12.14
 
   '@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)':
     dependencies:
@@ -6905,7 +6900,7 @@ snapshots:
   browserslist@4.24.2:
     dependencies:
       caniuse-lite: 1.0.30001680
-      electron-to-chromium: 1.5.56
+      electron-to-chromium: 1.5.57
       node-releases: 2.0.18
       update-browserslist-db: 1.1.1(browserslist@4.24.2)
 
@@ -7290,7 +7285,7 @@ snapshots:
 
   effect@3.6.5: {}
 
-  electron-to-chromium@1.5.56: {}
+  electron-to-chromium@1.5.57: {}
 
   embla-carousel-react@8.3.1(react@18.3.1):
     dependencies:
@@ -7929,11 +7924,11 @@ snapshots:
     dependencies:
       hermes-estree: 0.21.1
 
-  hono-rate-limiter@0.4.0(hono@4.6.9):
+  hono-rate-limiter@0.4.0(hono@4.6.10):
     dependencies:
-      hono: 4.6.9
+      hono: 4.6.10
 
-  hono@4.6.9: {}
+  hono@4.6.10: {}
 
   hosted-git-info@7.0.2:
     dependencies:
@@ -9430,7 +9425,7 @@ snapshots:
     dependencies:
       crypto-random-string: 2.0.0
 
-  unplugin@1.15.0:
+  unplugin@1.16.0:
     dependencies:
       acorn: 8.14.0
       webpack-virtual-modules: 0.6.2

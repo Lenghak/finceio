@@ -2,9 +2,9 @@
   "dependencies": {
     "@enalmada/env-valibot": "^0.0.15",
     "bun": "^1.1.34",
-    "hono": "^4.6.9",
+    "hono": "^4.6.10",
     "hono-rate-limiter": "^0.4.0",
-    "valibot": "^1.0.0-beta.3"
+    "valibot": "1.0.0-beta.3"
   },
   "devDependencies": {
     "@packages/typescript": "workspace:^",

@@ -15,9 +15,9 @@ import {
   FormMessage,
   FormProvider,
 } from "@packages/shadcn/components/form";
-import { IconInput } from "@packages/shadcn/components/input";
+import { InputAbsoluteAddon } from "@packages/shadcn/components/input";
 import { IconLoader3 } from "@tabler/icons-react";
-import { MailIcon } from "lucide-react";
+import { AtSignIcon } from "lucide-react";
 import { type ComponentPropsWithoutRef, useCallback } from "react";
 import { useForm } from "react-hook-form";
 
@@ -52,13 +52,15 @@ export function EmailSignInForm({ className, ...props }: EmailSignInFormProps) {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="transition-all">
               <FormLabel className="sr-only">Email</FormLabel>
               <FormControl>
-                <IconInput
+                <InputAbsoluteAddon
                   className="rounded-full"
-                  iconLeft={<MailIcon />}
-                  iconSeparator={true}
+                  leftAddon={
+                    <AtSignIcon className="dark:size-4 dark:stroke-[3]" />
+                  }
+                  leftSeparator={true}
                   placeholder="example@email.com"
                   {...field}
                 />
