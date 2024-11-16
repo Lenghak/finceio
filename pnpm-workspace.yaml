@@ -7,6 +7,7 @@ catalog:
   lucide-react: ^0.456.0
   eslint: ^9
   typescript: ^5
+  'valibot': ^0.42.0
   '@biomejs/biome': latest
   '@types/node': ^20
   '@types/eslint': ^9

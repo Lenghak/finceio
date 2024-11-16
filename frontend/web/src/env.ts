@@ -1,4 +1,3 @@
-import { isServer } from "@tanstack/react-query";
 import { url, type InferInput, object, pipe, string } from "valibot";
 
 const serverSchema = object({
@@ -12,22 +11,36 @@ const clientSchema = object({
 });
 
 const serverEnv = (
-  isServer
-    ? serverSchema["~validate"]({
-        value: {
-          AUTH_URL: process.env.AUTH_URL,
-          AUTH_SECRET: process.env.AUTH_SECRET,
+  typeof window === "undefined"
+    ? serverSchema["~run"](
+        {
+          value: {
+            AUTH_URL: process.env.AUTH_URL,
+            AUTH_SECRET: process.env.AUTH_SECRET,
+          },
         },
-      }).value
+        {
+          message: (issues) => {
+            return issues.message;
+          },
+        },
+      ).value
     : {}
 ) as InferInput<typeof serverSchema>;
 
-const clientEnv = clientSchema["~validate"]({
-  value: {
-    NEXT_PUBLIC_ORIGIN_URL: process.env.NEXT_PUBLIC_ORIGIN_URL,
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+const clientEnv = clientSchema["~run"](
+  {
+    value: {
+      NEXT_PUBLIC_ORIGIN_URL: process.env.NEXT_PUBLIC_ORIGIN_URL,
+      NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    },
   },
-}).value as InferInput<typeof clientSchema>;
+  {
+    message: (issues) => {
+      return issues.message;
+    },
+  },
+).value as InferInput<typeof clientSchema>;
 
 export const env = {
   ...clientEnv,
