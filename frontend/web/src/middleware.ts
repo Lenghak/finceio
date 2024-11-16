@@ -6,7 +6,7 @@ export default middleware(function middleware(req) {
   const currPathname = req.nextUrl.pathname;
   // Your custom middleware logic goes here
   const session = req.auth;
-  const isUserSignedIn = session?.user.at !== undefined;
+  const isUserSignedIn = session?.user?.at !== undefined;
 
   const isAuthPath = currPathname.startsWith("/auth");
 
