@@ -28,8 +28,8 @@
   "private": true,
   "scripts": {
     "b": "pnpm --filter=@backend/*",
-    "b:build": "pnpm turbo run build --filter=@backend/client",
     "b:client": "pnpm --filter=@backend/client",
+    "b:client:build": "pnpm turbo run build --filter=@backend/client",
     "b:client:dev": "pnpm turbo run dev --filter=@backend/client",
     "build": "turbo run build",
     "check-types": "pnpm tsc --noEmit",
