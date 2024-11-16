@@ -82,7 +82,7 @@ const InputAbsoluteAddon = React.forwardRef<
     ref,
   ) => {
     return (
-      <div className="relative">
+      <div className="relative [&_svg]:size-[1.125rem]">
         {leftAddon && (
           <div className="absolute top-0 bottom-0 left-0 flex items-center pl-4 text-muted-foreground">
             {leftAddon}
