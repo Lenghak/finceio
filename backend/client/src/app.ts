@@ -1,3 +1,4 @@
+import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { csrf } from "hono/csrf";
@@ -5,8 +6,6 @@ import { logger } from "hono/logger";
 import { prettyJSON } from "hono/pretty-json";
 import { secureHeaders } from "hono/secure-headers";
 import { trimTrailingSlash } from "hono/trailing-slash";
-
-import "@/core/env.config";
 
 const app = new Hono();
 
@@ -21,7 +20,7 @@ app.get("/", (c) => {
   return c.text("Hello Hono!");
 });
 
-export default {
-  port: 8000,
+serve({
   fetch: app.fetch,
-};
+  port: 8000,
+});
