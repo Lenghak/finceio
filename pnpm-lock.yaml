@@ -12,6 +12,9 @@ catalogs:
     '@types/eslint':
       specifier: ^9
       version: 9.6.1
+    '@types/node':
+      specifier: ^22
+      version: 22.9.0
     eslint:
       specifier: ^9
       version: 9.14.0
@@ -22,8 +25,8 @@ catalogs:
       specifier: ^5
       version: 5.6.3
     valibot:
-      specifier: ^0.42.0
-      version: 0.42.1
+      specifier: ^1.0.0-beta.6
+      version: 1.0.0-beta.6
   react18:
     '@types/react':
       specifier: ^18.3.12
@@ -102,7 +105,7 @@ importers:
         version: 1.13.7(hono@4.6.10)
       '@hono/valibot-validator':
         specifier: ^0.5.1
-        version: 0.5.1(hono@4.6.10)(valibot@1.0.0-beta.3(typescript@5.6.3))
+        version: 0.5.1(hono@4.6.10)(valibot@1.0.0-beta.6(typescript@5.6.3))
       hono:
         specifier: ^4.6.10
         version: 4.6.10
@@ -126,7 +129,7 @@ importers:
         version: 9.5.0
       valibot:
         specifier: 'catalog:'
-        version: 0.42.1(typescript@5.6.3)
+        version: 1.0.0-beta.6(typescript@5.6.3)
     devDependencies:
       '@swc/cli':
         specifier: ^0.5.0
@@ -135,8 +138,8 @@ importers:
         specifier: ^1.9.2
         version: 1.9.2(@swc/helpers@0.5.13)
       '@types/node':
-        specifier: ^20.11.17
-        version: 20.12.14
+        specifier: 'catalog:'
+        version: 22.9.0
       tsx:
         specifier: ^4.19.2
         version: 4.19.2
@@ -223,7 +226,7 @@ importers:
         version: 3.1.0(react@18.3.1)
       valibot:
         specifier: 'catalog:'
-        version: 0.42.1(typescript@5.6.3)
+        version: 1.0.0-beta.6(typescript@5.6.3)
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -2419,9 +2422,6 @@ packages:
 
   '@types/keyv@3.1.4':
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
-
-  '@types/node@20.12.14':
-    resolution: {integrity: sha512-scnD59RpYD91xngrQQLGkE+6UrHUPzeKZWhhjBSa3HSkwjbQc38+q3RoIVEwxQGRw3M+j5hpNAM+lgV3cVormg==}
 
   '@types/node@22.9.0':
     resolution: {integrity: sha512-vuyHg81vvWA1Z1ELfvLko2c8f34gyA0zaic0+Rllc5lbCnbSyuvb2Oxpm6TAUAC/2xZN3QGqxBNggD1nNR2AfQ==}
@@ -5409,9 +5409,6 @@ packages:
   unbox-primitive@1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
@@ -5485,8 +5482,8 @@ packages:
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
 
-  valibot@1.0.0-beta.3:
-    resolution: {integrity: sha512-PRknKVj2249cF8Pxqil1dahkVHgyaPDq++Y8sA96R5lx4nYnVazs11kefOsRVD3PSygYJG5q2MEdEm7kuSWa+g==}
+  valibot@1.0.0-beta.6:
+    resolution: {integrity: sha512-x9ObzhqDCWFaWOa6Zri1mbFcc8OIIKP7cQtD9JauKt5pJFhpJkvAXT+49bFKjoVikiKVk7m33mXgUJb/Wfknmw==}
     peerDependencies:
       typescript: '>=5'
     peerDependenciesMeta:
@@ -5599,7 +5596,6 @@ packages:
   xmldom@0.1.31:
     resolution: {integrity: sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ==}
     engines: {node: '>=0.1'}
-    deprecated: Deprecated due to CVE-2021-21366 resolved in 0.5.0
 
   xmlhttprequest-ssl@2.1.2:
     resolution: {integrity: sha512-TEU+nJVUUnA4CYJFLvK5X9AOeH4KvDvhIfm0vV1GaQRtchnG0hgK5p8hw/xjv8cunWYCsiPCSDzObPyhEwq3KQ==}
@@ -6230,10 +6226,10 @@ snapshots:
     dependencies:
       hono: 4.6.10
 
-  '@hono/valibot-validator@0.5.1(hono@4.6.10)(valibot@1.0.0-beta.3(typescript@5.6.3))':
+  '@hono/valibot-validator@0.5.1(hono@4.6.10)(valibot@1.0.0-beta.6(typescript@5.6.3))':
     dependencies:
       hono: 4.6.10
-      valibot: 1.0.0-beta.3(typescript@5.6.3)
+      valibot: 1.0.0-beta.6(typescript@5.6.3)
 
   '@hookform/resolvers@3.9.1(react-hook-form@7.53.2(react@18.3.1))':
     dependencies:
@@ -7356,12 +7352,12 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 20.12.14
+      '@types/node': 22.9.0
       '@types/responselike': 1.0.3
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
-      '@types/node': 20.12.14
+      '@types/node': 22.9.0
 
   '@types/cookie@0.6.0': {}
 
@@ -7406,11 +7402,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 20.12.14
-
-  '@types/node@20.12.14':
-    dependencies:
-      undici-types: 5.26.5
+      '@types/node': 22.9.0
 
   '@types/node@22.9.0':
     dependencies:
@@ -7429,7 +7421,7 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 20.12.14
+      '@types/node': 22.9.0
 
   '@typescript-eslint/eslint-plugin@8.14.0(@typescript-eslint/parser@8.14.0(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3))(eslint@9.14.0(jiti@1.21.6))(typescript@5.6.3)':
     dependencies:
@@ -10659,8 +10651,6 @@ snapshots:
       has-symbols: 1.0.3
       which-boxed-primitive: 1.0.2
 
-  undici-types@5.26.5: {}
-
   undici-types@6.19.8: {}
 
   unicorn-magic@0.1.0: {}
@@ -10738,7 +10728,7 @@ snapshots:
   v8-compile-cache-lib@3.0.1:
     optional: true
 
-  valibot@1.0.0-beta.3(typescript@5.6.3):
+  valibot@1.0.0-beta.6(typescript@5.6.3):
     optionalDependencies:
       typescript: 5.6.3
 

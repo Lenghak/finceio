@@ -14,7 +14,7 @@
   "devDependencies": {
     "@swc/cli": "^0.5.0",
     "@swc/core": "^1.9.2",
-    "@types/node": "^20.11.17",
+    "@types/node": "catalog:",
     "tsx": "^4.19.2"
   },
   "name": "@backend/client",
