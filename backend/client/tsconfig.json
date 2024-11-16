@@ -6,5 +6,8 @@
     }
   },
   "exclude": ["dist"],
-  "extends": ["@packages/typescript/hono.json"]
+  "extends": ["@packages/typescript/hono.json"],
+  "ts-node": {
+    "swc": true
+  }
 }
