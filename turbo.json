@@ -25,7 +25,11 @@
       "persistent": true
     },
     "lint": {
-      "cache": true,
+      "cache": false,
+      "persistent": false
+    },
+    "start": {
+      "cache": false,
       "persistent": true
     }
   }

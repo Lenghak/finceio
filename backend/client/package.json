@@ -21,8 +21,8 @@
   "scripts": {
     "build": "swc src -d dist",
     "build:watch": "swc src -d dist -w",
-    "dev": "pnpm tsx watch ./src/app.ts",
-    "prod": "pnpm tsx ./dist/src/app.js"
+    "dev": "pnpm tsx watch ./src/main.ts",
+    "start": "pnpm tsx ./dist/src/main.js"
   },
   "type": "module"
 }
