@@ -3,6 +3,9 @@
   "daemon": true,
   "envMode": "strict",
   "tasks": {
+    "@backend/client#build": {
+      "outputs": ["dist/**"]
+    },
     "@frontend/web#build": {
       "env": ["AUTH_URL", "AUTH_SECRET", "SKIP_ENV_VALIDATION"],
       "inputs": [
@@ -11,11 +14,12 @@
         ".env.local",
         ".env.production",
         ".env"
-      ]
+      ],
+      "outputs": [".next/**", "!.next/cache/**", ".vercel/**"]
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**", ".vercel/**"]
     },
     "check-types": {
       "dependsOn": ["^check-types"]
@@ -25,10 +29,6 @@
       "persistent": true
     },
     "lint": {
-      "cache": false,
-      "persistent": false
-    },
-    "start": {
       "cache": false,
       "persistent": true
     }
