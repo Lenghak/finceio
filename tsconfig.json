@@ -1,3 +1,4 @@
 {
+  "exclude": ["dist", "next", "build", "node_modules"],
   "extends": ["@packages/typescript/base"]
 }
