@@ -2,7 +2,7 @@
 
 import type { Root as LabelPrimitiveRoot } from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";
-import React from "react";
+import React, { forwardRef } from "react";
 import {
   Controller,
   type ControllerProps,
@@ -29,18 +29,39 @@ const FormFieldContext = React.createContext<FormFieldContextValue>(
   {} as FormFieldContextValue,
 );
 
-const FormField = <
-  TFieldValues extends FieldValues = FieldValues,
-  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
->({
-  ...props
-}: ControllerProps<TFieldValues, TName>) => {
-  return (
-    <FormFieldContext.Provider value={{ name: props.name }}>
-      <Controller {...props} />
-    </FormFieldContext.Provider>
-  );
-};
+const FormField = React.memo(
+  <
+    TFieldValues extends FieldValues = FieldValues,
+    TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+  >({
+    render,
+    ...props
+  }: ControllerProps<TFieldValues, TName>) => {
+    const memoizedValue = React.useMemo(
+      () => ({ name: props.name }),
+      [props.name],
+    );
+    const memoizedRender = React.useCallback(render, []);
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+    const memoizedProps = React.useMemo(() => props, [props]);
+
+    const memoizedController = React.useMemo(
+      () => (
+        <Controller
+          {...memoizedProps}
+          render={memoizedRender}
+        />
+      ),
+      [memoizedProps, memoizedRender],
+    );
+
+    return (
+      <FormFieldContext.Provider value={memoizedValue}>
+        {memoizedController}
+      </FormFieldContext.Provider>
+    );
+  },
+);
 
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);
@@ -79,8 +100,10 @@ const FormItem = React.forwardRef<
 >(({ className, ...props }, ref) => {
   const id = React.useId();
 
+  const value = React.useMemo(() => ({ id }), [id]);
+
   return (
-    <FormItemContext.Provider value={{ id }}>
+    <FormItemContext.Provider value={value}>
       <div
         className={cn("space-y-2", className)}
         ref={ref}
@@ -91,24 +114,28 @@ const FormItem = React.forwardRef<
 });
 FormItem.displayName = "FormItem";
 
-const FormLabel = React.forwardRef<
+const FormLabel = forwardRef<
   React.ElementRef<typeof LabelPrimitiveRoot>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitiveRoot>
 >(({ className, ...props }, ref) => {
   const { error, formItemId } = useFormField();
 
-  return (
-    <Label
-      className={cn(error && "text-destructive", className)}
-      htmlFor={formItemId}
-      ref={ref}
-      {...props}
-    />
+  return React.useMemo(
+    () => (
+      <Label
+        className={cn(error && "text-destructive", className)}
+        htmlFor={formItemId}
+        ref={ref}
+        {...props}
+      />
+    ),
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+    [error, className, formItemId, props, ref],
   );
 });
 FormLabel.displayName = "FormLabel";
 
-const FormControl = React.forwardRef<
+const FormControl = forwardRef<
   React.ElementRef<typeof Slot>,
   React.ComponentPropsWithoutRef<typeof Slot>
 >(({ ...props }, ref) => {

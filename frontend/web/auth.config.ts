@@ -31,4 +31,5 @@ export default {
     signOut: "/",
   },
   trustHost: true,
+  debug: process.env.NODE_ENV === "development",
 } as AuthConfig;

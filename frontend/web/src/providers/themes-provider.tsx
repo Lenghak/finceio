@@ -4,7 +4,12 @@ import {
   ThemeProvider as NextThemesProvider,
   type ThemeProviderProps,
 } from "next-themes";
+import { useMemo } from "react";
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+  return useMemo(
+    () => <NextThemesProvider {...props}>{children}</NextThemesProvider>,
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+    [props, children],
+  );
 }
