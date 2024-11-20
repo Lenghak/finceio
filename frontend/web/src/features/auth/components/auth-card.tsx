@@ -22,7 +22,6 @@ import {
   ThemesDropdownMenu,
   ThemesTrigger,
 } from "@packages/core/components/themes-toggle";
-import { BorderBeam } from "@packages/magic/components/border-beam";
 
 export const AuthCard = memo(
   ({ children, className, ...props }: HTMLAttributes<HTMLDivElement>) => (
@@ -39,7 +38,6 @@ export const AuthCard = memo(
         </ThemesDropdownMenu>
       </Box>
       {children}
-      <BorderBeam />
     </Card>
   ),
 );

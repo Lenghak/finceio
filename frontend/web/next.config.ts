@@ -11,6 +11,7 @@ export default process.env.NODE_ENV === "development"
       enabled: true,
       rsc: true,
       turbo: false,
+      optimizeDOM: true,
     })({
       ...nextConfig,
     })

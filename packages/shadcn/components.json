@@ -9,9 +9,9 @@
   "rsc": true,
   "style": "default",
   "tailwind": {
-    "baseColor": "neutral",
+    "baseColor": "slate",
     "config": "tailwind.config.ts",
-    "css": "./src/globals.css",
+    "css": "./src/global.css",
     "cssVariables": true
   },
   "tsx": true
