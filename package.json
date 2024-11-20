@@ -31,6 +31,7 @@
     "b:client": "pnpm --filter=@backend/client",
     "b:client:build": "pnpm turbo run build --filter=@backend/client",
     "b:client:dev": "pnpm turbo run dev --filter=@backend/client",
+    "b:client:start": "pnpm turbo run start --filter=@backend/client",
     "build": "turbo run build",
     "check-types": "pnpm tsc --noEmit",
     "dev": "turbo run dev",
