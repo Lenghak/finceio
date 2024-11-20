@@ -1,6 +1,6 @@
 "use client";
 
-import { type ComponentPropsWithoutRef, useCallback } from "react";
+import { type ComponentPropsWithoutRef, useCallback, useMemo } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 import { Flex } from "@packages/shadcn/components/flex";
@@ -37,6 +37,18 @@ export function SocialSignInForm({
     [signIn],
   );
 
+  const setGoogleProvider = useCallback(() => {
+    form.setValue("provider", "google");
+  }, [form.setValue]);
+
+  const setFacebookProvider = useCallback(() => {
+    form.setValue("provider", "facebook");
+  }, [form.setValue]);
+
+  const setGithubProvider = useCallback(() => {
+    form.setValue("provider", "github");
+  }, [form.setValue]);
+
   return (
     <FormProvider {...form}>
       <Flex
@@ -49,24 +61,24 @@ export function SocialSignInForm({
         {...props}
       >
         <OAuthButton
-          icon={<IconBrandGoogle />}
-          onClick={() => form.setValue("provider", "google")}
+          icon={useMemo(() => <IconBrandGoogle />, [])}
+          onClick={setGoogleProvider}
           type={isIdle ? "submit" : "button"}
         >
           Continue with Google
         </OAuthButton>
 
         <OAuthButton
-          icon={<IconBrandFacebook />}
-          onClick={() => form.setValue("provider", "facebook")}
+          icon={useMemo(() => <IconBrandFacebook />, [])}
+          onClick={setFacebookProvider}
           type={isIdle ? "submit" : "button"}
         >
           Continue with Facebook
         </OAuthButton>
 
         <OAuthButton
-          icon={<IconBrandGithub />}
-          onClick={() => form.setValue("provider", "github")}
+          icon={useMemo(() => <IconBrandGithub />, [])}
+          onClick={setGithubProvider}
           type={isIdle ? "submit" : "button"}
         >
           Continue with Github

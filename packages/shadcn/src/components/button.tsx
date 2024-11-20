@@ -1,4 +1,12 @@
-import { type ButtonHTMLAttributes, type ReactNode, forwardRef } from "react";
+import {
+  type ButtonHTMLAttributes,
+  type MutableRefObject,
+  type ReactNode,
+  forwardRef,
+  memo,
+  useCallback,
+  useMemo,
+} from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
 
@@ -18,7 +26,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-10 px-4 py-2 [&_svg]:size-4",
-        sm: "h-9 px-4 [&_svg]:size-4",
+        sm: "h-8 px-3 [&_svg]:size-4",
         lg: "h-11 px-9 [&_svg]:size-5",
         icon: "h-10 w-10 [&_svg]:size-4",
       },
@@ -803,49 +811,97 @@ export interface ButtonProps
   asChild?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps & ButtonIconProps>(
-  (
-    {
-      className,
-      variant,
-      size,
-      color,
-      asChild = false,
-      effect,
-      iconPlacement = "left",
-      ...props
+const Button = memo(
+  forwardRef<HTMLButtonElement, ButtonProps & ButtonIconProps>(
+    (
+      {
+        className,
+        variant,
+        size,
+        color,
+        asChild = false,
+        effect,
+        iconPlacement = "left",
+        ...props
+      },
+      ref,
+    ) => {
+      const stableRef = useCallback(
+        (node: HTMLButtonElement) => {
+          if (typeof ref === "function") {
+            ref(node);
+          } else if (ref) {
+            (ref as MutableRefObject<HTMLButtonElement | null>).current = node;
+          }
+        },
+        [ref],
+      );
+
+      const Comp = asChild ? Slot : "button";
+
+      const memoizedSlottable = useMemo(
+        () => <Slottable>{props.children}</Slottable>,
+        [props.children],
+      );
+
+      const buttonClass = useMemo(
+        () => buttonVariants({ variant, size, color, effect, className }),
+        [variant, size, color, effect, className],
+      );
+
+      const leftIcon = useMemo(
+        () =>
+          iconPlacement === "left" ? (
+            <IconDisplay
+              effect={effect}
+              icon={props.icon}
+              iconPlacement="left"
+            />
+          ) : null,
+        [effect, props.icon, iconPlacement],
+      );
+
+      const rightIcon = useMemo(
+        () =>
+          iconPlacement === "right" ? (
+            <IconDisplay
+              effect={effect}
+              icon={props.icon}
+              iconPlacement="right"
+            />
+          ) : null,
+        [effect, props.icon, iconPlacement],
+      );
+
+      const memoizedComp = useMemo(
+        () => (
+          <Comp
+            className={cn(buttonClass)}
+            ref={stableRef}
+            {...props}
+          >
+            {leftIcon}
+
+            {memoizedSlottable}
+
+            {rightIcon}
+          </Comp>
+        ),
+        [
+          Comp,
+          buttonClass,
+          stableRef,
+          // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+          props,
+          leftIcon,
+          memoizedSlottable,
+          rightIcon,
+        ],
+      );
+
+      return memoizedComp;
     },
-    ref,
-  ) => {
-    const Comp = asChild ? Slot : "button";
-    return (
-      <Comp
-        className={cn(
-          buttonVariants({ variant, size, color, effect, className }),
-        )}
-        ref={ref}
-        {...props}
-      >
-        {iconPlacement === "left" && (
-          <IconDisplay
-            effect={effect}
-            icon={props.icon}
-            iconPlacement="left"
-          />
-        )}
-
-        <Slottable>{props.children}</Slottable>
-
-        {iconPlacement === "right" && (
-          <IconDisplay
-            effect={effect}
-            icon={props.icon}
-            iconPlacement="right"
-          />
-        )}
-      </Comp>
-    );
-  },
+  ),
 );
 Button.displayName = "Button";
 

@@ -16,10 +16,14 @@ import {
   FormProvider,
 } from "@packages/shadcn/components/form";
 import { InputAbsoluteAddon } from "@packages/shadcn/components/input";
-import { IconLoader3 } from "@tabler/icons-react";
-import { AtSignIcon } from "lucide-react";
-import { type ComponentPropsWithoutRef, useCallback } from "react";
-import { useForm } from "react-hook-form";
+import { IconAt, IconLoader3 } from "@tabler/icons-react";
+import { type ComponentPropsWithoutRef, useCallback, useMemo } from "react";
+import {
+  type Control,
+  type FieldValues,
+  type UseControllerReturn,
+  useForm,
+} from "react-hook-form";
 
 type EmailSignInFormProps = ComponentPropsWithoutRef<"form">;
 
@@ -41,6 +45,31 @@ export function EmailSignInForm({ className, ...props }: EmailSignInFormProps) {
     [signIn],
   );
 
+  const memoizedLeftAddon = useMemo(
+    () => <IconAt className="dark:size-4 dark:stroke-[3]" />,
+    [],
+  );
+  const memoizedRenderEmailField = useCallback(
+    ({ field }: UseControllerReturn) => (
+      <FormItem className="transition-all">
+        <FormLabel className="sr-only">Email</FormLabel>
+        <FormControl>
+          <InputAbsoluteAddon
+            className="rounded-full"
+            leftAddon={memoizedLeftAddon}
+            leftSeparator={true}
+            placeholder="example@email.com"
+            {...field}
+          />
+        </FormControl>
+        <FormMessage />
+      </FormItem>
+    ),
+    [memoizedLeftAddon],
+  );
+
+  const memoizedIconLoader3 = useMemo(() => <IconLoader3 />, []);
+
   return (
     <FormProvider {...form}>
       <form
@@ -49,31 +78,15 @@ export function EmailSignInForm({ className, ...props }: EmailSignInFormProps) {
         {...props}
       >
         <FormField
-          control={form.control}
+          control={form.control as unknown as Control<FieldValues>}
           name="email"
-          render={({ field }) => (
-            <FormItem className="transition-all">
-              <FormLabel className="sr-only">Email</FormLabel>
-              <FormControl>
-                <InputAbsoluteAddon
-                  className="rounded-full"
-                  leftAddon={
-                    <AtSignIcon className="dark:size-4 dark:stroke-[3]" />
-                  }
-                  leftSeparator={true}
-                  placeholder="example@email.com"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
+          render={memoizedRenderEmailField}
         />
         <Button
           className="w-full gap-2"
           disabled={!isIdle}
           effect={isPending ? "loading" : "hideIcon"}
-          icon={<IconLoader3 />}
+          icon={memoizedIconLoader3}
           iconPlacement="right"
           type={isPending ? "button" : "submit"}
         >
