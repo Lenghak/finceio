@@ -21,7 +21,7 @@ export default function SignInLayout({ children }: PropsWithChildren) {
     <>
       <AuthCardHeader>
         <AuthCardLogo />
-        <AuthCardTitle>Welcome back</AuthCardTitle>
+        <AuthCardTitle>Sign in to Finceio</AuthCardTitle>
         <AuthCardDescription>
           Glad to see you again! Let&apos;s get started.
         </AuthCardDescription>

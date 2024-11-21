@@ -53,7 +53,19 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning={true}
     >
-      <body className={cn("font-sans")}>
+      <head>
+        <link
+          href="/svg/logo-light.svg"
+          media="(prefers-color-scheme: light)"
+          rel="icon"
+        />
+        <link
+          href="/svg/logo-dark.svg"
+          media="(prefers-color-scheme: dark)"
+          rel="icon"
+        />
+      </head>
+      <body className={cn("font-sans dark:has-[body]:bg-slate-50")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

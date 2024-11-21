@@ -8,10 +8,14 @@
   }
 
   html {
-    @apply flex h-dvh w-full p-1.5 font-sans antialiased;
+    @apply bg-neutral-100 flex h-dvh w-full p-1 font-sans antialiased;
+  }
+
+  html.dark {
+    @apply bg-neutral-950;
   }
 
   body {
-    @apply flex h-[calc(100dvh-0.8rem)] min-h-full w-full flex-col items-center overflow-visible rounded-md border bg-background text-foreground relative;
+    @apply flex h-[calc(100dvh-0.8rem)] min-h-full w-full flex-col items-center overflow-visible rounded-lg border bg-background text-foreground relative;
   }
 }

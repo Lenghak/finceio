@@ -12,9 +12,9 @@ import { type HTMLAttributes, memo } from "react";
 
 import {
   Logo,
-  LogoColorDarkPure,
-  LogoColorLightPure,
+  LogoDark,
   type LogoImageProps,
+  LogoLight,
   type LogoProps,
 } from "@/components/core/logo";
 import { cn } from "@/lib/utils";
@@ -32,7 +32,7 @@ export const AuthCard = memo(
       <Box className="absolute top-0 right-0 size-fit [&>button]:rounded-none [&>button]:rounded-se-lg [&>button]:rounded-es-lg">
         <ThemesDropdownMenu>
           <ThemesTrigger
-            className="rounded-lg border border-t-0 border-r-0"
+            className="rounded-lg border border-t-0 border-r-0 dark:bg-background"
             variant="soft"
           />
         </ThemesDropdownMenu>
@@ -97,13 +97,13 @@ export const AuthCardLogo = memo(
       }}
       {...props}
     >
-      <LogoColorDarkPure
+      <LogoDark
         className="absolute opacity-0 transition-all dark:opacity-100"
         height={height}
         width={width}
       />
 
-      <LogoColorLightPure
+      <LogoLight
         className="absolute opacity-100 transition-all dark:opacity-0"
         height={height}
         width={width}
