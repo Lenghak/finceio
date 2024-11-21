@@ -8,6 +8,14 @@
       }
     }
   },
+  "css": {
+    "formatter": {
+      "enabled": true
+    },
+    "linter": {
+      "enabled": true
+    }
+  },
   "formatter": {
     "attributePosition": "multiline",
     "bracketSpacing": true,

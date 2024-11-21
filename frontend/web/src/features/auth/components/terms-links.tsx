@@ -8,9 +8,7 @@ import { TypographyMuted } from "@packages/shadcn/components/typography";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 
-const linkCls = cva(
-  "h-fit bg-transparent px-1.5 py-0.5 font-bold focus-visible:ring-offset-0",
-);
+const linkCls = cva("bg-transparent font-bold focus-visible:ring-offset-0");
 
 export function TermsPrivacyLinks({
   className,
@@ -25,7 +23,7 @@ export function TermsPrivacyLinks({
       <Link
         className={cn(
           buttonVariants({
-            size: "sm",
+            size: "xs",
             color: "secondary",
             variant: "link",
           }),
@@ -39,7 +37,7 @@ export function TermsPrivacyLinks({
       <a
         className={cn(
           buttonVariants({
-            size: "sm",
+            size: "xs",
             color: "secondary",
             variant: "link",
           }),

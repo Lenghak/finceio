@@ -26,6 +26,7 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-10 px-4 py-2 [&_svg]:size-4",
+        xs: "h-6 px-2 [&_svg]:size-4",
         sm: "h-8 px-3 [&_svg]:size-4",
         lg: "h-11 px-9 [&_svg]:size-5",
         icon: "h-10 w-10 [&_svg]:size-4",
@@ -41,9 +42,9 @@ const buttonVariants = cva(
         gooeyLeft:
           "after:-z-10 relative z-0 overflow-hidden transition-all duration-500 after:absolute after:inset-0 after:translate-x-[-150%] after:translate-y-[150%] after:scale-[2.5] after:rounded-[100%] after:bg-gradient-to-l after:transition-transform after:duration-1000 hover:after:translate-x-[0%] hover:after:translate-y-[0%]",
         linkHover1:
-          "relative after:absolute after:bottom-2 after:h-[1px] after:w-2/3 after:origin-bottom-left after:scale-x-100 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-right hover:after:scale-x-0",
+          "relative after:absolute after:bottom-0 after:h-[1px] after:w-2/3 after:origin-bottom-left after:scale-x-100 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-right hover:after:scale-x-0",
         linkHover2:
-          "relative after:absolute after:bottom-2 after:h-[1px] after:w-2/3 after:origin-bottom-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-left hover:after:scale-x-100",
+          "relative after:absolute after:bottom-0 after:h-[1px] after:w-2/3 after:origin-bottom-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-left hover:after:scale-x-100",
         loading:
           "group relative transition-all [&_svg]:animate-spin [&_svg]:transition-all",
         hideIcon: "transition-all [&_svg]:size-0 [&_svg]:transition-all",

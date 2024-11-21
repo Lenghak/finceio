@@ -34,85 +34,61 @@ const LogoImage = memo(({ className, ...props }: LogoImageProps) => (
 ));
 LogoImage.displayName = "LogoImage";
 
-export const LogoLightWithBackground = memo(
+export const LogoLightBackground = memo(
   ({ ...props }: Omit<LogoImageProps, "src">) => (
     <LogoImage
-      src="/svg/logo-light-with-background.svg"
+      src="/svg/logo-light-background.svg"
       {...props}
     />
   ),
 );
-LogoLightWithBackground.displayName = "LogoLightWithBackground";
+LogoLightBackground.displayName = "LogoLightBackground";
 
-export const LogoLightNoBackground = memo(
+export const LogoLightTransparent = memo(
   ({ ...props }: Omit<LogoImageProps, "src">) => (
     <LogoImage
-      src="/svg/logo-light-no-background.svg"
+      src="/svg/logo-light-transparent.svg"
       {...props}
     />
   ),
 );
-LogoLightNoBackground.displayName = "LogoLightNoBackground";
+LogoLightTransparent.displayName = "LogoLightTransparent";
 
-export const LogoDarkWithBackground = memo(
+export const LogoDarkBackground = memo(
   ({ ...props }: Omit<LogoImageProps, "src">) => (
     <LogoImage
-      src="/svg/logo-dark-with-background.svg"
+      src="/svg/logo-dark-background.svg"
       {...props}
     />
   ),
 );
-LogoDarkWithBackground.displayName = "LogoDarkWithBackground";
+LogoDarkBackground.displayName = "LogoDarkBackground";
 
-export const LogoDarkNoBackground = memo(
+export const LogoDarkTransparent = memo(
   ({ ...props }: Omit<LogoImageProps, "src">) => (
     <LogoImage
-      src="/svg/logo-dark-no-background.svg"
+      src="/svg/logo-dark-transparent.svg"
       {...props}
     />
   ),
 );
-LogoDarkNoBackground.displayName = "LogoDarkNoBackground";
+LogoDarkTransparent.displayName = "LogoDarkTransparent";
 
-export const LogoBlackPure = memo(
-  ({ ...props }: Omit<LogoImageProps, "src">) => (
-    <LogoImage
-      src="/svg/logo-black-pure.svg"
-      {...props}
-    />
-  ),
-);
-LogoBlackPure.displayName = "LogoBlackPure";
+export const LogoDark = memo(({ ...props }: Omit<LogoImageProps, "src">) => (
+  <LogoImage
+    src="/svg/logo-dark.svg"
+    {...props}
+  />
+));
+LogoDark.displayName = "LogoDark";
 
-export const LogoWhitePure = memo(
-  ({ ...props }: Omit<LogoImageProps, "src">) => (
-    <LogoImage
-      src="/svg/logo-white-pure.svg"
-      {...props}
-    />
-  ),
-);
-LogoWhitePure.displayName = "LogoBlackWithBackground";
-
-export const LogoColorLightPure = memo(
-  ({ ...props }: Omit<LogoImageProps, "src">) => (
-    <LogoImage
-      src="/svg/logo-color-light-pure.svg"
-      {...props}
-    />
-  ),
-);
-LogoColorLightPure.displayName = "LogoColorLightPure";
-
-export const LogoColorDarkPure = memo(
-  ({ ...props }: Omit<LogoImageProps, "src">) => (
-    <LogoImage
-      src="/svg/logo-color-dark-pure.svg"
-      {...props}
-    />
-  ),
-);
-LogoColorDarkPure.displayName = "LogoColorDarkPure";
+export const LogoLight = memo(({ ...props }: Omit<LogoImageProps, "src">) => (
+  <LogoImage
+    src="/svg/logo-light.svg"
+    {...props}
+  />
+));
+LogoLight.displayName = "LogoLight";
 
 export type LogoTextProps = ComponentPropsWithoutRef<"span">;
 export const LogoText = memo(({ className, ...props }: LogoTextProps) => (

@@ -11,7 +11,7 @@
   "tailwind": {
     "baseColor": "neutral",
     "config": "tailwind.config.ts",
-    "css": "./src/globals.css",
+    "css": "./src/global.css",
     "cssVariables": true
   },
   "tsx": true

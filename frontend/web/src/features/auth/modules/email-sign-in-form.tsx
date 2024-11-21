@@ -83,7 +83,7 @@ export function EmailSignInForm({ className, ...props }: EmailSignInFormProps) {
           render={memoizedRenderEmailField}
         />
         <Button
-          className="w-full gap-2"
+          className="w-full gap-2 "
           disabled={!isIdle}
           effect={isPending ? "loading" : "hideIcon"}
           icon={memoizedIconLoader3}

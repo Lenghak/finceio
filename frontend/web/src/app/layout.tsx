@@ -7,8 +7,8 @@ import { DotPattern } from "@packages/magic/components/dot-pattern";
 import type { Metadata } from "next";
 import type React from "react";
 
-import "@packages/shadcn/globals.css";
-import "@/app/globals.css";
+import "@packages/shadcn/global.css";
+import "@/app/global.css";
 
 import type { Viewport } from "next";
 
@@ -53,7 +53,19 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning={true}
     >
-      <body className={cn("font-sans")}>
+      <head>
+        <link
+          href="/svg/logo-light.svg"
+          media="(prefers-color-scheme: light)"
+          rel="icon"
+        />
+        <link
+          href="/svg/logo-dark.svg"
+          media="(prefers-color-scheme: dark)"
+          rel="icon"
+        />
+      </head>
+      <body className={cn("font-sans dark:has-[body]:bg-slate-50")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
