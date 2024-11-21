@@ -37,6 +37,7 @@ export default function SignInLayout({ children }: PropsWithChildren) {
               variant: "link",
               effect: "linkHover2",
             }),
+            "bg-transparent",
           )}
           href="/auth/sign-up"
         >

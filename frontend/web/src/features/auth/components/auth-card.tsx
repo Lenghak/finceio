@@ -87,10 +87,7 @@ export const AuthCardLogo = memo(
     ...props
   }: LogoProps & Omit<LogoImageProps, "src" | "alt">) => (
     <Logo
-      className={cn(
-        "my-4 aspect-square overflow-hidden bg-background",
-        className,
-      )}
+      className={cn("my-4 aspect-square overflow-hidden", className)}
       style={{
         width: width,
         height: height,

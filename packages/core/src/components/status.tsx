@@ -35,7 +35,7 @@ export const Status = ({
     {icon}
 
     {typeof title === "string" ? (
-      <TypographyH1 className="font-display text-primary">{title}</TypographyH1>
+      <TypographyH1 className="font-serif text-primary">{title}</TypographyH1>
     ) : (
       title
     )}
