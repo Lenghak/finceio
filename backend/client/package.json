@@ -1,34 +1,20 @@
 {
   "dependencies": {
-    "@hono/node-server": "^1.13.7",
-    "@hono/oauth-providers": "^0.6.2",
-    "@hono/valibot-validator": "^0.5.1",
-    "drizzle-orm": "^0.36.3",
-    "drizzle-valibot": "^0.2.0",
-    "hono": "^4.6.10",
-    "hono-pino": "^0.6.0",
-    "passport-facebook": "^3.0.0",
-    "passport-github2": "^0.1.12",
-    "passport-google-oauth": "^2.0.0",
-    "passport-jwt": "^4.0.1",
-    "pino": "^9.5.0",
-    "pino-pretty": "^13.0.0",
-    "resend": "^4.0.1",
-    "valibot": "catalog:"
+    "encore.dev": "^1.44.4",
+    "vite": "^5.4.11"
   },
   "devDependencies": {
-    "@swc/cli": "^0.5.0",
-    "@swc/core": "^1.9.2",
     "@types/node": "catalog:",
-    "drizzle-kit": "^0.28.1",
-    "tsx": "^4.19.2"
+    "typescript": "catalog:",
+    "vitest": "^5.4.11"
   },
   "name": "@backend/client",
+  "private": true,
   "scripts": {
-    "build": "swc src -d dist",
-    "build:watch": "swc src -d dist -w",
-    "dev": "pnpm tsx watch ./src/main.ts",
-    "start": "pnpm tsx ./dist/src/main.js"
+    "build": "",
+    "dev": "encore run",
+    "start": ""
   },
-  "type": "module"
+  "type": "module",
+  "version": "0.0.1"
 }
