@@ -1,5 +1,11 @@
 {
-  "files": ["index.json", "next.json", "react.json", "eslint.json"],
+  "files": [
+    "index.json",
+    "next.json",
+    "react.json",
+    "eslint.json",
+    "encore.json"
+  ],
   "name": "@packages/typescript",
   "private": true,
   "version": "1.0.0"
