@@ -6,7 +6,8 @@
         "sortJsxProps": "on",
         "useSortedKeys": "on"
       }
-    }
+    },
+    "enabled": true
   },
   "css": {
     "formatter": {
