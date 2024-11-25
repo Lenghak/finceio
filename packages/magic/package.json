@@ -3,7 +3,7 @@
     "clsx": "^2.1.1",
     "react": "catalog:react18",
     "react-dom": "catalog:react18",
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
     "@packages/tailwindcss": "workspace:^",

@@ -28,7 +28,8 @@
       "**/*/dist/**/*",
       "**/*/encore.gen/**/*",
       "**/*/.encore/**/*",
-      "**/*/build/**/*"
+      "**/*/build/**/*",
+      "pnpm-workspace.yaml"
     ],
     "indentStyle": "space",
     "indentWidth": 2,
@@ -50,7 +51,8 @@
       "**/*/dist/**/*",
       "**/*/encore.gen/**/*",
       "**/*/.encore/**/*",
-      "**/*/build/**/*"
+      "**/*/build/**/*",
+      "pnpm-workspace.yaml"
     ],
     "rules": {
       "a11y": {
