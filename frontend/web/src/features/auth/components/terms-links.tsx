@@ -23,9 +23,9 @@ export function TermsPrivacyLinks({
       <Link
         className={cn(
           buttonVariants({
-            size: "xs",
-            color: "secondary",
-            variant: "link",
+            // size: "xs",
+            // color: "secondary",
+            // variant: "link",
           }),
           linkCls(),
         )}
@@ -37,9 +37,9 @@ export function TermsPrivacyLinks({
       <a
         className={cn(
           buttonVariants({
-            size: "xs",
-            color: "secondary",
-            variant: "link",
+            // size: "xs",
+            // color: "secondary",
+            // variant: "link",
           }),
           linkCls(),
         )}

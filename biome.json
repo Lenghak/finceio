@@ -7,7 +7,16 @@
         "useSortedKeys": "on"
       }
     },
-    "enabled": true
+    "enabled": true,
+    "ignore": [
+      "node_modules",
+      ".next",
+      ".vercel",
+      "dist",
+      "encore.gen",
+      "build",
+      ".*"
+    ]
   },
   "css": {
     "formatter": {
@@ -23,12 +32,13 @@
     "enabled": true,
     "formatWithErrors": true,
     "ignore": [
-      "**/*/node_modules/**/*",
-      "**/*/.next/**/*",
-      "**/*/dist/**/*",
-      "**/*/encore.gen/**/*",
-      "**/*/.encore/**/*",
-      "**/*/build/**/*"
+      "node_modules",
+      ".next",
+      ".vercel",
+      "dist",
+      "encore.gen",
+      "build",
+      ".*"
     ],
     "indentStyle": "space",
     "indentWidth": 2,
@@ -36,21 +46,27 @@
     "lineWidth": 80
   },
   "javascript": {
+    "assists": {
+      "enabled": true
+    },
     "formatter": {
       "enabled": true,
       "quoteStyle": "double",
       "semicolons": "always"
-    }
+    },
+    "jsxRuntime": "transparent",
+    "linter": { "enabled": true },
+    "organizeImports": {}
   },
   "linter": {
     "enabled": true,
     "ignore": [
-      "**/*/node_modules/**/*",
-      "**/*/.next/**/*",
-      "**/*/dist/**/*",
-      "**/*/encore.gen/**/*",
-      "**/*/.encore/**/*",
-      "**/*/build/**/*"
+      ".vercel",
+      ".next",
+      "node_modules",
+      "dist",
+      "encore.gen",
+      "build"
     ],
     "rules": {
       "a11y": {
@@ -103,17 +119,29 @@
     }
   },
   "organizeImports": {
-    "enabled": true
+    "enabled": true,
+    "ignore": [
+      "node_modules",
+      ".next",
+      ".vercel",
+      "dist",
+      "encore.gen",
+      ".encore",
+      ".turbo",
+      "build"
+    ]
   },
   "overrides": [
     {
       "ignore": [
-        "**/*/node_modules/**/*",
-        "**/*/.next/**/*",
-        "**/*/dist/**/*",
-        "**/*/encore.gen/**/*",
-        "**/*/.encore/**/*",
-        "**/*/build/**/*"
+        "node_modules",
+        ".next",
+        ".vercel",
+        "dist",
+        "encore.gen",
+        ".encore",
+        ".turbo",
+        "build"
       ]
     }
   ]

@@ -33,10 +33,10 @@ export default function SignUpLayout({ children }: PropsWithChildren) {
         <Link
           className={cn(
             buttonVariants({
-              color: "secondary",
-              size: "xs",
-              variant: "link",
-              effect: "linkHover2",
+              // color: "secondary",
+              // size: "xs",
+              // variant: "link",
+              // effect: "linkHover2",
             }),
             "bg-transparent",
           )}

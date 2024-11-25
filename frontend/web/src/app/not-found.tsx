@@ -1,7 +1,7 @@
 import { ErrorCta } from "@/components/core/error-cta";
 import { Status } from "@packages/core/components/status";
 import { Container } from "@packages/shadcn/components/container";
-import { TrafficConeIcon } from "lucide-react";
+import { IconError404 } from "@tabler/icons-react";
 
 export default function NotFound() {
   return (
@@ -11,10 +11,10 @@ export default function NotFound() {
     >
       <Status
         description="Looks like you have stumbled across that page that does not exist. You can always find your back down below."
-        icon={<TrafficConeIcon />}
+        icon={<IconError404 />}
         title="Page not Found"
       >
-        <ErrorCta />
+        <ErrorCta className="py-4" />
       </Status>
     </Container>
   );
