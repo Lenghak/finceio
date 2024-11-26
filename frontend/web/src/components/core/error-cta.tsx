@@ -22,11 +22,10 @@ export const ErrorCta = React.memo(
         <Button
           className="[&_svg]:mr-2 [&_svg]:size-4"
           color="default"
-          icon={<ArrowLeftIcon />}
-          iconPlacement="left"
           onClick={back}
           variant="filled"
         >
+          <ArrowLeftIcon />
           <span>Previous</span>
         </Button>
 
@@ -35,11 +34,10 @@ export const ErrorCta = React.memo(
           className="[&_svg]:size-4"
           color="secondary"
           effect="expandIcon"
-          icon={<ArrowRightIcon />}
-          iconPlacement="right"
         >
           <Link href="/">
             <span>Go back home</span>
+            <ArrowRightIcon />
           </Link>
         </Button>
       </Flex>

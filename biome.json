@@ -7,7 +7,17 @@
         "useSortedKeys": "on"
       }
     },
-    "enabled": true
+    "enabled": true,
+    "ignore": [
+      "node_modules",
+      ".next",
+      ".vercel",
+      ".turbo",
+      "dist",
+      "encore.gen",
+      "build",
+      ".*"
+    ]
   },
   "css": {
     "formatter": {
@@ -23,12 +33,14 @@
     "enabled": true,
     "formatWithErrors": true,
     "ignore": [
-      "**/*/node_modules/**/*",
-      "**/*/.next/**/*",
-      "**/*/dist/**/*",
-      "**/*/encore.gen/**/*",
-      "**/*/.encore/**/*",
-      "**/*/build/**/*"
+      "node_modules",
+      ".next",
+      ".vercel",
+      ".turbo",
+      "dist",
+      "encore.gen",
+      "build",
+      ".*"
     ],
     "indentStyle": "space",
     "indentWidth": 2,
@@ -45,12 +57,14 @@
   "linter": {
     "enabled": true,
     "ignore": [
-      "**/*/node_modules/**/*",
-      "**/*/.next/**/*",
-      "**/*/dist/**/*",
-      "**/*/encore.gen/**/*",
-      "**/*/.encore/**/*",
-      "**/*/build/**/*"
+      "node_modules",
+      ".next",
+      ".vercel",
+      ".turbo",
+      "dist",
+      "encore.gen",
+      "build",
+      ".*"
     ],
     "rules": {
       "a11y": {
@@ -108,12 +122,14 @@
   "overrides": [
     {
       "ignore": [
-        "**/*/node_modules/**/*",
-        "**/*/.next/**/*",
-        "**/*/dist/**/*",
-        "**/*/encore.gen/**/*",
-        "**/*/.encore/**/*",
-        "**/*/build/**/*"
+        "node_modules",
+        ".next",
+        ".vercel",
+        ".turbo",
+        "dist",
+        "encore.gen",
+        "build",
+        ".*"
       ]
     }
   ]

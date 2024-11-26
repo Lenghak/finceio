@@ -86,11 +86,10 @@ export function EmailSignInForm({ className, ...props }: EmailSignInFormProps) {
           className="w-full gap-2 "
           disabled={!isIdle}
           effect={isPending ? "loading" : "hideIcon"}
-          icon={memoizedIconLoader3}
-          iconPlacement="right"
           type={isPending ? "button" : "submit"}
         >
           <span>Continue with Email</span>
+          {memoizedIconLoader3}
         </Button>
       </form>
     </FormProvider>

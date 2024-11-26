@@ -1,7 +1,6 @@
 import {
   type ButtonHTMLAttributes,
   type MutableRefObject,
-  type ReactNode,
   forwardRef,
   memo,
   useCallback,
@@ -794,18 +793,6 @@ const buttonVariants = cva(
   },
 );
 
-interface IconProps {
-  icon: ReactNode;
-  iconPlacement?: "left" | "right";
-}
-
-interface IconRefProps {
-  icon?: never;
-  iconPlacement?: undefined;
-}
-
-export type ButtonIconProps = IconProps | IconRefProps;
-
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">,
     VariantProps<typeof buttonVariants> {
@@ -813,18 +800,9 @@ export interface ButtonProps
 }
 
 const Button = memo(
-  forwardRef<HTMLButtonElement, ButtonProps & ButtonIconProps>(
+  forwardRef<HTMLButtonElement, ButtonProps>(
     (
-      {
-        className,
-        variant,
-        size,
-        color,
-        asChild = false,
-        effect,
-        iconPlacement = "left",
-        ...props
-      },
+      { className, variant, size, color, asChild = false, effect, ...props },
       ref,
     ) => {
       const stableRef = useCallback(
@@ -850,30 +828,6 @@ const Button = memo(
         [variant, size, color, effect, className],
       );
 
-      const leftIcon = useMemo(
-        () =>
-          iconPlacement === "left" ? (
-            <IconDisplay
-              effect={effect}
-              icon={props.icon}
-              iconPlacement="left"
-            />
-          ) : null,
-        [effect, props.icon, iconPlacement],
-      );
-
-      const rightIcon = useMemo(
-        () =>
-          iconPlacement === "right" ? (
-            <IconDisplay
-              effect={effect}
-              icon={props.icon}
-              iconPlacement="right"
-            />
-          ) : null,
-        [effect, props.icon, iconPlacement],
-      );
-
       const memoizedComp = useMemo(
         () => (
           <Comp
@@ -881,11 +835,7 @@ const Button = memo(
             ref={stableRef}
             {...props}
           >
-            {leftIcon}
-
             {memoizedSlottable}
-
-            {rightIcon}
           </Comp>
         ),
         [
@@ -894,9 +844,7 @@ const Button = memo(
           stableRef,
           // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
           props,
-          leftIcon,
           memoizedSlottable,
-          rightIcon,
         ],
       );
 
@@ -905,34 +853,5 @@ const Button = memo(
   ),
 );
 Button.displayName = "Button";
-
-type IconDisplayProps = Pick<
-  ButtonIconProps & ButtonProps,
-  "effect" | "icon" | "iconPlacement"
->;
-
-function IconDisplay({ icon, effect, iconPlacement }: IconDisplayProps) {
-  if (!icon) {
-    return;
-  }
-
-  if (effect !== "expandIcon" && icon) {
-    return icon;
-  }
-
-  if (iconPlacement === "left") {
-    return (
-      <div className="w-0 translate-x-[0%] pr-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-100 group-hover:pr-2 group-hover:opacity-100">
-        {icon}
-      </div>
-    );
-  }
-
-  return (
-    <div className="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-2 group-hover:opacity-100">
-      {icon}
-    </div>
-  );
-}
 
 export { Button, buttonVariants };

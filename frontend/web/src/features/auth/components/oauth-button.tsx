@@ -19,7 +19,6 @@ export function OAuthButton({
         className,
       )}
       color="secondary"
-      iconPlacement="left"
       variant="outline"
       {...props}
     >
