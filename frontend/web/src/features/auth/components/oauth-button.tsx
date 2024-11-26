@@ -18,8 +18,8 @@ export function OAuthButton({
         "[&_svg]:absolute [&_svg]:left-4 [&_svg]:size-5 [&_svg]:text-muted-foreground [&_svg]:group-hover:text-foreground [&_svg]:dark:fill-current [&_svg]:dark:stroke-none",
         className,
       )}
-      // color="secondary"
-      // iconPlacement="left"
+      color="secondary"
+      iconPlacement="left"
       variant="outline"
       {...props}
     >

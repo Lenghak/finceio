@@ -11,8 +11,5 @@
   "editor.formatOnSave": true,
   "editor.quickSuggestions": {
     "strings": "on"
-  },
-  "files.associations": {
-    "*.css": "css"
   }
 }

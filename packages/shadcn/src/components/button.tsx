@@ -1,576 +1,938 @@
+import {
+  type ButtonHTMLAttributes,
+  type MutableRefObject,
+  type ReactNode,
+  forwardRef,
+  memo,
+  useCallback,
+  useMemo,
+} from "react";
+
 import { cn } from "@packages/shadcn/lib/utils";
+
+import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
-import { type ButtonHTMLAttributes, Fragment, forwardRef } from "react";
 
 const buttonVariants = cva(
-  "inline-flex select-none items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center rounded-full font-bold text-sm ring-tranparent ring-offset-transparent transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
-      size: {
-        "1": "h-8 px-3 text-xs",
-        "2": "h-9 px-4 text-sm",
-        "3": "h-10 px-5 text-base",
-        "4": "h-11 px-6 text-lg",
-      },
       variant: {
-        solid: "",
-        soft: "bg-opacity-20 hover:bg-opacity-30",
-        outline: "border border-solid",
-        ghost: "hover:bg-opacity-10",
+        filled: "",
+        soft: "",
+        outline: "border border-input",
+        ghost: "",
+        link: "underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-10 px-4 py-2 [&_svg]:size-4",
+        xs: "h-6 px-2 [&_svg]:size-4",
+        sm: "h-8 px-3 [&_svg]:size-4",
+        lg: "h-11 px-9 [&_svg]:size-5",
+        icon: "h-10 w-10 [&_svg]:size-4",
+      },
+      effect: {
+        expandIcon: "group relative",
+        ringHover:
+          "transition-all duration-300 hover:ring-2 hover:ring-current/90 hover:ring-offset-2",
+        shine:
+          "animate-shine bg-[length:400%_100%] bg-gradient-to-r from-current to-current",
+        gooeyRight:
+          "before:-z-10 relative z-0 overflow-hidden transition-all duration-500 before:absolute before:inset-0 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-gradient-to-r before:transition-transform before:duration-1000 hover:before:translate-x-[0%] hover:before:translate-y-[0%]",
+        gooeyLeft:
+          "after:-z-10 relative z-0 overflow-hidden transition-all duration-500 after:absolute after:inset-0 after:translate-x-[-150%] after:translate-y-[150%] after:scale-[2.5] after:rounded-[100%] after:bg-gradient-to-l after:transition-transform after:duration-1000 hover:after:translate-x-[0%] hover:after:translate-y-[0%]",
+        linkHover1:
+          "relative after:absolute after:bottom-0 after:h-[1px] after:w-2/3 after:origin-bottom-left after:scale-x-100 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-right hover:after:scale-x-0",
+        linkHover2:
+          "relative after:absolute after:bottom-0 after:h-[1px] after:w-2/3 after:origin-bottom-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-left hover:after:scale-x-100",
+        loading:
+          "group relative transition-all [&_svg]:animate-spin [&_svg]:transition-all",
+        hideIcon: "transition-all [&_svg]:size-0 [&_svg]:transition-all",
       },
       color: {
-        slate: "",
-        gray: "",
-        zinc: "",
-        neutral: "",
-        stone: "",
-        red: "",
-        orange: "",
-        amber: "",
-        yellow: "",
-        lime: "",
-        green: "",
-        emerald: "",
-        teal: "",
-        cyan: "",
-        sky: "",
-        blue: "",
-        indigo: "",
-        violet: "",
-        purple: "",
-        fuchsia: "",
-        pink: "",
-        rose: "",
-      },
-      highContrast: {
-        true: "font-semibold",
-      },
-      radius: {
-        none: "rounded-none",
-        small: "rounded-sm",
-        medium: "rounded",
-        large: "rounded-md",
-        full: "rounded-full",
+        default:
+          "border-primary bg-primary text-primary-foreground focus-visible:ring-primary",
+        secondary:
+          "border-secondary bg-secondary text-secondary-foreground focus-visible:ring-primary",
+        destructive:
+          "border-destructive-200 bg-destructive text-destructive-foreground focus-visible:ring-destructive dark:border-destructive-900",
+        slate:
+          "border-slate-200 bg-slate-500 text-slate-50 focus-visible:ring-slate-500 dark:border-slate-900",
+        gray: "border-gray-200 bg-gray-500 text-gray-50 focus-visible:ring-gray-500 dark:border-gray-900",
+        zinc: "border-zinc-200 bg-zinc-500 text-zinc-50 focus-visible:ring-zinc-500 dark:border-zinc-900",
+        neutral:
+          "border-neutral-200 bg-neutral-500 text-neutral-50 focus-visible:ring-neutral-500 dark:border-neutral-900",
+        stone:
+          "border-stone-200 bg-stone-500 text-stone-50 focus-visible:ring-stone-500 dark:border-stone-900",
+        red: "border-red-200 bg-red-500 text-red-50 focus-visible:ring-red-500 dark:border-red-900",
+        orange:
+          "border-orange-200 bg-orange-500 text-orange-50 focus-visible:ring-orange-500 dark:border-orange-900",
+        amber:
+          "border-amber-200 bg-amber-500 text-amber-50 focus-visible:ring-amber-500 dark:border-amber-900",
+        yellow:
+          "border-yellow-200 bg-yellow-500 text-yellow-50 focus-visible:ring-yellow-500 dark:border-yellow-900",
+        lime: "border-lime-200 bg-lime-500 text-lime-50 focus-visible:ring-lime-500 dark:border-lime-900",
+        green:
+          "border-green-200 bg-green-500 text-green-50 focus-visible:ring-green-500 dark:border-green-900",
+        emerald:
+          "border-emerald-200 bg-emerald-500 text-emerald-50 focus-visible:ring-emerald-500 dark:border-emerald-900",
+        teal: "border-teal-200 bg-teal-500 text-teal-50 focus-visible:ring-teal-500 dark:border-teal-900",
+        cyan: "border-cyan-200 bg-cyan-500 text-cyan-50 focus-visible:ring-cyan-500 dark:border-cyan-900",
+        sky: "border-sky-200 bg-sky-500 text-sky-50 focus-visible:ring-sky-500 dark:border-sky-900",
+        blue: "border-blue-200 bg-blue-500 text-blue-50 focus-visible:ring-blue-500 dark:border-blue-900",
+        indigo:
+          "border-indigo-200 bg-indigo-500 text-indigo-50 focus-visible:ring-indigo-500 dark:border-indigo-900",
+        violet:
+          "border-violet-200 bg-violet-500 text-violet-50 focus-visible:ring-violet-500 dark:border-violet-900",
+        purple:
+          "border-purple-200 bg-purple-500 text-purple-50 focus-visible:ring-purple-500 dark:border-purple-900",
+        fuchsia:
+          "border-fuchsia-200 bg-fuchsia-500 text-fuchsia-50 focus-visible:ring-fuchsia-500 dark:border-fuchsia-900",
+        pink: "border-pink-200 bg-pink-500 text-pink-50 focus-visible:ring-pink-500 dark:border-pink-900",
+        rose: "border-rose-200 bg-rose-500 text-rose-50 focus-visible:ring-rose-500 dark:border-rose-900",
       },
     },
     compoundVariants: [
-      // Slate
       {
-        variant: "solid",
+        variant: "filled",
+        color: "default",
+        className: "hover:bg-primary/90",
+      },
+      {
+        variant: "soft",
+        color: "default",
+        className: "bg-primary/20 text-primary hover:bg-primary/30",
+      },
+      {
+        variant: "outline",
+        color: "default",
+        className: "bg-primary/20 text-primary hover:bg-primary/30",
+      },
+      {
+        variant: "filled",
+        color: "secondary",
+        className: "hover:bg-secondary/80",
+      },
+      {
+        variant: "outline",
+        color: "secondary",
+        className:
+          "bg-transparent text-secondary-foreground hover:bg-secondary/30",
+      },
+      {
+        variant: "soft",
+        color: "secondary",
+        className:
+          "bg-secondary/20 text-secondary-foreground hover:bg-secondary/30",
+      },
+      {
+        variant: "link",
+        color: "secondary",
+        className:
+          "bg-background text-secondary-foreground hover:text-secondary-foreground/75",
+      },
+      {
+        variant: "ghost",
+        color: "secondary",
+        className:
+          "bg-transparent text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground/75",
+      },
+      {
+        variant: "filled",
+        color: "destructive",
+        className: "hover:bg-destructive/90",
+      },
+      {
+        variant: "soft",
+        color: "destructive",
+        className: "bg-destructive/20 text-destructive hover:bg-destructive/30",
+      },
+      {
+        variant: "filled",
         color: "slate",
-        className: "bg-slate-900 text-white hover:bg-slate-800",
+        className: "hover:bg-slate-600",
       },
       {
         variant: "soft",
         color: "slate",
-        className: "bg-slate-200 text-slate-900 hover:bg-slate-300",
+        className:
+          "bg-slate-100 text-slate-900 hover:bg-slate-500 hover:text-slate-50 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800",
       },
       {
         variant: "outline",
         color: "slate",
-        className: "border-slate-300 text-slate-900 hover:bg-slate-100",
+        className:
+          "bg-background text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-slate-50",
       },
       {
         variant: "ghost",
         color: "slate",
-        className: "text-slate-900 hover:bg-slate-100",
+        className:
+          "bg-background text-slate-500 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-slate-50",
       },
-      // Gray
       {
-        variant: "solid",
+        variant: "link",
+        color: "slate",
+        className:
+          "bg-background text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300",
+      },
+      {
+        variant: "filled",
         color: "gray",
-        className: "bg-gray-900 text-white hover:bg-gray-800",
+        className: "hover:bg-gray-600",
       },
       {
         variant: "soft",
         color: "gray",
-        className: "bg-gray-200 text-gray-900 hover:bg-gray-300",
+        className:
+          "bg-gray-100 text-gray-900 hover:bg-gray-500 hover:text-gray-50 dark:bg-gray-900 dark:text-gray-100 dark:hover:bg-gray-800",
       },
       {
         variant: "outline",
         color: "gray",
-        className: "border-gray-300 text-gray-900 hover:bg-gray-100",
+        className:
+          "bg-background text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-50",
       },
       {
         variant: "ghost",
         color: "gray",
-        className: "text-gray-900 hover:bg-gray-100",
+        className:
+          "bg-background text-gray-500 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-900 dark:hover:text-gray-50",
       },
-      // Zinc
       {
-        variant: "solid",
+        variant: "link",
+        color: "gray",
+        className:
+          "bg-background text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300",
+      },
+      {
+        variant: "filled",
         color: "zinc",
-        className: "bg-zinc-900 text-white hover:bg-zinc-800",
+        className: "hover:bg-zinc-600",
       },
       {
         variant: "soft",
         color: "zinc",
-        className: "bg-zinc-200 text-zinc-900 hover:bg-zinc-300",
+        className:
+          "bg-zinc-100 text-zinc-900 hover:bg-zinc-500 hover:text-zinc-50 dark:bg-zinc-900 dark:text-zinc-100 dark:hover:bg-zinc-800",
       },
       {
         variant: "outline",
         color: "zinc",
-        className: "border-zinc-300 text-zinc-900 hover:bg-zinc-100",
+        className:
+          "bg-background text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-50",
       },
       {
         variant: "ghost",
         color: "zinc",
-        className: "text-zinc-900 hover:bg-zinc-100",
+        className:
+          "bg-background text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-50",
       },
-      // Neutral
       {
-        variant: "solid",
+        variant: "link",
+        color: "zinc",
+        className:
+          "bg-background text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300",
+      },
+      {
+        variant: "filled",
         color: "neutral",
-        className: "bg-neutral-900 text-white hover:bg-neutral-800",
+        className: "hover:bg-neutral-600",
       },
       {
         variant: "soft",
         color: "neutral",
-        className: "bg-neutral-200 text-neutral-900 hover:bg-neutral-300",
+        className:
+          "bg-neutral-100 text-neutral-900 hover:bg-neutral-500 hover:text-neutral-50 dark:bg-neutral-900 dark:text-neutral-100 dark:hover:bg-neutral-800",
       },
       {
         variant: "outline",
         color: "neutral",
-        className: "border-neutral-300 text-neutral-900 hover:bg-neutral-100",
+        className:
+          "bg-background text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 dark:hover:text-neutral-50",
       },
       {
         variant: "ghost",
         color: "neutral",
-        className: "text-neutral-900 hover:bg-neutral-100",
+        className:
+          "bg-background text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-400 dark:hover:bg-neutral-900 dark:hover:text-neutral-50",
       },
-      // Stone
       {
-        variant: "solid",
+        variant: "link",
+        color: "neutral",
+        className:
+          "bg-background text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300",
+      },
+      {
+        variant: "filled",
         color: "stone",
-        className: "bg-stone-900 text-white hover:bg-stone-800",
+        className: "hover:bg-stone-600",
       },
       {
         variant: "soft",
         color: "stone",
-        className: "bg-stone-200 text-stone-900 hover:bg-stone-300",
+        className:
+          "bg-stone-100 text-stone-900 hover:bg-stone-500 hover:text-stone-50 dark:bg-stone-900 dark:text-stone-100 dark:hover:bg-stone-800",
       },
       {
         variant: "outline",
         color: "stone",
-        className: "border-stone-300 text-stone-900 hover:bg-stone-100",
+        className:
+          "bg-background text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:text-stone-400 dark:hover:bg-stone-900 dark:hover:text-stone-50",
       },
       {
         variant: "ghost",
         color: "stone",
-        className: "text-stone-900 hover:bg-stone-100",
+        className:
+          "bg-background text-stone-500 hover:bg-stone-100 hover:text-stone-900 dark:text-stone-400 dark:hover:bg-stone-900 dark:hover:text-stone-50",
       },
-      // Red
       {
-        variant: "solid",
+        variant: "link",
+        color: "stone",
+        className:
+          "bg-background text-stone-500 hover:text-stone-600 dark:text-stone-400 dark:hover:text-stone-300",
+      },
+      {
+        variant: "filled",
         color: "red",
-        className: "bg-red-600 text-white hover:bg-red-700",
+        className: "hover:bg-red-600",
       },
       {
         variant: "soft",
         color: "red",
-        className: "bg-red-100 text-red-900 hover:bg-red-200",
+        className:
+          "bg-red-100 text-red-900 hover:bg-red-500 hover:text-red-50 dark:bg-red-900 dark:text-red-100 dark:hover:bg-red-800",
       },
       {
         variant: "outline",
         color: "red",
-        className: "border-red-300 text-red-900 hover:bg-red-100",
+        className:
+          "bg-background text-red-500 hover:bg-red-100 hover:text-red-900 dark:text-red-400 dark:hover:bg-red-900 dark:hover:text-red-50",
       },
       {
         variant: "ghost",
         color: "red",
-        className: "text-red-900 hover:bg-red-100",
+        className:
+          "bg-background text-red-500 hover:bg-red-100 hover:text-red-900 dark:text-red-400 dark:hover:bg-red-900 dark:hover:text-red-50",
       },
-      // Orange
       {
-        variant: "solid",
+        variant: "link",
+        color: "red",
+        className:
+          "bg-background text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300",
+      },
+      {
+        variant: "filled",
         color: "orange",
-        className: "bg-orange-600 text-white hover:bg-orange-700",
+        className: "hover:bg-orange-600",
       },
       {
         variant: "soft",
         color: "orange",
-        className: "bg-orange-100 text-orange-900 hover:bg-orange-200",
+        className:
+          "bg-orange-100 text-orange-900 hover:bg-orange-500 hover:text-orange-50 dark:bg-orange-900 dark:text-orange-100 dark:hover:bg-orange-800",
       },
       {
         variant: "outline",
         color: "orange",
-        className: "border-orange-300 text-orange-900 hover:bg-orange-100",
+        className:
+          "bg-background text-orange-500 hover:bg-orange-100 hover:text-orange-900 dark:text-orange-400 dark:hover:bg-orange-900 dark:hover:text-orange-50",
       },
       {
         variant: "ghost",
         color: "orange",
-        className: "text-orange-900 hover:bg-orange-100",
+        className:
+          "bg-background text-orange-500 hover:bg-orange-100 hover:text-orange-900 dark:text-orange-400 dark:hover:bg-orange-900 dark:hover:text-orange-50",
       },
-      // Amber
       {
-        variant: "solid",
+        variant: "link",
+        color: "orange",
+        className:
+          "bg-background text-orange-500 hover:text-orange-600 dark:text-orange-400 dark:hover:text-orange-300",
+      },
+      {
+        variant: "filled",
         color: "amber",
-        className: "bg-amber-600 text-white hover:bg-amber-700",
+        className: "hover:bg-amber-600",
       },
       {
         variant: "soft",
         color: "amber",
-        className: "bg-amber-100 text-amber-900 hover:bg-amber-200",
+        className:
+          "bg-amber-100 text-amber-900 hover:bg-amber-500 hover:text-amber-50 dark:bg-amber-900 dark:text-amber-100 dark:hover:bg-amber-800",
       },
       {
         variant: "outline",
         color: "amber",
-        className: "border-amber-300 text-amber-900 hover:bg-amber-100",
+        className:
+          "bg-background text-amber-500 hover:bg-amber-100 hover:text-amber-900 dark:text-amber-400 dark:hover:bg-amber-900 dark:hover:text-amber-50",
       },
       {
         variant: "ghost",
         color: "amber",
-        className: "text-amber-900 hover:bg-amber-100",
+        className:
+          "bg-background text-amber-500 hover:bg-amber-100 hover:text-amber-900 dark:text-amber-400 dark:hover:bg-amber-900 dark:hover:text-amber-50",
       },
-      // Yellow
       {
-        variant: "solid",
+        variant: "link",
+        color: "amber",
+        className:
+          "bg-background text-amber-500 hover:text-amber-600 dark:text-amber-400 dark:hover:text-amber-300",
+      },
+      {
+        variant: "filled",
         color: "yellow",
-        className: "bg-yellow-500 text-white hover:bg-yellow-600",
+        className: "hover:bg-yellow-600",
       },
       {
         variant: "soft",
         color: "yellow",
-        className: "bg-yellow-100 text-yellow-900 hover:bg-yellow-200",
+        className:
+          "bg-yellow-100 text-yellow-900 hover:bg-yellow-500 hover:text-yellow-50 dark:bg-yellow-900 dark:text-yellow-100 dark:hover:bg-yellow-800",
       },
       {
         variant: "outline",
         color: "yellow",
-        className: "border-yellow-300 text-yellow-900 hover:bg-yellow-100",
+        className:
+          "bg-background text-yellow-500 hover:bg-yellow-100 hover:text-yellow-900 dark:text-yellow-400 dark:hover:bg-yellow-900 dark:hover:text-yellow-50",
       },
       {
         variant: "ghost",
         color: "yellow",
-        className: "text-yellow-900 hover:bg-yellow-100",
+        className:
+          "bg-background text-yellow-500 hover:bg-yellow-100 hover:text-yellow-900 dark:text-yellow-400 dark:hover:bg-yellow-900 dark:hover:text-yellow-50",
       },
-      // Lime
       {
-        variant: "solid",
+        variant: "link",
+        color: "yellow",
+        className:
+          "bg-background text-yellow-500 hover:text-yellow-600 dark:text-yellow-400 dark:hover:text-yellow-300",
+      },
+      {
+        variant: "filled",
         color: "lime",
-        className: "bg-lime-600 text-white hover:bg-lime-700",
+        className: "hover:bg-lime-600",
       },
       {
         variant: "soft",
         color: "lime",
-        className: "bg-lime-100 text-lime-900 hover:bg-lime-200",
+        className:
+          "bg-lime-100 text-lime-900 hover:bg-lime-500 hover:text-lime-50 dark:bg-lime-900 dark:text-lime-100 dark:hover:bg-lime-800",
       },
       {
         variant: "outline",
         color: "lime",
-        className: "border-lime-300 text-lime-900 hover:bg-lime-100",
+        className:
+          "bg-background text-lime-500 hover:bg-lime-100 hover:text-lime-900 dark:text-lime-400 dark:hover:bg-lime-900 dark:hover:text-lime-50",
       },
       {
         variant: "ghost",
         color: "lime",
-        className: "text-lime-900 hover:bg-lime-100",
+        className:
+          "bg-background text-lime-500 hover:bg-lime-100 hover:text-lime-900 dark:text-lime-400 dark:hover:bg-lime-900 dark:hover:text-lime-50",
       },
-      // Green
       {
-        variant: "solid",
+        variant: "link",
+        color: "lime",
+        className:
+          "bg-background text-lime-500 hover:text-lime-600 dark:text-lime-400 dark:hover:text-lime-300",
+      },
+      {
+        variant: "filled",
         color: "green",
-        className: "bg-green-600 text-white hover:bg-green-700",
+        className: "hover:bg-green-600",
       },
       {
         variant: "soft",
         color: "green",
-        className: "bg-green-100 text-green-900 hover:bg-green-200",
+        className:
+          "bg-green-100 text-green-900 hover:bg-green-500 hover:text-green-50 dark:bg-green-900 dark:text-green-100 dark:hover:bg-green-800",
       },
       {
         variant: "outline",
         color: "green",
-        className: "border-green-300 text-green-900 hover:bg-green-100",
+        className:
+          "bg-background text-green-500 hover:bg-green-100 hover:text-green-900 dark:text-green-400 dark:hover:bg-green-900 dark:hover:text-green-50",
       },
       {
         variant: "ghost",
         color: "green",
-        className: "text-green-900 hover:bg-green-100",
+        className:
+          "bg-background text-green-500 hover:bg-green-100 hover:text-green-900 dark:text-green-400 dark:hover:bg-green-900 dark:hover:text-green-50",
       },
-      // Emerald
       {
-        variant: "solid",
+        variant: "link",
+        color: "green",
+        className:
+          "bg-background text-green-500 hover:text-green-600 dark:text-green-400 dark:hover:text-green-300",
+      },
+      {
+        variant: "filled",
         color: "emerald",
-        className: "bg-emerald-600 text-white hover:bg-emerald-700",
+        className: "hover:bg-emerald-600",
       },
       {
         variant: "soft",
         color: "emerald",
-        className: "bg-emerald-100 text-emerald-900 hover:bg-emerald-200",
+        className:
+          "bg-emerald-100 text-emerald-900 hover:bg-emerald-500 hover:text-emerald-50 dark:bg-emerald-900 dark:text-emerald-100 dark:hover:bg-emerald-800",
       },
       {
         variant: "outline",
         color: "emerald",
-        className: "border-emerald-300 text-emerald-900 hover:bg-emerald-100",
+        className:
+          "bg-background text-emerald-500 hover:bg-emerald-100 hover:text-emerald-900 dark:text-emerald-400 dark:hover:bg-emerald-900 dark:hover:text-emerald-50",
       },
       {
         variant: "ghost",
         color: "emerald",
-        className: "text-emerald-900 hover:bg-emerald-100",
+        className:
+          "bg-background text-emerald-500 hover:bg-emerald-100 hover:text-emerald-900 dark:text-emerald-400 dark:hover:bg-emerald-900 dark:hover:text-emerald-50",
       },
-      // Teal
       {
-        variant: "solid",
+        variant: "link",
+        color: "emerald",
+        className:
+          "bg-background text-emerald-500 hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-300",
+      },
+      {
+        variant: "filled",
         color: "teal",
-        className: "bg-teal-600 text-white hover:bg-teal-700",
+        className: "hover:bg-teal-600",
       },
       {
         variant: "soft",
         color: "teal",
-        className: "bg-teal-100 text-teal-900 hover:bg-teal-200",
+        className:
+          "bg-teal-100 text-teal-900 hover:bg-teal-500 hover:text-teal-50 dark:bg-teal-900 dark:text-teal-100 dark:hover:bg-teal-800",
       },
       {
         variant: "outline",
         color: "teal",
-        className: "border-teal-300 text-teal-900 hover:bg-teal-100",
+        className:
+          "bg-background text-teal-500 hover:bg-teal-100 hover:text-teal-900 dark:text-teal-400 dark:hover:bg-teal-900 dark:hover:text-teal-50",
       },
       {
         variant: "ghost",
         color: "teal",
-        className: "text-teal-900 hover:bg-teal-100",
+        className:
+          "bg-background text-teal-500 hover:bg-teal-100 hover:text-teal-900 dark:text-teal-400 dark:hover:bg-teal-900 dark:hover:text-teal-50",
       },
-      // Cyan
       {
-        variant: "solid",
+        variant: "link",
+        color: "teal",
+        className:
+          "bg-background text-teal-500 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300",
+      },
+      {
+        variant: "filled",
         color: "cyan",
-        className: "bg-cyan-600 text-white hover:bg-cyan-700",
+        className: "hover:bg-cyan-600",
       },
       {
         variant: "soft",
         color: "cyan",
-        className: "bg-cyan-100 text-cyan-900 hover:bg-cyan-200",
+        className:
+          "bg-cyan-100 text-cyan-900 hover:bg-cyan-500 hover:text-cyan-50 dark:bg-cyan-900 dark:text-cyan-100 dark:hover:bg-cyan-800",
       },
       {
         variant: "outline",
         color: "cyan",
-        className: "border-cyan-300 text-cyan-900 hover:bg-cyan-100",
+        className:
+          "bg-background text-cyan-500 hover:bg-cyan-100 hover:text-cyan-900 dark:text-cyan-400 dark:hover:bg-cyan-900 dark:hover:text-cyan-50",
       },
       {
         variant: "ghost",
         color: "cyan",
-        className: "text-cyan-900 hover:bg-cyan-100",
+        className:
+          "bg-background text-cyan-500 hover:bg-cyan-100 hover:text-cyan-900 dark:text-cyan-400 dark:hover:bg-cyan-900 dark:hover:text-cyan-50",
       },
-      // Sky
       {
-        variant: "solid",
+        variant: "link",
+        color: "cyan",
+        className:
+          "bg-background text-cyan-500 hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-300",
+      },
+      {
+        variant: "filled",
         color: "sky",
-        className: "bg-sky-600 text-white hover:bg-sky-700",
+        className: "hover:bg-sky-600",
       },
       {
         variant: "soft",
         color: "sky",
-        className: "bg-sky-100 text-sky-900 hover:bg-sky-200",
+        className:
+          "bg-sky-100 text-sky-900 hover:bg-sky-500 hover:text-sky-50 dark:bg-sky-900 dark:text-sky-100 dark:hover:bg-sky-800",
       },
       {
         variant: "outline",
         color: "sky",
-        className: "border-sky-300 text-sky-900 hover:bg-sky-100",
+        className:
+          "bg-background text-sky-500 hover:bg-sky-100 hover:text-sky-900 dark:text-sky-400 dark:hover:bg-sky-900 dark:hover:text-sky-50",
       },
       {
         variant: "ghost",
         color: "sky",
-        className: "text-sky-900 hover:bg-sky-100",
+        className:
+          "bg-background text-sky-500 hover:bg-sky-100 hover:text-sky-900 dark:text-sky-400 dark:hover:bg-sky-900 dark:hover:text-sky-50",
       },
-      // Blue
       {
-        variant: "solid",
+        variant: "link",
+        color: "sky",
+        className:
+          "bg-background text-sky-500 hover:text-sky-600 dark:text-sky-400 dark:hover:text-sky-300",
+      },
+      {
+        variant: "filled",
         color: "blue",
-        className: "bg-blue-600 text-white hover:bg-blue-700",
+        className: "hover:bg-blue-600",
       },
       {
         variant: "soft",
         color: "blue",
-        className: "bg-blue-100 text-blue-900 hover:bg-blue-200",
+        className:
+          "bg-blue-100 text-blue-900 hover:bg-blue-500 hover:text-blue-50 dark:bg-blue-900 dark:text-blue-100 dark:hover:bg-blue-800",
       },
       {
         variant: "outline",
         color: "blue",
-        className: "border-blue-300 text-blue-900 hover:bg-blue-100",
+        className:
+          "bg-background text-blue-500 hover:bg-blue-100 hover:text-blue-900 dark:text-blue-400 dark:hover:bg-blue-900 dark:hover:text-blue-50",
       },
       {
         variant: "ghost",
         color: "blue",
-        className: "text-blue-900 hover:bg-blue-100",
+        className:
+          "bg-background text-blue-500 hover:bg-blue-100 hover:text-blue-900 dark:text-blue-400 dark:hover:bg-blue-900 dark:hover:text-blue-50",
       },
-      // Indigo
       {
-        variant: "solid",
+        variant: "link",
+        color: "blue",
+        className:
+          "bg-background text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300",
+      },
+      {
+        variant: "filled",
         color: "indigo",
-        className: "bg-indigo-600 text-white hover:bg-indigo-700",
+        className: "hover:bg-indigo-600",
       },
       {
         variant: "soft",
         color: "indigo",
-        className: "bg-indigo-100 text-indigo-900 hover:bg-indigo-200",
+        className:
+          "bg-indigo-100 text-indigo-900 hover:bg-indigo-500 hover:text-indigo-50 dark:bg-indigo-900 dark:text-indigo-100 dark:hover:bg-indigo-800",
       },
       {
         variant: "outline",
         color: "indigo",
-        className: "border-indigo-300 text-indigo-900 hover:bg-indigo-100",
+        className:
+          "bg-background text-indigo-500 hover:bg-indigo-100 hover:text-indigo-900 dark:text-indigo-400 dark:hover:bg-indigo-900 dark:hover:text-indigo-50",
       },
       {
         variant: "ghost",
         color: "indigo",
-        className: "text-indigo-900 hover:bg-indigo-100",
+        className:
+          "bg-background text-indigo-500 hover:bg-indigo-100 hover:text-indigo-900 dark:text-indigo-400 dark:hover:bg-indigo-900 dark:hover:text-indigo-50",
       },
-      // Violet
       {
-        variant: "solid",
+        variant: "link",
+        color: "indigo",
+        className:
+          "bg-background text-indigo-500 hover:text-indigo-600 dark:text-indigo-400 dark:hover:text-indigo-300",
+      },
+      {
+        variant: "filled",
         color: "violet",
-        className: "bg-violet-600 text-white hover:bg-violet-700",
+        className: "hover:bg-violet-600",
       },
       {
         variant: "soft",
         color: "violet",
-        className: "bg-violet-100 text-violet-900 hover:bg-violet-200",
+        className:
+          "bg-violet-100 text-violet-900 hover:bg-violet-500 hover:text-violet-50 dark:bg-violet-900 dark:text-violet-100 dark:hover:bg-violet-800",
       },
       {
         variant: "outline",
         color: "violet",
-        className: "border-violet-300 text-violet-900 hover:bg-violet-100",
+        className:
+          "bg-background text-violet-500 hover:bg-violet-100 hover:text-violet-900 dark:text-violet-400 dark:hover:bg-violet-900 dark:hover:text-violet-50",
       },
       {
         variant: "ghost",
         color: "violet",
-        className: "text-violet-900 hover:bg-violet-100",
+        className:
+          "bg-background text-violet-500 hover:bg-violet-100 hover:text-violet-900 dark:text-violet-400 dark:hover:bg-violet-900 dark:hover:text-violet-50",
       },
-      // Purple
       {
-        variant: "solid",
+        variant: "link",
+        color: "violet",
+        className:
+          "bg-background text-violet-500 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300",
+      },
+      {
+        variant: "filled",
         color: "purple",
-        className: "bg-purple-600 text-white hover:bg-purple-700",
+        className: "hover:bg-purple-600",
       },
       {
         variant: "soft",
         color: "purple",
-        className: "bg-purple-100 text-purple-900 hover:bg-purple-200",
+        className:
+          "bg-purple-100 text-purple-900 hover:bg-purple-500 hover:text-purple-50 dark:bg-purple-900 dark:text-purple-100 dark:hover:bg-purple-800",
       },
       {
         variant: "outline",
         color: "purple",
-        className: "border-purple-300 text-purple-900 hover:bg-purple-100",
+        className:
+          "bg-background text-purple-500 hover:bg-purple-100 hover:text-purple-900 dark:text-purple-400 dark:hover:bg-purple-900 dark:hover:text-purple-50",
       },
       {
         variant: "ghost",
         color: "purple",
-        className: "text-purple-900 hover:bg-purple-100",
+        className:
+          "bg-background text-purple-500 hover:bg-purple-100 hover:text-purple-900 dark:text-purple-400 dark:hover:bg-purple-900 dark:hover:text-purple-50",
       },
-      // Fuchsia
       {
-        variant: "solid",
+        variant: "link",
+        color: "purple",
+        className:
+          "bg-background text-purple-500 hover:text-purple-600 dark:text-purple-400 dark:hover:text-purple-300",
+      },
+      {
+        variant: "filled",
         color: "fuchsia",
-        className: "bg-fuchsia-600 text-white hover:bg-fuchsia-700",
+        className: "hover:bg-fuchsia-600",
       },
       {
         variant: "soft",
         color: "fuchsia",
-        className: "bg-fuchsia-100 text-fuchsia-900 hover:bg-fuchsia-200",
+        className:
+          "bg-fuchsia-100 text-fuchsia-900 hover:bg-fuchsia-500 hover:text-fuchsia-50 dark:bg-fuchsia-900 dark:text-fuchsia-100 dark:hover:bg-fuchsia-800",
       },
       {
         variant: "outline",
         color: "fuchsia",
-        className: "border-fuchsia-300 text-fuchsia-900 hover:bg-fuchsia-100",
+        className:
+          "bg-background text-fuchsia-500 hover:bg-fuchsia-100 hover:text-fuchsia-900 dark:text-fuchsia-400 dark:hover:bg-fuchsia-900 dark:hover:text-fuchsia-50",
       },
       {
         variant: "ghost",
         color: "fuchsia",
-        className: "text-fuchsia-900 hover:bg-fuchsia-100",
+        className:
+          "bg-background text-fuchsia-500 hover:bg-fuchsia-100 hover:text-fuchsia-900 dark:text-fuchsia-400 dark:hover:bg-fuchsia-900 dark:hover:text-fuchsia-50",
       },
-      // Pink
       {
-        variant: "solid",
+        variant: "link",
+        color: "fuchsia",
+        className:
+          "bg-background text-fuchsia-500 hover:text-fuchsia-600 dark:text-fuchsia-400 dark:hover:text-fuchsia-300",
+      },
+      {
+        variant: "filled",
         color: "pink",
-        className: "bg-pink-600 text-white hover:bg-pink-700",
+        className: "hover:bg-pink-600",
       },
       {
         variant: "soft",
         color: "pink",
-        className: "bg-pink-100 text-pink-900 hover:bg-pink-200",
+        className:
+          "bg-pink-100 text-pink-900 hover:bg-pink-500 hover:text-pink-50 dark:bg-pink-900 dark:text-pink-100 dark:hover:bg-pink-800",
       },
       {
         variant: "outline",
         color: "pink",
-        className: "border-pink-300 text-pink-900 hover:bg-pink-100",
+        className:
+          "bg-background text-pink-500 hover:bg-pink-100 hover:text-pink-900 dark:text-pink-400 dark:hover:bg-pink-900 dark:hover:text-pink-50",
       },
       {
         variant: "ghost",
         color: "pink",
-        className: "text-pink-900 hover:bg-pink-100",
+        className:
+          "bg-background text-pink-500 hover:bg-pink-100 hover:text-pink-900 dark:text-pink-400 dark:hover:bg-pink-900 dark:hover:text-pink-50",
       },
-      // Rose
       {
-        variant: "solid",
+        variant: "link",
+        color: "pink",
+        className:
+          "bg-background text-pink-500 hover:text-pink-600 dark:text-pink-400 dark:hover:text-pink-300",
+      },
+      {
+        variant: "filled",
         color: "rose",
-        className: "bg-rose-600 text-white hover:bg-rose-700",
+        className: "hover:bg-rose-600",
       },
       {
         variant: "soft",
         color: "rose",
-        className: "bg-rose-100 text-rose-900 hover:bg-rose-200",
+        className:
+          "bg-rose-100 text-rose-900 hover:bg-rose-500 hover:text-rose-50 dark:bg-rose-900 dark:text-rose-100 dark:hover:bg-rose-800",
       },
       {
         variant: "outline",
         color: "rose",
-        className: "border-rose-300 text-rose-900 hover:bg-rose-100",
+        className:
+          "bg-background text-rose-500 hover:bg-rose-100 hover:text-rose-900 dark:text-rose-400 dark:hover:bg-rose-900 dark:hover:text-rose-50",
       },
       {
         variant: "ghost",
         color: "rose",
-        className: "text-rose-900 hover:bg-rose-100",
+        className:
+          "bg-background text-rose-500 hover:bg-rose-100 hover:text-rose-900 dark:text-rose-400 dark:hover:bg-rose-900 dark:hover:text-rose-50",
+      },
+      {
+        variant: "link",
+        color: "rose",
+        className:
+          "bg-background text-rose-500 hover:text-rose-600 dark:text-rose-400 dark:hover:text-rose-300",
       },
     ],
     defaultVariants: {
-      size: "2",
-      variant: "solid",
-      color: "slate",
-      radius: "medium",
+      variant: "filled",
+      size: "default",
+      color: "default",
     },
   },
 );
+
+interface IconProps {
+  icon: ReactNode;
+  iconPlacement?: "left" | "right";
+}
+
+interface IconRefProps {
+  icon?: never;
+  iconPlacement?: undefined;
+}
+
+export type ButtonIconProps = IconProps | IconRefProps;
 
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
-  loading?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      size,
-      variant,
-      color,
-      highContrast,
-      radius,
-      loading,
-      asChild = false,
-      ...props
+const Button = memo(
+  forwardRef<HTMLButtonElement, ButtonProps & ButtonIconProps>(
+    (
+      {
+        className,
+        variant,
+        size,
+        color,
+        asChild = false,
+        effect,
+        iconPlacement = "left",
+        ...props
+      },
+      ref,
+    ) => {
+      const stableRef = useCallback(
+        (node: HTMLButtonElement) => {
+          if (typeof ref === "function") {
+            ref(node);
+          } else if (ref) {
+            (ref as MutableRefObject<HTMLButtonElement | null>).current = node;
+          }
+        },
+        [ref],
+      );
+
+      const Comp = asChild ? Slot : "button";
+
+      const memoizedSlottable = useMemo(
+        () => <Slottable>{props.children}</Slottable>,
+        [props.children],
+      );
+
+      const buttonClass = useMemo(
+        () => buttonVariants({ variant, size, color, effect, className }),
+        [variant, size, color, effect, className],
+      );
+
+      const leftIcon = useMemo(
+        () =>
+          iconPlacement === "left" ? (
+            <IconDisplay
+              effect={effect}
+              icon={props.icon}
+              iconPlacement="left"
+            />
+          ) : null,
+        [effect, props.icon, iconPlacement],
+      );
+
+      const rightIcon = useMemo(
+        () =>
+          iconPlacement === "right" ? (
+            <IconDisplay
+              effect={effect}
+              icon={props.icon}
+              iconPlacement="right"
+            />
+          ) : null,
+        [effect, props.icon, iconPlacement],
+      );
+
+      const memoizedComp = useMemo(
+        () => (
+          <Comp
+            className={cn(buttonClass)}
+            ref={stableRef}
+            {...props}
+          >
+            {leftIcon}
+
+            {memoizedSlottable}
+
+            {rightIcon}
+          </Comp>
+        ),
+        [
+          Comp,
+          buttonClass,
+          stableRef,
+          // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+          props,
+          leftIcon,
+          memoizedSlottable,
+          rightIcon,
+        ],
+      );
+
+      return memoizedComp;
     },
-    ref,
-  ) => {
-    const Comp = asChild ? Fragment : "button";
-    return (
-      <Comp
-        className={cn(
-          buttonVariants({ size, variant, color, highContrast, radius }),
-          loading && "cursor-not-allowed opacity-50",
-          className,
-        )}
-        disabled={loading}
-        ref={ref}
-        {...props}
-      >
-        {loading ? (
-          <>
-            <span className="opacity-0">{props.children}</span>
-          </>
-        ) : (
-          props.children
-        )}
-      </Comp>
-    );
-  },
+  ),
 );
 Button.displayName = "Button";
+
+type IconDisplayProps = Pick<
+  ButtonIconProps & ButtonProps,
+  "effect" | "icon" | "iconPlacement"
+>;
+
+function IconDisplay({ icon, effect, iconPlacement }: IconDisplayProps) {
+  if (!icon) {
+    return;
+  }
+
+  if (effect !== "expandIcon" && icon) {
+    return icon;
+  }
+
+  if (iconPlacement === "left") {
+    return (
+      <div className="w-0 translate-x-[0%] pr-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-100 group-hover:pr-2 group-hover:opacity-100">
+        {icon}
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-2 group-hover:opacity-100">
+      {icon}
+    </div>
+  );
+}
 
 export { Button, buttonVariants };

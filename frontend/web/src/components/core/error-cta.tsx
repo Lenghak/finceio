@@ -1,28 +1,31 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Button } from "@packages/shadcn/components/button";
 import { Flex, type FlexProps } from "@packages/shadcn/components/flex";
+
+import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 export const ErrorCta = React.memo(
-  ({ className, ...props }: Omit<FlexProps, "children">) => {
+  ({ ...props }: Omit<FlexProps, "children">) => {
     const { back } = useRouter();
 
     return (
       <Flex
-        className={cn("gap-4", className)}
+        className="gap-4"
         items="center"
         justify="center"
         {...props}
       >
         <Button
           className="[&_svg]:mr-2 [&_svg]:size-4"
-          color="amber"
+          color="default"
+          icon={<ArrowLeftIcon />}
+          iconPlacement="left"
           onClick={back}
-          variant="solid"
+          variant="filled"
         >
           <span>Previous</span>
         </Button>
@@ -30,8 +33,10 @@ export const ErrorCta = React.memo(
         <Button
           asChild={true}
           className="[&_svg]:size-4"
-          color="amber"
-          variant="soft"
+          color="secondary"
+          effect="expandIcon"
+          icon={<ArrowRightIcon />}
+          iconPlacement="right"
         >
           <Link href="/">
             <span>Go back home</span>

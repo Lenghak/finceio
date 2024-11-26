@@ -7,16 +7,7 @@
         "useSortedKeys": "on"
       }
     },
-    "enabled": true,
-    "ignore": [
-      "node_modules",
-      ".next",
-      ".vercel",
-      "dist",
-      "encore.gen",
-      "build",
-      ".*"
-    ]
+    "enabled": true
   },
   "css": {
     "formatter": {
@@ -32,13 +23,12 @@
     "enabled": true,
     "formatWithErrors": true,
     "ignore": [
-      "node_modules",
-      ".next",
-      ".vercel",
-      "dist",
-      "encore.gen",
-      "build",
-      ".*"
+      "**/*/node_modules/**/*",
+      "**/*/.next/**/*",
+      "**/*/dist/**/*",
+      "**/*/encore.gen/**/*",
+      "**/*/.encore/**/*",
+      "**/*/build/**/*"
     ],
     "indentStyle": "space",
     "indentWidth": 2,
@@ -46,27 +36,21 @@
     "lineWidth": 80
   },
   "javascript": {
-    "assists": {
-      "enabled": true
-    },
     "formatter": {
       "enabled": true,
       "quoteStyle": "double",
       "semicolons": "always"
-    },
-    "jsxRuntime": "transparent",
-    "linter": { "enabled": true },
-    "organizeImports": {}
+    }
   },
   "linter": {
     "enabled": true,
     "ignore": [
-      ".vercel",
-      ".next",
-      "node_modules",
-      "dist",
-      "encore.gen",
-      "build"
+      "**/*/node_modules/**/*",
+      "**/*/.next/**/*",
+      "**/*/dist/**/*",
+      "**/*/encore.gen/**/*",
+      "**/*/.encore/**/*",
+      "**/*/build/**/*"
     ],
     "rules": {
       "a11y": {
@@ -119,29 +103,17 @@
     }
   },
   "organizeImports": {
-    "enabled": true,
-    "ignore": [
-      "node_modules",
-      ".next",
-      ".vercel",
-      "dist",
-      "encore.gen",
-      ".encore",
-      ".turbo",
-      "build"
-    ]
+    "enabled": true
   },
   "overrides": [
     {
       "ignore": [
-        "node_modules",
-        ".next",
-        ".vercel",
-        "dist",
-        "encore.gen",
-        ".encore",
-        ".turbo",
-        "build"
+        "**/*/node_modules/**/*",
+        "**/*/.next/**/*",
+        "**/*/dist/**/*",
+        "**/*/encore.gen/**/*",
+        "**/*/.encore/**/*",
+        "**/*/build/**/*"
       ]
     }
   ]

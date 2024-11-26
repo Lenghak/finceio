@@ -24,7 +24,7 @@ export const Status = ({
   <Flex
     className={cn(
       "h-full w-full space-y-6 text-center",
-      "[&>svg]:size-36 [&>svg]:stroke-2 [&>svg]:text-primary",
+      "[&>svg]:size-36 [&>svg]:fill-primary/10 [&>svg]:stroke-1 [&>svg]:stroke-primary",
       className,
     )}
     direction="col"
@@ -35,7 +35,7 @@ export const Status = ({
     {icon}
 
     {typeof title === "string" ? (
-      <TypographyH1 className="font-mono text-primary">{title}</TypographyH1>
+      <TypographyH1 className="font-serif text-primary">{title}</TypographyH1>
     ) : (
       title
     )}
