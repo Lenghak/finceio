@@ -10,7 +10,7 @@ catalog:
   typescript: ^5
   'valibot': ^1.0.0-beta
   '@biomejs/biome': latest
-  '@types/node': ^22
+  '@types/node': ^20
   '@types/eslint': ^9
 
 catalogs:

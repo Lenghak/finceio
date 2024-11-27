@@ -12,9 +12,8 @@ import { type HTMLAttributes, memo } from "react";
 
 import {
   Logo,
-  LogoDark,
+  LogoBackgroundLight,
   type LogoImageProps,
-  LogoLight,
   type LogoProps,
 } from "@/components/core/logo";
 import { cn } from "@/lib/utils";
@@ -82,26 +81,19 @@ AuthCardTitle.displayName = "AuthCardTitle";
 export const AuthCardLogo = memo(
   ({
     className,
-    width = 32,
-    height = 32,
+    width = 48,
+    height = 48,
     ...props
   }: LogoProps & Omit<LogoImageProps, "src" | "alt">) => (
     <Logo
-      className={cn("my-4 aspect-square overflow-hidden", className)}
+      className={cn("mb-4 aspect-square overflow-hidden rounded-lg", className)}
       style={{
         width: width,
         height: height,
       }}
       {...props}
     >
-      <LogoDark
-        className="absolute opacity-0 transition-all dark:opacity-100"
-        height={height}
-        width={width}
-      />
-
-      <LogoLight
-        className="absolute opacity-100 transition-all dark:opacity-0"
+      <LogoBackgroundLight
         height={height}
         width={width}
       />

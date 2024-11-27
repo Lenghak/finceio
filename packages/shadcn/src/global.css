@@ -5,32 +5,33 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 190 6.90% 5%;
+    --foreground: 0 0% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 190 6.90% 5%;
+    --card-foreground: 0 0% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 190 6.90% 5%;
+    --popover-foreground: 0 0% 5%;
 
-    --primary: 190 69% 45%;
-    --primary-foreground: 190 6.90% 98%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 190 34.5% 90.3%;
-    --secondary-foreground: 190 6.90% 5%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 5%;
 
-    --muted: 190 34.5% 92.3%;
-    --muted-foreground: 190 6.90% 50.1%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 190 34.5% 92.3%;
-    --accent-foreground: 190 6.90% 5%;
+    --accent: 0 0% 95%;
+    --accent-foreground: 0 0% 5%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 190 34.5% 92.3%;
-    --input: 190 34.5% 92.3%;
-    --ring: 179 53% 45%;
+    --border: 0 0% 91%;
+    --input: 0 0% 84%;
+    --ring: 0 0% 76%;
+
     --radius: 0.75rem;
 
     --chart-1: 12 76% 61%;
@@ -41,41 +42,33 @@
   }
 
   .dark {
-    /* Name: custom color palette
-         Author: Ilias Ism
-         URL: https://gradient.page */
+    --background: 300 4% 5%;
+    --foreground: 0 0% 98%;
 
-    /* CSS: .bg-gradient { background: var(--gradient) } */
-    --gradient: linear-gradient(to top left, #2cd8d5, #6b8dd6, #8e37d7);
+    --popover: 240 3% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --background: 190 44.84% 4.08%;
-    --foreground: 190 6.90% 97.55%;
+    --card: 240 3% 6%;
+    --card-foreground: 0 0% 98%;
 
-    --muted: 190 34.5% 15.3%;
-    --muted-foreground: 190 6.90% 55.1%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
 
-    --popover: 190 51.2% 6.63%;
-    --popover-foreground: 190 6.90% 97.55%;
+    --secondary: 240 2% 12%;
+    --secondary-foreground: 0 0% 98%;
 
-    --card: 190 51.2% 6.63%;
-    --card-foreground: 190 6.90% 97.55%;
+    --muted: 270 2% 18%;
+    --muted-foreground: 264 2% 49%;
 
-    --border: 190 34.5% 15.3%;
-    --input: 190 34.5% 15.3%;
+    --accent: 262 18% 12%;
+    --accent-foreground: 0 0% 98%;
 
-    --primary: 190 69% 51%;
-    --primary-foreground: 190 6.90% 5.1%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --secondary: 190 34.5% 15.3%;
-    --secondary-foreground: 190 6.90% 97.55%;
-
-    --accent: 190 34.5% 15.3%;
-    --accent-foreground: 190 6.90% 97.55%;
-
-    --destructive: 0 62.8% 45.6%;
-    --destructive-foreground: 190 6.90% 97.55%;
-
-    --ring: 190 69% 51%;
+    --border: 240 2% 12%;
+    --input: 270 2% 18%;
+    --ring: 262 83% 40%;
 
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
