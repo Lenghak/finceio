@@ -2,6 +2,7 @@ packages:
   - backend/*
   - frontend/*
   - packages/*
+  - kernel/*
 
 catalog:
   lucide-react: ^0.456.0
