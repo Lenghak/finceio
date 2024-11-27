@@ -2,7 +2,6 @@
 
 import { Button } from "@packages/shadcn/components/button";
 import { Flex, type FlexProps } from "@packages/shadcn/components/flex";
-
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -20,26 +19,22 @@ export const ErrorCta = React.memo(
         {...props}
       >
         <Button
-          className="[&_svg]:mr-2 [&_svg]:size-4"
           color="default"
-          icon={<ArrowLeftIcon />}
-          iconPlacement="left"
           onClick={back}
           variant="filled"
         >
+          <ArrowLeftIcon className="mr-2" />
           <span>Previous</span>
         </Button>
 
         <Button
           asChild={true}
-          className="[&_svg]:size-4"
           color="secondary"
-          effect="expandIcon"
-          icon={<ArrowRightIcon />}
-          iconPlacement="right"
+          effect="expandIconRight"
         >
           <Link href="/">
             <span>Go back home</span>
+            <ArrowRightIcon />
           </Link>
         </Button>
       </Flex>

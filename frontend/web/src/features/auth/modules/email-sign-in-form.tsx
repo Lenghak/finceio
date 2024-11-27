@@ -16,7 +16,7 @@ import {
   FormProvider,
 } from "@packages/shadcn/components/form";
 import { InputAbsoluteAddon } from "@packages/shadcn/components/input";
-import { IconAt, IconLoader3 } from "@tabler/icons-react";
+import { IconAt, IconLoader2 } from "@tabler/icons-react";
 import { type ComponentPropsWithoutRef, useCallback, useMemo } from "react";
 import {
   type Control,
@@ -68,7 +68,7 @@ export function EmailSignInForm({ className, ...props }: EmailSignInFormProps) {
     [memoizedLeftAddon],
   );
 
-  const memoizedIconLoader3 = useMemo(() => <IconLoader3 />, []);
+  const memoizedIconLoader2 = useMemo(() => <IconLoader2 />, []);
 
   return (
     <FormProvider {...form}>
@@ -83,14 +83,13 @@ export function EmailSignInForm({ className, ...props }: EmailSignInFormProps) {
           render={memoizedRenderEmailField}
         />
         <Button
-          className="w-full gap-2 "
+          className="w-full gap-2"
           disabled={!isIdle}
           effect={isPending ? "loading" : "hideIcon"}
-          icon={memoizedIconLoader3}
-          iconPlacement="right"
           type={isPending ? "button" : "submit"}
         >
           <span>Continue with Email</span>
+          {memoizedIconLoader2}
         </Button>
       </form>
     </FormProvider>

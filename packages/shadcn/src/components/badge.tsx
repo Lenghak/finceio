@@ -12,7 +12,7 @@ const badgeVariants = cva(
       variant: {
         default: "border-transparent",
         soft: "border-transparent",
-        outline: "border bg-transparent bg-opacity-0",
+        outline: "border bg-transparent",
       },
       dot: {
         true: "pl-1.5",

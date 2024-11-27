@@ -7,7 +7,19 @@
         "useSortedKeys": "on"
       }
     },
-    "enabled": true
+    "enabled": true,
+    "ignore": [
+      ".encore",
+      ".idea",
+      ".next",
+      ".million",
+      ".vercel",
+      ".turbo",
+      "build",
+      "dist",
+      "encore.gen",
+      "node_modules"
+    ]
   },
   "css": {
     "formatter": {
@@ -23,12 +35,16 @@
     "enabled": true,
     "formatWithErrors": true,
     "ignore": [
-      "**/*/node_modules/**/*",
-      "**/*/.next/**/*",
-      "**/*/dist/**/*",
-      "**/*/encore.gen/**/*",
-      "**/*/.encore/**/*",
-      "**/*/build/**/*"
+      ".encore",
+      ".idea",
+      ".next",
+      ".million",
+      ".vercel",
+      ".turbo",
+      "build",
+      "dist",
+      "encore.gen",
+      "node_modules"
     ],
     "indentStyle": "space",
     "indentWidth": 2,
@@ -45,12 +61,16 @@
   "linter": {
     "enabled": true,
     "ignore": [
-      "**/*/node_modules/**/*",
-      "**/*/.next/**/*",
-      "**/*/dist/**/*",
-      "**/*/encore.gen/**/*",
-      "**/*/.encore/**/*",
-      "**/*/build/**/*"
+      ".encore",
+      ".idea",
+      ".next",
+      ".million",
+      ".vercel",
+      ".turbo",
+      "build",
+      "dist",
+      "encore.gen",
+      "node_modules"
     ],
     "rules": {
       "a11y": {
@@ -103,17 +123,33 @@
     }
   },
   "organizeImports": {
-    "enabled": true
+    "enabled": true,
+    "ignore": [
+      ".encore",
+      ".idea",
+      ".next",
+      ".million",
+      ".vercel",
+      ".turbo",
+      "build",
+      "dist",
+      "encore.gen",
+      "node_modules"
+    ]
   },
   "overrides": [
     {
       "ignore": [
-        "**/*/node_modules/**/*",
-        "**/*/.next/**/*",
-        "**/*/dist/**/*",
-        "**/*/encore.gen/**/*",
-        "**/*/.encore/**/*",
-        "**/*/build/**/*"
+        ".encore",
+        ".idea",
+        ".next",
+        ".million",
+        ".vercel",
+        ".turbo",
+        "build",
+        "dist",
+        "encore.gen",
+        "node_modules"
       ]
     }
   ]

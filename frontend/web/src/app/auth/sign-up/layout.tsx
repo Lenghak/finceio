@@ -27,7 +27,7 @@ export default function SignUpLayout({ children }: PropsWithChildren) {
         </AuthCardDescription>
       </AuthCardHeader>
 
-      <AuthCardContent className="space-y-6">{children}</AuthCardContent>
+      <AuthCardContent className="space-y-4">{children}</AuthCardContent>
       <AuthCardFooter className="flex items-center justify-center text-muted-foreground text-sm">
         Already have an account?
         <Link
