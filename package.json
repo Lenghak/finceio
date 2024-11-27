@@ -16,7 +16,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": "^22"
+    "node": "^20"
   },
   "keywords": [],
   "license": "ISC",

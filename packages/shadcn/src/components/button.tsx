@@ -13,7 +13,7 @@ import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-full font-bold text-sm ring-tranparent ring-offset-transparent transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
+  "group relative inline-flex items-center justify-center rounded-full font-bold text-sm ring-tranparent ring-offset-transparent transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -31,7 +31,10 @@ const buttonVariants = cva(
         icon: "h-10 w-10 [&_svg]:size-4",
       },
       effect: {
-        expandIcon: "group relative",
+        expandIconLeft:
+          "[&:hover_svg]:mr-2 [&:hover_svg]:w-4 [&:hover_svg]:translate-x-100 [&:hover_svg]:opacity-100 [&_svg]:w-0 [&_svg]:translate-x-[0%] [&_svg]:pr-0 [&_svg]:opacity-0 [&_svg]:transition-all [&_svg]:duration-200",
+        expandIconRight:
+          "[&:hover_svg]:ml-2 [&:hover_svg]:w-4 [&:hover_svg]:translate-x-0 [&:hover_svg]:opacity-100 [&_svg]:w-0 [&_svg]:translate-x-[100%] [&_svg]:pl-0 [&_svg]:opacity-0 [&_svg]:transition-all [&_svg]:duration-200",
         ringHover:
           "transition-all duration-300 hover:ring-2 hover:ring-current/90 hover:ring-offset-2",
         shine:
@@ -44,15 +47,14 @@ const buttonVariants = cva(
           "relative after:absolute after:bottom-0 after:h-[1px] after:w-2/3 after:origin-bottom-left after:scale-x-100 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-right hover:after:scale-x-0",
         linkHover2:
           "relative after:absolute after:bottom-0 after:h-[1px] after:w-2/3 after:origin-bottom-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-in-out hover:no-underline hover:after:origin-bottom-left hover:after:scale-x-100",
-        loading:
-          "group relative transition-all [&_svg]:animate-spin [&_svg]:transition-all",
+        loading: "transition-all [&_svg]:animate-spin [&_svg]:transition-all",
         hideIcon: "transition-all [&_svg]:size-0 [&_svg]:transition-all",
       },
       color: {
         default:
           "border-primary bg-primary text-primary-foreground focus-visible:ring-primary",
         secondary:
-          "border-secondary bg-secondary text-secondary-foreground focus-visible:ring-primary",
+          "border-secondary bg-secondary text-secondary-foreground focus-visible:ring-ring",
         destructive:
           "border-destructive-200 bg-destructive text-destructive-foreground focus-visible:ring-destructive dark:border-destructive-900",
         slate:
