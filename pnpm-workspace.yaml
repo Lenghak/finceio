@@ -1,12 +1,12 @@
 packages:
-  - backend/*
+  - backend
   - frontend/*
   - packages/*
 
 catalog:
   lucide-react: ^0.456.0
   eslint: ^9
-  typescript: ^5
+  typescript: ^5.7.2
   'valibot': ^1.0.0-beta
   'vitest': ^2.1.6
   'encore.dev': ^1.44.5

@@ -3,12 +3,6 @@
   "daemon": true,
   "envMode": "strict",
   "tasks": {
-    "@backend/client#build": {
-      "outputs": ["dist/**"]
-    },
-    "@backend/client#start": {
-      "dependsOn": ["^@backend/client#build"]
-    },
     "@frontend/web#build": {
       "env": ["AUTH_URL", "AUTH_SECRET", "SKIP_ENV_VALIDATION"],
       "inputs": [

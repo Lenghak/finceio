@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "encore.dev": "catalog:"
+  },
+  "description": "Encore Typescript Starter",
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "license": "MPL-2.0",
+  "name": "backend",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1"
+}
