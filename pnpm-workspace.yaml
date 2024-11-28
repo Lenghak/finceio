@@ -2,13 +2,15 @@ packages:
   - backend/*
   - frontend/*
   - packages/*
-  - kernel/*
 
 catalog:
   lucide-react: ^0.456.0
   eslint: ^9
   typescript: ^5
   'valibot': ^1.0.0-beta
+  'vitest': ^2.1.6
+  'encore.dev': ^1.44.5
+  'vite': ^6.0.1
   '@biomejs/biome': latest
   '@types/node': ^20
   '@types/eslint': ^9
