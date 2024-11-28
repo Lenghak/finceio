@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "encore.dev": "^1.44.5",
-    "vite": "^5.4.11"
+    "encore.dev": "catalog:",
+    "vite": "catalog:"
   },
   "devDependencies": {
     "@types/node": "catalog:",
     "typescript": "catalog:",
-    "vitest": "^2.1.6"
+    "vitest": "catalog:"
   },
   "name": "@backend/client",
   "private": true,
