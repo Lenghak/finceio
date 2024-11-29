@@ -3,11 +3,15 @@
     "encore.dev": "catalog:"
   },
   "devDependencies": {
+    "@packages/typescript": "workspace:^",
     "@types/node": "catalog:",
     "typescript": "catalog:"
   },
-  "name": "@backend/_",
+  "name": "backend",
   "private": true,
+  "scripts": {
+    "dev": "encore run"
+  },
   "type": "module",
   "version": "0.0.1"
 }
