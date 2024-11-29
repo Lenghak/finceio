@@ -21,17 +21,14 @@
   "keywords": [],
   "license": "ISC",
   "lint-staged": {
-    "*": "pnpm biome check --write --unsafe --no-errors-on-unmatched --verbose"
+    "*.{css,js,jsx,ts,tsx,md,mdx,json,jsonc}": "pnpm biome check --write --unsafe --no-errors-on-unmatched --verbose"
   },
   "name": "finceio",
   "packageManager": "pnpm@9.14.1+sha512.7f1de9cffea40ff4594c48a94776112a0db325e81fb18a9400362ff7b7247f4fbd76c3011611c9f8ac58743c3dc526017894e07948de9b72052f874ee2edfdcd",
   "private": true,
   "scripts": {
-    "b": "pnpm --filter=@backend/*",
-    "b:client": "pnpm --filter=@backend/client",
-    "b:client:build": "pnpm turbo run build --filter=@backend/client",
-    "b:client:dev": "pnpm turbo run dev --filter=@backend/client",
-    "b:client:start": "pnpm turbo run start --filter=@backend/client",
+    "b": "pnpm --filter=backend",
+    "b:dev": "pnpm turbo run dev --filter=backend",
     "build": "turbo run build",
     "check-types": "pnpm tsc --noEmit",
     "dev": "turbo run dev",

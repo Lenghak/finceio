@@ -107,6 +107,9 @@ importers:
         specifier: 'catalog:'
         version: 1.44.5
     devDependencies:
+      '@packages/typescript':
+        specifier: workspace:^
+        version: link:../packages/typescript
       '@types/node':
         specifier: 'catalog:'
         version: 20.17.9
