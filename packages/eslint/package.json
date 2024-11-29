@@ -5,7 +5,7 @@
     "@types/eslint": "catalog:",
     "@typescript-eslint/parser": "8.14.0",
     "eslint": "catalog:",
-    "eslint-config-biome": "^1.9.3",
+    "eslint-config-biome": "^1.9.4",
     "eslint-config-next": "15.0.3",
     "eslint-config-turbo": "^2.3.3"
   },
