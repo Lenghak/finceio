@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "composite": true
+  },
   "exclude": ["dist", "next", "build", "node_modules", "encore.gen"],
   "extends": ["@packages/typescript/base"]
 }

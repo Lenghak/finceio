@@ -6,22 +6,18 @@
     "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
-    "@packages/tailwindcss": "workspace:^",
-    "@packages/typescript": "workspace:^",
+    "@packages/typescript": "workspace:*",
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
-    "fluid-tailwind": "catalog:tailwindcss",
-    "tailwindcss": "catalog:tailwindcss",
+    "tailwindcss": "4.0.0-beta.4",
     "tailwindcss-animate": "catalog:tailwindcss"
   },
   "exports": {
     "./components/*": "./src/components/*.tsx",
     "./hooks/*": ["./src/hooks/*.ts", "./src/hooks/*.tsx"],
-    "./lib/*": "./src/lib/*.ts",
-    "./postcss.config": "./postcss.config.mjs",
-    "./tailwind.config": "./tailwind.config.ts"
+    "./lib/*": "./src/lib/*.ts"
   },
   "name": "@packages/magic",
   "private": true,
-  "version": "1.0.0"
+  "version": "0.0.1"
 }

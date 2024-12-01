@@ -46,7 +46,7 @@ export function EmailSignInForm({ className, ...props }: EmailSignInFormProps) {
   );
 
   const memoizedLeftAddon = useMemo(
-    () => <IconAt className="dark:size-4 dark:stroke-[3]" />,
+    () => <IconAt className="dark:size-4 dark:stroke-3" />,
     [],
   );
   const memoizedRenderEmailField = useCallback(

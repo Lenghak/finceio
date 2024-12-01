@@ -10,7 +10,7 @@ export function TypographyH1({ className, children }: TypographyProps) {
   return (
     <h1
       className={cn(
-        "~text-4xl/5xl scroll-m-20 font-extrabold tracking-tight",
+        "scroll-m-20 font-extrabold text-5xl tracking-tight",
         className,
       )}
     >
@@ -86,9 +86,7 @@ export function TypographyH6({ className, children }: TypographyProps) {
 
 export function TypographyP({ className, children }: TypographyProps) {
   return (
-    <p className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>
-      {children}
-    </p>
+    <p className={cn("not-first:mt-6 leading-7", className)}>{children}</p>
   );
 }
 
