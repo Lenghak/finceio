@@ -11,8 +11,8 @@ export function OAuthButton({
   return (
     <Button
       className={cn(
-        "group relative w-full bg-background",
-        "[&_svg]:absolute [&_svg]:left-4 [&_svg]:size-5 [&_svg]:text-muted-foreground group-hover:[&_svg]:text-foreground dark:[&_svg]:fill-current dark:[&_svg]:stroke-none",
+        "group relative w-full",
+        "[&_svg]:absolute [&_svg]:left-4 [&_svg]:size-5 [&_svg]:text-muted-foreground hover:[&_svg]:text-current group-hover:[&_svg]:text-foreground dark:[&_svg]:fill-current dark:[&_svg]:stroke-none",
         className,
       )}
       color="secondary"

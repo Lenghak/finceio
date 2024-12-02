@@ -7,7 +7,6 @@ import { DotPattern } from "@packages/magic/components/dot-pattern";
 import type { Metadata } from "next";
 import type React from "react";
 
-import "@packages/shadcn/globals.css";
 import "@/app/globals.css";
 
 import type { Viewport } from "next";
