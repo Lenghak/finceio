@@ -10,7 +10,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <input
         className={cn(
-          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background transition-all duration-200 ease-in-out file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background transition-all duration-200 ease-in-out file:border-0 file:bg-transparent file:font-medium file:text-foreground file:text-sm placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
           className,
         )}
         ref={ref}
@@ -31,7 +31,7 @@ export interface InputAddonsProps
 const InputInlineAddons = React.forwardRef<HTMLInputElement, InputAddonsProps>(
   ({ className, leftAddon, rightAddon, ...props }, ref) => {
     return (
-      <div className="flex rounded-md shadow-sm [&_svg]:size-[1.125rem]">
+      <div className="flex rounded-md shadow-xs [&_svg]:size-[1.125rem]">
         {leftAddon && (
           <div className="flex items-center justify-center rounded-l-full border border-input border-r-0 pr-3 pl-4 text-muted-foreground text-sm">
             {leftAddon}
@@ -39,7 +39,7 @@ const InputInlineAddons = React.forwardRef<HTMLInputElement, InputAddonsProps>(
         )}
         <Input
           className={cn(
-            "flex-grow",
+            "grow",
             className,
             leftAddon && "rounded-l-none",
             rightAddon && "rounded-r-none",

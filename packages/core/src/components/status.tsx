@@ -1,7 +1,7 @@
 import { Flex } from "@packages/shadcn/components/flex";
 import {
   TypographyH1,
-  TypographyP,
+  TypographyMuted,
 } from "@packages/shadcn/components/typography";
 import { cn } from "@packages/shadcn/lib/utils";
 import type React from "react";
@@ -41,7 +41,7 @@ export const Status = ({
     )}
 
     {typeof description === "string" ? (
-      <TypographyP className="text-muted-foreground">{description}</TypographyP>
+      <TypographyMuted className="text-base">{description}</TypographyMuted>
     ) : (
       description
     )}

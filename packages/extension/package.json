@@ -3,5 +3,5 @@
   "main": "index.js",
   "name": "@packages/extension",
   "private": true,
-  "version": "1.0.0"
+  "version": "0.0.1"
 }

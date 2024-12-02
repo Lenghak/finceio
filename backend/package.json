@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "encore.dev": "catalog:"
+    "encore.dev": "^1.44.6"
   },
   "devDependencies": {
     "@packages/typescript": "workspace:^",
-    "@types/node": "catalog:",
-    "typescript": "catalog:"
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
   },
   "name": "backend",
   "private": true,
