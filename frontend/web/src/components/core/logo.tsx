@@ -34,26 +34,6 @@ const LogoImage = memo(({ className, ...props }: LogoImageProps) => (
 ));
 LogoImage.displayName = "LogoImage";
 
-export const LogoBackgroundLight = memo(
-  ({ ...props }: Omit<LogoImageProps, "src">) => (
-    <LogoImage
-      src="/svg/logo-background-light.svg"
-      {...props}
-    />
-  ),
-);
-LogoBackgroundLight.displayName = "LogoBackgroundLight";
-
-export const LogoBackgroundDark = memo(
-  ({ ...props }: Omit<LogoImageProps, "src">) => (
-    <LogoImage
-      src="/svg/logo-background-dark.svg"
-      {...props}
-    />
-  ),
-);
-LogoBackgroundDark.displayName = "LogoBackgroundDark";
-
 export const LogoDark = memo(({ ...props }: Omit<LogoImageProps, "src">) => (
   <LogoImage
     src="/svg/logo-dark.svg"
