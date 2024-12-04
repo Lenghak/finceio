@@ -184,10 +184,10 @@
     --background: 300 4% 5%;
     --foreground: 0 0% 98%;
 
-    --popover: 240 3% 6%;
+    --popover: 240 3% 5%;
     --popover-foreground: 0 0% 98%;
 
-    --card: 240 3% 6%;
+    --card: 240 3% 5%;
     --card-foreground: 0 0% 98%;
 
     --primary: 262 83% 58%;
@@ -206,8 +206,8 @@
     --destructive-foreground: 0 0% 98%;
 
     --border: 240 2% 12%;
-    --input: 270 2% 18%;
-    --ring: 262 83% 40%;
+    --input: 270 2% 12%;
+    --ring: 0 0% 90%;
 
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;

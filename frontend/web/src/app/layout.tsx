@@ -1,9 +1,10 @@
-import { display, mono, sans, serif } from "@/app/fonts";
+import { mono, sans, serif } from "@/app/fonts";
 import { cn } from "@/lib/utils";
 import { QueryClientProvider } from "@/providers/query-client-provider";
 import { SessionProvider } from "@/providers/session-provider";
 import { ThemeProvider } from "@/providers/themes-provider";
 import { DotPattern } from "@packages/magic/components/dot-pattern";
+import { TooltipProvider } from "@packages/shadcn/components/tooltip";
 import type { Metadata } from "next";
 import type React from "react";
 
@@ -43,12 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      className={cn(
-        sans.variable,
-        serif.variable,
-        mono.variable,
-        display.variable,
-      )}
+      className={cn(sans.variable, serif.variable, mono.variable)}
       lang="en"
       suppressHydrationWarning={true}
     >
@@ -79,7 +75,9 @@ export default function RootLayout({
                   "fill-slate-300 [mask-image:radial-gradient(75dvw_circle_at_center,white,transparent)] dark:fill-slate-800",
                 )}
               />
-              <main className="relative z-10 h-full w-full">{children}</main>
+              <TooltipProvider>
+                <main className="relative z-10 h-full w-full">{children}</main>
+              </TooltipProvider>
             </QueryClientProvider>
           </SessionProvider>
         </ThemeProvider>

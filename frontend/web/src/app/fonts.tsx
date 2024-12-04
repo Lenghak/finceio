@@ -1,35 +1,25 @@
-import {
-  Fira_Code,
-  Lobster_Two,
-  Source_Sans_3,
-  Source_Serif_4,
-} from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Serif, Recursive } from "next/font/google";
 
-export const sans = Source_Sans_3({
+export const sans = Recursive({
   subsets: ["latin"],
   preload: true,
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
   variable: "--font-sans",
 });
 
-export const serif = Source_Serif_4({
+export const serif = IBM_Plex_Serif({
   subsets: ["latin"],
   preload: true,
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   display: "swap",
   variable: "--font-serif",
 });
 
-export const mono = Fira_Code({
+export const mono = IBM_Plex_Mono({
   subsets: ["latin"],
   preload: true,
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   display: "swap",
   variable: "--font-mono",
-});
-
-export const display = Lobster_Two({
-  subsets: ["latin"],
-  preload: true,
-  display: "swap",
-  variable: "--font-display",
-  weight: ["400", "700"],
 });

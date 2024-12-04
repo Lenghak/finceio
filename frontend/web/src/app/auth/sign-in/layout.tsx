@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function SignInLayout({ children }: PropsWithChildren) {
   return (
     <>
-      <AuthCardHeader>
+      <AuthCardHeader className="text-center">
         <AuthCardLogo />
         <AuthCardTitle>Sign in to Finceio</AuthCardTitle>
         <AuthCardDescription>

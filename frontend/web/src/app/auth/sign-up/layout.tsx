@@ -19,11 +19,11 @@ export const metadata: Metadata = {
 export default function SignUpLayout({ children }: PropsWithChildren) {
   return (
     <>
-      <AuthCardHeader>
+      <AuthCardHeader className="text-center">
         <AuthCardLogo />
         <AuthCardTitle>Create an Account</AuthCardTitle>
         <AuthCardDescription>
-          Happy to see you joining us. Let&apos;s get you started.
+          Happy to see you . Let&apos;s get you started.
         </AuthCardDescription>
       </AuthCardHeader>
 

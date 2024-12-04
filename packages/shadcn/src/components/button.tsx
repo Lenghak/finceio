@@ -54,7 +54,7 @@ const buttonVariants = cva(
         default:
           "border-primary bg-primary text-primary-foreground focus-visible:ring-primary",
         secondary:
-          "border-secondary bg-secondary text-secondary-foreground focus-visible:ring-ring",
+          "border-border bg-secondary text-secondary-foreground focus-visible:ring-ring",
         destructive:
           "border-destructive-200 bg-destructive text-destructive-foreground focus-visible:ring-destructive dark:border-destructive-900",
         slate:
@@ -120,7 +120,7 @@ const buttonVariants = cva(
         variant: "outline",
         color: "secondary",
         className:
-          "bg-transparent text-secondary-foreground hover:bg-secondary/30",
+          "bg-background text-secondary-foreground hover:bg-secondary/30",
       },
       {
         variant: "soft",
@@ -138,7 +138,7 @@ const buttonVariants = cva(
         variant: "ghost",
         color: "secondary",
         className:
-          "bg-transparent text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground/75",
+          "bg-background text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground/75",
       },
       {
         variant: "filled",
@@ -155,7 +155,7 @@ const buttonVariants = cva(
         variant: "outline",
         color: "destructive",
         className:
-          "bg-transparent text-destructive hover:bg-destructive/10 dark:text-destructive-foreground dark:hover:bg-destructive/20",
+          "bg-background text-destructive hover:bg-destructive/10 dark:text-destructive-foreground dark:hover:bg-destructive/20",
       },
       {
         variant: "ghost",

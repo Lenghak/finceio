@@ -81,12 +81,15 @@ AuthCardTitle.displayName = "AuthCardTitle";
 export const AuthCardLogo = memo(
   ({
     className,
-    width = 42,
-    height = 42,
+    width = 48,
+    height = 48,
     ...props
   }: LogoProps & Omit<LogoImageProps, "src" | "alt">) => (
     <Logo
-      className={cn("mb-6 aspect-square overflow-hidden rounded-lg", className)}
+      className={cn(
+        "mb-6 aspect-square overflow-hidden rounded-full",
+        className,
+      )}
       style={{
         width: width,
         height: height,
