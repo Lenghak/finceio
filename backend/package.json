@@ -1,10 +1,10 @@
 {
   "dependencies": {
-    "encore.dev": "^1.44.6"
+    "encore.dev": "^1.44.9"
   },
   "devDependencies": {
     "@packages/typescript": "workspace:^",
-    "@types/node": "^20",
+    "@types/node": "^20.17.9",
     "typescript": "^5.7.2"
   },
   "name": "backend",

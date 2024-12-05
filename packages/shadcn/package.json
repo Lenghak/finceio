@@ -50,7 +50,7 @@
   "devDependencies": {
     "@packages/typescript": "workspace:*",
     "@tailwindcss/postcss": "4.0.0-beta.3",
-    "@types/node": "^20",
+    "@types/node": "^20.17.9",
     "@types/react": "catalog:react18",
     "@types/react-dom": "catalog:react18",
     "postcss": "catalog:tailwindcss",
