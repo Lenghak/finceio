@@ -50,12 +50,12 @@ export default function RootLayout({
     >
       <head>
         <link
-          href="/svg/logo-light.svg"
+          href="/svg/favicon-light.svg"
           media="(prefers-color-scheme: light)"
           rel="icon"
         />
         <link
-          href="/svg/logo-dark.svg"
+          href="/svg/favicon-dark.svg"
           media="(prefers-color-scheme: dark)"
           rel="icon"
         />
