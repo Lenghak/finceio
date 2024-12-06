@@ -11,9 +11,10 @@ import {
   Trigger,
 } from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
-import React from "react";
+import type React from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
+import type { ComponentPropsWithRef } from "react";
 
 const Dialog = Root;
 
@@ -23,25 +24,24 @@ const DialogPortal = Portal;
 
 const DialogClose = Close;
 
-const DialogOverlay = React.forwardRef<
-  React.ElementRef<typeof Overlay>,
-  React.ComponentPropsWithoutRef<typeof Overlay>
->(({ className, ...props }, ref) => (
+const DialogOverlay = ({
+  className,
+  ...props
+}: ComponentPropsWithRef<typeof Overlay>) => (
   <Overlay
     className={cn(
       "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80 data-[state=closed]:animate-out data-[state=open]:animate-in",
       className,
     )}
-    ref={ref}
     {...props}
   />
-));
-DialogOverlay.displayName = Overlay.displayName;
+);
 
-const DialogContent = React.forwardRef<
-  React.ElementRef<typeof Content>,
-  React.ComponentPropsWithoutRef<typeof Content>
->(({ className, children, ...props }, ref) => (
+const DialogContent = ({
+  className,
+  children,
+  ...props
+}: ComponentPropsWithRef<typeof Content>) => (
   <DialogPortal>
     <DialogOverlay />
     <Content
@@ -49,7 +49,6 @@ const DialogContent = React.forwardRef<
         "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] fixed top-[50%] left-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:rounded-lg",
         className,
       )}
-      ref={ref}
       {...props}
     >
       {children}
@@ -59,8 +58,7 @@ const DialogContent = React.forwardRef<
       </Close>
     </Content>
   </DialogPortal>
-));
-DialogContent.displayName = Content.displayName;
+);
 
 const DialogHeader = ({
   className,
@@ -74,7 +72,6 @@ const DialogHeader = ({
     {...props}
   />
 );
-DialogHeader.displayName = "DialogHeader";
 
 const DialogFooter = ({
   className,
@@ -88,34 +85,29 @@ const DialogFooter = ({
     {...props}
   />
 );
-DialogFooter.displayName = "DialogFooter";
 
-const DialogTitle = React.forwardRef<
-  React.ElementRef<typeof Title>,
-  React.ComponentPropsWithoutRef<typeof Title>
->(({ className, ...props }, ref) => (
+const DialogTitle = ({
+  className,
+  ...props
+}: ComponentPropsWithRef<typeof Title>) => (
   <Title
     className={cn(
       "font-semibold text-lg leading-none tracking-tight",
       className,
     )}
-    ref={ref}
     {...props}
   />
-));
-DialogTitle.displayName = Title.displayName;
+);
 
-const DialogDescription = React.forwardRef<
-  React.ElementRef<typeof Description>,
-  React.ComponentPropsWithoutRef<typeof Description>
->(({ className, ...props }, ref) => (
+const DialogDescription = ({
+  className,
+  ...props
+}: ComponentPropsWithRef<typeof Description>) => (
   <Description
     className={cn("text-muted-foreground text-sm", className)}
-    ref={ref}
     {...props}
   />
-));
-DialogDescription.displayName = Description.displayName;
+);
 
 export {
   Dialog,

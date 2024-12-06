@@ -9,7 +9,7 @@ import type React from "react";
 const ResizablePanelGroup = ({
   className,
   ...props
-}: React.ComponentProps<typeof PanelGroup>) => (
+}: React.ComponentPropsWithRef<typeof PanelGroup>) => (
   <PanelGroup
     className={cn(
       "flex h-full w-full data-[panel-group-direction=vertical]:flex-col",
@@ -25,7 +25,7 @@ const ResizableHandle = ({
   withHandle,
   className,
   ...props
-}: React.ComponentProps<typeof PanelResizeHandle> & {
+}: React.ComponentPropsWithRef<typeof PanelResizeHandle> & {
   withHandle?: boolean;
 }) => (
   <PanelResizeHandle

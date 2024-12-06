@@ -6,10 +6,7 @@ import {
   type LogoProps,
 } from "@/components/core/logo";
 import { cn } from "@/lib/utils";
-import {
-  ThemesDropdownMenu,
-  ThemesTrigger,
-} from "@packages/core/components/themes-toggle";
+import { ThemesToggle } from "@packages/core/components/themes-toggle";
 import {
   Card,
   CardContent,
@@ -27,12 +24,7 @@ export const AuthCard = memo(
       {...props}
     >
       <div className="absolute top-0 right-0 size-fit [&>button]:rounded-none [&>button]:rounded-se-lg [&>button]:rounded-es-lg">
-        <ThemesDropdownMenu>
-          <ThemesTrigger
-            className="rounded-lg border border-t-0 border-r-0 dark:bg-background"
-            variant="soft"
-          />
-        </ThemesDropdownMenu>
+        <ThemesToggle />
       </div>
       {children}
     </Card>

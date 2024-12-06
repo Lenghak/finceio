@@ -11,10 +11,11 @@ import {
   Title,
   Trigger,
 } from "@radix-ui/react-alert-dialog";
-import React from "react";
+import type React from "react";
 
 import { buttonVariants } from "@packages/shadcn/components/button";
 import { cn } from "@packages/shadcn/lib/utils";
+import type { ComponentPropsWithRef } from "react";
 
 const AlertDialog = Root;
 
@@ -22,25 +23,26 @@ const AlertDialogTrigger = Trigger;
 
 const AlertDialogPortal = Portal;
 
-const AlertDialogOverlay = React.forwardRef<
-  React.ElementRef<typeof Overlay>,
-  React.ComponentPropsWithoutRef<typeof Overlay>
->(({ className, ...props }, ref) => (
+const AlertDialogOverlay = ({
+  className,
+  ref,
+  ...props
+}: ComponentPropsWithRef<typeof Overlay>) => (
   <Overlay
     className={cn(
       "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80 data-[state=closed]:animate-out data-[state=open]:animate-in",
       className,
     )}
-    {...props}
     ref={ref}
+    {...props}
   />
-));
-AlertDialogOverlay.displayName = Overlay.displayName;
+);
 
-const AlertDialogContent = React.forwardRef<
-  React.ElementRef<typeof Content>,
-  React.ComponentPropsWithoutRef<typeof Content>
->(({ className, ...props }, ref) => (
+const AlertDialogContent = ({
+  className,
+  ref,
+  ...props
+}: ComponentPropsWithRef<typeof Content>) => (
   <AlertDialogPortal>
     <AlertDialogOverlay />
     <Content
@@ -52,8 +54,7 @@ const AlertDialogContent = React.forwardRef<
       {...props}
     />
   </AlertDialogPortal>
-));
-AlertDialogContent.displayName = Content.displayName;
+);
 
 const AlertDialogHeader = ({
   className,
@@ -67,7 +68,6 @@ const AlertDialogHeader = ({
     {...props}
   />
 );
-AlertDialogHeader.displayName = "AlertDialogHeader";
 
 const AlertDialogFooter = ({
   className,
@@ -81,48 +81,48 @@ const AlertDialogFooter = ({
     {...props}
   />
 );
-AlertDialogFooter.displayName = "AlertDialogFooter";
 
-const AlertDialogTitle = React.forwardRef<
-  React.ElementRef<typeof Title>,
-  React.ComponentPropsWithoutRef<typeof Title>
->(({ className, ...props }, ref) => (
+const AlertDialogTitle = ({
+  className,
+  ref,
+  ...props
+}: ComponentPropsWithRef<typeof Title>) => (
   <Title
     className={cn("font-semibold text-lg", className)}
     ref={ref}
     {...props}
   />
-));
-AlertDialogTitle.displayName = Title.displayName;
+);
 
-const AlertDialogDescription = React.forwardRef<
-  React.ElementRef<typeof Description>,
-  React.ComponentPropsWithoutRef<typeof Description>
->(({ className, ...props }, ref) => (
+const AlertDialogDescription = ({
+  className,
+  ref,
+  ...props
+}: ComponentPropsWithRef<typeof Description>) => (
   <Description
     className={cn("text-muted-foreground text-sm", className)}
     ref={ref}
     {...props}
   />
-));
-AlertDialogDescription.displayName = Description.displayName;
+);
 
-const AlertDialogAction = React.forwardRef<
-  React.ElementRef<typeof Action>,
-  React.ComponentPropsWithoutRef<typeof Action>
->(({ className, ...props }, ref) => (
+const AlertDialogAction = ({
+  className,
+  ref,
+  ...props
+}: ComponentPropsWithRef<typeof Action>) => (
   <Action
     className={cn(buttonVariants(), className)}
     ref={ref}
     {...props}
   />
-));
-AlertDialogAction.displayName = Action.displayName;
+);
 
-const AlertDialogCancel = React.forwardRef<
-  React.ElementRef<typeof Cancel>,
-  React.ComponentPropsWithoutRef<typeof Cancel>
->(({ className, ...props }, ref) => (
+const AlertDialogCancel = ({
+  className,
+  ref,
+  ...props
+}: ComponentPropsWithRef<typeof Cancel>) => (
   <Cancel
     className={cn(
       buttonVariants({ variant: "outline" }),
@@ -132,8 +132,7 @@ const AlertDialogCancel = React.forwardRef<
     ref={ref}
     {...props}
   />
-));
-AlertDialogCancel.displayName = Cancel.displayName;
+);
 
 export {
   AlertDialog,

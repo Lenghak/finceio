@@ -1,21 +1,20 @@
 import { cn } from "@packages/shadcn/lib/utils";
+import type { ComponentPropsWithRef } from "react";
 import type React from "react";
 
-interface ContainerProps extends React.HTMLAttributes<HTMLElement> {
-  as?: React.ElementType;
+interface ContainerProps extends ComponentPropsWithRef<"div"> {
   maxWidth?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "full";
   children: React.ReactNode;
 }
 
 export function Container({
-  as: Component = "div",
   maxWidth = "xl",
   className,
   children,
   ...props
 }: ContainerProps) {
   return (
-    <Component
+    <div
       className={cn(
         "mx-auto px-4",
         {
@@ -33,6 +32,6 @@ export function Container({
       {...props}
     >
       {children}
-    </Component>
+    </div>
   );
 }

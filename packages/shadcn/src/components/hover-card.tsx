@@ -1,7 +1,7 @@
 "use client";
 
 import { Content, Root, Trigger } from "@radix-ui/react-hover-card";
-import React from "react";
+import type React from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
 
@@ -9,10 +9,13 @@ const HoverCard = Root;
 
 const HoverCardTrigger = Trigger;
 
-const HoverCardContent = React.forwardRef<
-  React.ElementRef<typeof Content>,
-  React.ComponentPropsWithoutRef<typeof Content>
->(({ className, align = "center", sideOffset = 4, ...props }, ref) => (
+const HoverCardContent = ({
+  className,
+  align = "center",
+  sideOffset = 4,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof Content>) => (
   <Content
     align={align}
     className={cn(
@@ -23,7 +26,6 @@ const HoverCardContent = React.forwardRef<
     sideOffset={sideOffset}
     {...props}
   />
-));
-HoverCardContent.displayName = Content.displayName;
+);
 
 export { HoverCard, HoverCardTrigger, HoverCardContent };
