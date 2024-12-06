@@ -6,7 +6,7 @@ import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 
 const buttonVariants = cva(
-  "group relative inline-flex cursor-pointer items-center justify-center rounded-full font-bold text-sm ring-tranparent ring-offset-transparent transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:pointer-events-none disabled:opacity-50",
+  "group relative inline-flex cursor-pointer items-center justify-center rounded-full font-bold text-sm ring-tranparent ring-offset-transparent transition-all transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -44,8 +44,7 @@ const buttonVariants = cva(
         hideIcon: "transition-all [&_svg]:size-0 [&_svg]:transition-all",
       },
       color: {
-        default:
-          "border-primary bg-primary text-primary-foreground focus-visible:ring-primary",
+        default: "border-primary bg-primary text-primary-foreground",
         secondary:
           "border-border bg-secondary text-secondary-foreground focus-visible:ring-ring",
         destructive:
@@ -101,8 +100,7 @@ const buttonVariants = cva(
       {
         variant: "outline",
         color: "default",
-        className:
-          "border-border bg-transparent text-primary dark:text-primary-foreground",
+        className: "border-border bg-transparent text-primary-foreground",
       },
       {
         variant: "filled",
