@@ -1,21 +1,18 @@
 "use client";
 
 import { Button } from "@packages/shadcn/components/button";
-import { Flex, type FlexProps } from "@packages/shadcn/components/flex";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { type ComponentPropsWithoutRef } from "react";
 
 export const ErrorCta = React.memo(
-  ({ ...props }: Omit<FlexProps, "children">) => {
+  ({ ...props }: Omit<ComponentPropsWithoutRef<"div">, "children">) => {
     const { back } = useRouter();
 
     return (
-      <Flex
-        className="gap-4"
-        items="center"
-        justify="center"
+      <div
+        className="flex flex-row items-center justify-between gap-4"
         {...props}
       >
         <Button
@@ -37,7 +34,7 @@ export const ErrorCta = React.memo(
             <ArrowRightIcon />
           </Link>
         </Button>
-      </Flex>
+      </div>
     );
   },
 );

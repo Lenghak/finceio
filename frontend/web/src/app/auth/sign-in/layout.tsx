@@ -28,7 +28,7 @@ export default function SignInLayout({ children }: PropsWithChildren) {
       </AuthCardHeader>
       <AuthCardContent className="space-y-4">{children}</AuthCardContent>
       <AuthCardFooter className="flex items-center justify-center text-muted-foreground text-sm">
-        Don't have an account?
+        Don&apos;t have an account?
         <Link
           className={cn(
             buttonVariants({

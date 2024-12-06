@@ -60,7 +60,7 @@ export default function RootLayout({
           rel="icon"
         />
       </head>
-      <body className={cn("font-sans dark:has-[body]:bg-slate-50")}>
+      <body className={cn("font-sans dark:has-[body]:bg-neutral-50")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -72,7 +72,7 @@ export default function RootLayout({
             <QueryClientProvider>
               <DotPattern
                 className={cn(
-                  "fill-slate-300 [mask-image:radial-gradient(75dvw_circle_at_center,white,transparent)] dark:fill-slate-800",
+                  "fill-neutral-300 [mask-image:radial-gradient(75dvw_circle_at_center,white,transparent)] dark:fill-neutral-800",
                 )}
               />
               <TooltipProvider>

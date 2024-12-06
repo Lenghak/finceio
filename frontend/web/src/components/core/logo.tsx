@@ -19,8 +19,6 @@ export const Logo = memo(({ className, children, ...props }: LogoProps) => (
   </div>
 ));
 
-Logo.displayName = "Logo";
-
 export type LogoImageProps = Omit<
   ImageProps & ComponentPropsWithoutRef<"image">,
   "alt"
@@ -32,7 +30,6 @@ const LogoImage = memo(({ className, ...props }: LogoImageProps) => (
     {...props}
   />
 ));
-LogoImage.displayName = "LogoImage";
 
 export const LogoDark = memo(({ ...props }: Omit<LogoImageProps, "src">) => (
   <LogoImage
@@ -48,7 +45,6 @@ export const LogoLight = memo(({ ...props }: Omit<LogoImageProps, "src">) => (
     {...props}
   />
 ));
-LogoLight.displayName = "LogoLight";
 
 export type LogoTextProps = ComponentPropsWithoutRef<"span">;
 export const LogoText = memo(({ className, ...props }: LogoTextProps) => (
@@ -62,4 +58,3 @@ export const LogoText = memo(({ className, ...props }: LogoTextProps) => (
     Finceio
   </span>
 ));
-LogoText.displayName = "LogoText";

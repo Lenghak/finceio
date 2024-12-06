@@ -1,15 +1,3 @@
-import { Box } from "@packages/shadcn/components/box";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@packages/shadcn/components/card";
-
-import { type HTMLAttributes, memo } from "react";
-
 import {
   Logo,
   LogoDark,
@@ -22,6 +10,15 @@ import {
   ThemesDropdownMenu,
   ThemesTrigger,
 } from "@packages/core/components/themes-toggle";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@packages/shadcn/components/card";
+import { type HTMLAttributes, memo } from "react";
 
 export const AuthCard = memo(
   ({ children, className, ...props }: HTMLAttributes<HTMLDivElement>) => (
@@ -29,14 +26,14 @@ export const AuthCard = memo(
       className={cn("relative w-full max-w-sm", className)}
       {...props}
     >
-      <Box className="absolute top-0 right-0 size-fit [&>button]:rounded-none [&>button]:rounded-se-lg [&>button]:rounded-es-lg">
+      <div className="absolute top-0 right-0 size-fit [&>button]:rounded-none [&>button]:rounded-se-lg [&>button]:rounded-es-lg">
         <ThemesDropdownMenu>
           <ThemesTrigger
             className="rounded-lg border border-t-0 border-r-0 dark:bg-background"
             variant="soft"
           />
         </ThemesDropdownMenu>
-      </Box>
+      </div>
       {children}
     </Card>
   ),

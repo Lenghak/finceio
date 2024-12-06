@@ -1,25 +1,23 @@
 import { cn } from "@/lib/utils";
-import { Flex, type FlexProps } from "@packages/shadcn/components/flex";
 import { Separator } from "@packages/shadcn/components/separator";
 import { TypographyMuted } from "@packages/shadcn/components/typography";
+import type { ComponentPropsWithoutRef } from "react";
 
 export function OrSeparator({
   className,
   ...props
-}: Omit<FlexProps, "children">) {
+}: Omit<ComponentPropsWithoutRef<"div">, "children">) {
   return (
-    <Flex
+    <div
       className={cn(
-        "grid grid-cols-[1fr_auto_1fr] grid-rows-1 gap-4 overflow-hidden text-center",
+        "grid grid-cols-[1fr_auto_1fr] grid-rows-1 place-items-center justify-center gap-4 overflow-hidden text-center",
         className,
       )}
-      items="center"
-      justify="center"
       {...props}
     >
       <Separator />
       <TypographyMuted>Or</TypographyMuted>
       <Separator />
-    </Flex>
+    </div>
   );
 }
