@@ -1,9 +1,8 @@
-import type React from "react";
-
 import { cn } from "@packages/shadcn/lib/utils";
 
 import { type VariantProps, cva } from "class-variance-authority";
 import { Circle } from "lucide-react";
+import type { ComponentPropsWithRef } from "react";
 
 const badgeVariants = cva(
   "inline-flex items-center rounded-full font-semibold text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-offset-2",
@@ -376,7 +375,7 @@ const badgeVariants = cva(
 );
 
 export interface BadgeProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "color">,
+  extends Omit<ComponentPropsWithRef<"div">, "color">,
     VariantProps<typeof badgeVariants> {}
 
 function Badge({

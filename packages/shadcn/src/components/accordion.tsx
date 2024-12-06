@@ -7,29 +7,31 @@ import {
   Root,
   Trigger,
 } from "@radix-ui/react-accordion";
-import { ChevronDown } from "lucide-react";
-import React from "react";
+import { ChevronDownIcon } from "lucide-react";
+import type React from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
 
 const Accordion = Root;
 
-const AccordionItem = React.forwardRef<
-  React.ElementRef<typeof Item>,
-  React.ComponentPropsWithoutRef<typeof Item>
->(({ className, ...props }, ref) => (
+const AccordionItem = ({
+  className,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof Item>) => (
   <Item
     className={cn("border-b", className)}
     ref={ref}
     {...props}
   />
-));
-AccordionItem.displayName = "AccordionItem";
+);
 
-const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof Trigger>,
-  React.ComponentPropsWithoutRef<typeof Trigger>
->(({ className, children, ...props }, ref) => (
+const AccordionTrigger = ({
+  className,
+  children,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof Trigger>) => (
   <Header className="flex">
     <Trigger
       className={cn(
@@ -40,16 +42,17 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+      <ChevronDownIcon className="h-4 w-4 shrink-0 transition-transform duration-200" />
     </Trigger>
   </Header>
-));
-AccordionTrigger.displayName = Trigger.displayName;
+);
 
-const AccordionContent = React.forwardRef<
-  React.ElementRef<typeof Content>,
-  React.ComponentPropsWithoutRef<typeof Content>
->(({ className, children, ...props }, ref) => (
+const AccordionContent = ({
+  className,
+  children,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof Content>) => (
   <Content
     className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
     ref={ref}
@@ -57,8 +60,6 @@ const AccordionContent = React.forwardRef<
   >
     <div className={cn("pt-0 pb-4", className)}>{children}</div>
   </Content>
-));
-
-AccordionContent.displayName = Content.displayName;
+);
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

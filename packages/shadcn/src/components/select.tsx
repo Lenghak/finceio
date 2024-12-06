@@ -18,7 +18,7 @@ import {
   Viewport,
 } from "@radix-ui/react-select";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
-import React from "react";
+import type React from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
 
@@ -28,10 +28,12 @@ const SelectGroup = Group;
 
 const SelectValue = Value;
 
-const SelectTrigger = React.forwardRef<
-  React.ElementRef<typeof Trigger>,
-  React.ComponentPropsWithoutRef<typeof Trigger>
->(({ className, children, ...props }, ref) => (
+const SelectTrigger = ({
+  className,
+  children,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof Trigger>) => (
   <Trigger
     className={cn(
       "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
@@ -45,13 +47,13 @@ const SelectTrigger = React.forwardRef<
       <ChevronDown className="h-4 w-4 opacity-50" />
     </Icon>
   </Trigger>
-));
-SelectTrigger.displayName = Trigger.displayName;
+);
 
-const SelectScrollUpButton = React.forwardRef<
-  React.ElementRef<typeof ScrollUpButton>,
-  React.ComponentPropsWithoutRef<typeof ScrollUpButton>
->(({ className, ...props }, ref) => (
+const SelectScrollUpButton = ({
+  className,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof ScrollUpButton>) => (
   <ScrollUpButton
     className={cn(
       "flex cursor-default items-center justify-center py-1",
@@ -62,13 +64,13 @@ const SelectScrollUpButton = React.forwardRef<
   >
     <ChevronUp className="h-4 w-4" />
   </ScrollUpButton>
-));
-SelectScrollUpButton.displayName = ScrollUpButton.displayName;
+);
 
-const SelectScrollDownButton = React.forwardRef<
-  React.ElementRef<typeof ScrollDownButton>,
-  React.ComponentPropsWithoutRef<typeof ScrollDownButton>
->(({ className, ...props }, ref) => (
+const SelectScrollDownButton = ({
+  className,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof ScrollDownButton>) => (
   <ScrollDownButton
     className={cn(
       "flex cursor-default items-center justify-center py-1",
@@ -79,13 +81,15 @@ const SelectScrollDownButton = React.forwardRef<
   >
     <ChevronDown className="h-4 w-4" />
   </ScrollDownButton>
-));
-SelectScrollDownButton.displayName = ScrollDownButton.displayName;
+);
 
-const SelectContent = React.forwardRef<
-  React.ElementRef<typeof Content>,
-  React.ComponentPropsWithoutRef<typeof Content>
->(({ className, children, position = "popper", ...props }, ref) => (
+const SelectContent = ({
+  className,
+  children,
+  position = "popper",
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof Content>) => (
   <Portal>
     <Content
       className={cn(
@@ -111,25 +115,25 @@ const SelectContent = React.forwardRef<
       <SelectScrollDownButton />
     </Content>
   </Portal>
-));
-SelectContent.displayName = Content.displayName;
+);
 
-const SelectLabel = React.forwardRef<
-  React.ElementRef<typeof Label>,
-  React.ComponentPropsWithoutRef<typeof Label>
->(({ className, ...props }, ref) => (
+const SelectLabel = ({
+  className,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof Label>) => (
   <Label
     className={cn("py-1.5 pr-2 pl-8 font-semibold text-sm", className)}
     ref={ref}
     {...props}
   />
-));
-SelectLabel.displayName = Label.displayName;
-
-const SelectItem = React.forwardRef<
-  React.ElementRef<typeof Item>,
-  React.ComponentPropsWithoutRef<typeof Item>
->(({ className, children, ...props }, ref) => (
+);
+const SelectItem = ({
+  className,
+  children,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof Item>) => (
   <Item
     className={cn(
       "relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50",
@@ -146,20 +150,18 @@ const SelectItem = React.forwardRef<
 
     <ItemText>{children}</ItemText>
   </Item>
-));
-SelectItem.displayName = Item.displayName;
-
-const SelectSeparator = React.forwardRef<
-  React.ElementRef<typeof Separator>,
-  React.ComponentPropsWithoutRef<typeof Separator>
->(({ className, ...props }, ref) => (
+);
+const SelectSeparator = ({
+  className,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof Separator>) => (
   <Separator
     className={cn("-mx-1 my-1 h-px bg-muted", className)}
     ref={ref}
     {...props}
   />
-));
-SelectSeparator.displayName = Separator.displayName;
+);
 
 export {
   Select,

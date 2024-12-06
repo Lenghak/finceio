@@ -1,4 +1,3 @@
-import { Flex } from "@packages/shadcn/components/flex";
 import {
   TypographyH1,
   TypographyMuted,
@@ -7,7 +6,7 @@ import { cn } from "@packages/shadcn/lib/utils";
 import type React from "react";
 import type { HTMLAttributes } from "react";
 
-export type StatusProps = HTMLAttributes<HTMLDivElement> & {
+export type StatusProps = HTMLAttributes<HTMLElement> & {
   title: React.ReactNode;
   description: React.ReactNode;
   icon: React.ReactNode;
@@ -21,15 +20,12 @@ export const Status = ({
   icon,
   ...props
 }: StatusProps) => (
-  <Flex
+  <div
     className={cn(
-      "h-full w-full space-y-6 text-center",
+      "flex h-full w-full flex-col items-center justify-center space-y-6 text-center",
       "[&>svg]:size-36 [&>svg]:fill-primary/10 [&>svg]:stroke-1 [&>svg]:stroke-primary",
       className,
     )}
-    direction="col"
-    items="center"
-    justify="center"
     {...props}
   >
     {icon}
@@ -47,5 +43,5 @@ export const Status = ({
     )}
 
     {children}
-  </Flex>
+  </div>
 );

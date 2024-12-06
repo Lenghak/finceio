@@ -1,6 +1,6 @@
 "use client";
 
-import { type PropsWithChildren, useMemo, useState } from "react";
+import { type PropsWithChildren, useState } from "react";
 
 import { getQueryClient } from "@/lib/query-client";
 
@@ -14,14 +14,9 @@ export function QueryClientProvider({ children }: PropsWithChildren) {
   //       render if it suspends and there is no boundary
   const [queryClient] = useState(getQueryClient());
 
-  const provider = useMemo(
-    () => (
-      <QueryClientPrimitiveProvider client={queryClient}>
-        {children}
-      </QueryClientPrimitiveProvider>
-    ),
-    [queryClient, children],
+  return (
+    <QueryClientPrimitiveProvider client={queryClient}>
+      {children}
+    </QueryClientPrimitiveProvider>
   );
-
-  return provider;
 }

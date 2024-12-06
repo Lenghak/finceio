@@ -7,7 +7,7 @@ import { DayPicker } from "react-day-picker";
 import { buttonVariants } from "@packages/shadcn/components/button";
 import { cn } from "@packages/shadcn/lib/utils";
 
-export type CalendarProps = React.ComponentProps<typeof DayPicker>;
+export type CalendarProps = React.ComponentPropsWithRef<typeof DayPicker>;
 
 function Calendar({
   className,
@@ -65,6 +65,5 @@ function Calendar({
     />
   );
 }
-Calendar.displayName = "Calendar";
 
 export { Calendar };

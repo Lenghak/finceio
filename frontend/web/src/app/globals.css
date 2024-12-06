@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@packages/shadcn/globals.css";
+
 @source "../../node_modules/@packages/shadcn";
 @source "../../node_modules/@packages/magic";
 @source "../../node_modules/@packages/core";

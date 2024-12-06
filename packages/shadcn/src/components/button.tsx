@@ -1,11 +1,4 @@
-import {
-  type ButtonHTMLAttributes,
-  type MutableRefObject,
-  forwardRef,
-  memo,
-  useCallback,
-  useMemo,
-} from "react";
+import type { ComponentPropsWithRef } from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
 
@@ -13,7 +6,7 @@ import { Slot, Slottable } from "@radix-ui/react-slot";
 import { type VariantProps, cva } from "class-variance-authority";
 
 const buttonVariants = cva(
-  "group relative inline-flex cursor-pointer items-center justify-center rounded-full font-bold text-sm ring-tranparent ring-offset-transparent transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
+  "group relative inline-flex cursor-pointer items-center justify-center rounded-full font-bold text-sm ring-tranparent ring-offset-transparent transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
@@ -109,7 +102,7 @@ const buttonVariants = cva(
         variant: "outline",
         color: "default",
         className:
-          "bg-primary/20 text-primary hover:bg-primary/30 dark:bg-primary/10 dark:text-primary-foreground dark:hover:bg-primary/20",
+          "border-border bg-transparent text-primary dark:text-primary-foreground",
       },
       {
         variant: "filled",
@@ -120,7 +113,7 @@ const buttonVariants = cva(
         variant: "outline",
         color: "secondary",
         className:
-          "bg-background text-secondary-foreground hover:bg-secondary/30",
+          "bg-transparent text-secondary-foreground hover:bg-secondary/30",
       },
       {
         variant: "soft",
@@ -132,13 +125,13 @@ const buttonVariants = cva(
         variant: "link",
         color: "secondary",
         className:
-          "bg-background text-secondary-foreground hover:text-secondary-foreground/75",
+          "bg-transparent text-secondary-foreground hover:text-secondary-foreground/75",
       },
       {
         variant: "ghost",
         color: "secondary",
         className:
-          "bg-background text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground/75",
+          "bg-transparent text-secondary-foreground hover:bg-secondary hover:text-secondary-foreground/75",
       },
       {
         variant: "filled",
@@ -155,7 +148,7 @@ const buttonVariants = cva(
         variant: "outline",
         color: "destructive",
         className:
-          "bg-background text-destructive hover:bg-destructive/10 dark:text-destructive-foreground dark:hover:bg-destructive/20",
+          "bg-transparent text-destructive hover:bg-destructive/10 dark:text-destructive-foreground dark:hover:bg-destructive/20",
       },
       {
         variant: "ghost",
@@ -817,64 +810,32 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">,
+  extends Omit<ComponentPropsWithRef<"button">, "color">,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
 
-const Button = memo(
-  forwardRef<HTMLButtonElement, ButtonProps>(
-    (
-      { className, variant, size, color, asChild = false, effect, ...props },
-      ref,
-    ) => {
-      const stableRef = useCallback(
-        (node: HTMLButtonElement) => {
-          if (typeof ref === "function") {
-            ref(node);
-          } else if (ref) {
-            (ref as MutableRefObject<HTMLButtonElement | null>).current = node;
-          }
-        },
-        [ref],
-      );
+const Button = ({
+  className,
+  variant,
+  size,
+  color,
+  asChild = false,
+  effect,
+  ...props
+}: ButtonProps) => {
+  const Comp = asChild ? Slot : "button";
 
-      const Comp = asChild ? Slot : "button";
-
-      const memoizedSlottable = useMemo(
-        () => <Slottable>{props.children}</Slottable>,
-        [props.children],
-      );
-
-      const buttonClass = useMemo(
-        () => buttonVariants({ variant, size, color, effect, className }),
-        [variant, size, color, effect, className],
-      );
-
-      const memoizedComp = useMemo(
-        () => (
-          <Comp
-            className={cn(buttonClass)}
-            ref={stableRef}
-            {...props}
-          >
-            {memoizedSlottable}
-          </Comp>
-        ),
-        [
-          Comp,
-          buttonClass,
-          stableRef,
-          // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-          props,
-          memoizedSlottable,
-        ],
-      );
-
-      return memoizedComp;
-    },
-  ),
-);
-Button.displayName = "Button";
+  return (
+    <Comp
+      className={cn(
+        buttonVariants({ variant, size, color, effect, className }),
+      )}
+      {...props}
+    >
+      <Slottable>{props.children}</Slottable>
+    </Comp>
+  );
+};
 
 export { Button, buttonVariants };

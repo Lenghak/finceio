@@ -7,7 +7,6 @@ import {
 } from "@/features/auth/pipes/sign-in-validations";
 import { cn } from "@/lib/utils";
 import { useSignIn } from "@/services/auth/hooks";
-import { Flex } from "@packages/shadcn/components/flex";
 import {
   IconBrandFacebook,
   IconBrandGithub,
@@ -51,12 +50,11 @@ export function SocialSignInForm({
 
   return (
     <FormProvider {...form}>
-      <Flex
-        as="form"
-        className={cn("gap-4", className)}
-        direction="col"
-        items="center"
-        justify="center"
+      <form
+        className={cn(
+          "flex flex-col items-center justify-center gap-4",
+          className,
+        )}
         onSubmit={form.handleSubmit(handleSubmit)}
         {...props}
       >
@@ -86,7 +84,7 @@ export function SocialSignInForm({
           {memoizedIconBrandGithub}
           <span>Continue with Github</span>
         </OAuthButton>
-      </Flex>
+      </form>
     </FormProvider>
   );
 }

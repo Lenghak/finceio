@@ -1,16 +1,16 @@
 {
   "dependencies": {
     "clsx": "^2.1.1",
-    "react": "catalog:react18",
-    "react-dom": "catalog:react18",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
     "@packages/typescript": "workspace:*",
-    "@types/react": "catalog:react18",
-    "@types/react-dom": "catalog:react18",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "tailwindcss": "4.0.0-beta.4",
-    "tailwindcss-animate": "catalog:tailwindcss"
+    "tailwindcss-animate": "^x.x.x"
   },
   "exports": {
     "./components/*": "./src/components/*.tsx",

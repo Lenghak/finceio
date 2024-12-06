@@ -6,10 +6,12 @@ import React from "react";
 
 import { cn } from "@packages/shadcn/lib/utils";
 
-const InputOTP = React.forwardRef<
-  React.ElementRef<typeof OTPInput>,
-  React.ComponentPropsWithoutRef<typeof OTPInput>
->(({ className, containerClassName, ...props }, ref) => (
+const InputOTP = ({
+  className,
+  containerClassName,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<typeof OTPInput>) => (
   <OTPInput
     className={cn("disabled:cursor-not-allowed", className)}
     containerClassName={cn(
@@ -19,25 +21,26 @@ const InputOTP = React.forwardRef<
     ref={ref}
     {...props}
   />
-));
-InputOTP.displayName = "InputOTP";
+);
 
-const InputOTPGroup = React.forwardRef<
-  React.ElementRef<"div">,
-  React.ComponentPropsWithoutRef<"div">
->(({ className, ...props }, ref) => (
+const InputOTPGroup = ({
+  className,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<"div">) => (
   <div
     className={cn("flex items-center", className)}
     ref={ref}
     {...props}
   />
-));
-InputOTPGroup.displayName = "InputOTPGroup";
+);
 
-const InputOTPSlot = React.forwardRef<
-  React.ElementRef<"div">,
-  React.ComponentPropsWithoutRef<"div"> & { index: number }
->(({ index, className, ...props }, ref) => {
+const InputOTPSlot = ({
+  index,
+  className,
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<"div"> & { index: number }) => {
   const inputOTPContext = React.useContext(OTPInputContext);
   const slot = inputOTPContext.slots[index];
 
@@ -59,23 +62,19 @@ const InputOTPSlot = React.forwardRef<
       )}
     </div>
   );
-});
+};
 InputOTPSlot.displayName = "InputOTPSlot";
 
-const InputOTPSeparator = React.forwardRef<
-  React.ElementRef<"div">,
-  React.ComponentPropsWithoutRef<"div">
->(({ ...props }, ref) => (
-  // biome-ignore lint/a11y/useFocusableInteractive: <explanation>
+const InputOTPSeparator = ({
+  ref,
+  ...props
+}: React.ComponentPropsWithRef<"div">) => (
   <div
     ref={ref}
-    // biome-ignore lint/a11y/useSemanticElements: <explanation>
-    role="separator"
+    role="presentation"
     {...props}
   >
     <Dot />
   </div>
-));
-InputOTPSeparator.displayName = "InputOTPSeparator";
-
+);
 export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator };

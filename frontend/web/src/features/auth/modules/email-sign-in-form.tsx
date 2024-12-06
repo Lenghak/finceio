@@ -13,7 +13,7 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-  FormProvider,
+  Form as FormProvider,
 } from "@packages/shadcn/components/form";
 import { InputAbsoluteAddon } from "@packages/shadcn/components/input";
 import { IconAt, IconLoader2 } from "@tabler/icons-react";

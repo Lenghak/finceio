@@ -16,11 +16,3 @@ catalogs:
     '@types/react': npm:types-react@rc
     '@types/react-dom': npm:types-react-dom@rc
 
-  tailwindcss:
-    autoprefixer: latest
-    clsx: latest
-    fluid-tailwind: latest
-    postcss: latest
-    tailwindcss: latest
-    tailwindcss-animate: latest
-    tailwind-merge: latest
