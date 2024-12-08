@@ -25,9 +25,9 @@ const buttonVariants = cva(
       },
       effect: {
         expandIconLeft:
-          "[&:hover_svg]:mr-2 [&:hover_svg]:w-4 [&:hover_svg]:translate-x-100 [&:hover_svg]:opacity-100 [&_svg]:w-0 [&_svg]:translate-x-[0%] [&_svg]:pr-0 [&_svg]:opacity-0 [&_svg]:transition-all [&_svg]:duration-200",
+          "gap-0 [&:hover_svg]:mr-2 [&:hover_svg]:w-4 [&:hover_svg]:translate-x-100 [&:hover_svg]:opacity-100 [&_svg]:w-0 [&_svg]:translate-x-[0%] [&_svg]:pr-0 [&_svg]:opacity-0 [&_svg]:transition-all [&_svg]:duration-200",
         expandIconRight:
-          "[&:hover_svg]:ml-2 [&:hover_svg]:w-4 [&:hover_svg]:translate-x-0 [&:hover_svg]:opacity-100 [&_svg]:w-0 [&_svg]:translate-x-[100%] [&_svg]:pl-0 [&_svg]:opacity-0 [&_svg]:transition-all [&_svg]:duration-200",
+          "gap-0 [&:hover_svg]:ml-2 [&:hover_svg]:w-4 [&:hover_svg]:translate-x-0 [&:hover_svg]:opacity-100 [&_svg]:w-0 [&_svg]:translate-x-[100%] [&_svg]:pl-0 [&_svg]:opacity-0 [&_svg]:transition-all [&_svg]:duration-200",
         ringHover:
           "transition-all duration-300 hover:ring-2 hover:ring-current/90 hover:ring-offset-2",
         shine:

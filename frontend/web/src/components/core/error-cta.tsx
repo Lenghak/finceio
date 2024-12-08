@@ -18,9 +18,8 @@ export const ErrorCta = React.memo(
         <Button
           color="default"
           onClick={back}
-          variant="filled"
         >
-          <ArrowLeftIcon className="mr-2" />
+          <ArrowLeftIcon />
           <span>Previous</span>
         </Button>
 
