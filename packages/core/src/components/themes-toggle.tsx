@@ -47,6 +47,7 @@ export function ThemesTrigger({
 }: ComponentPropsWithRef<typeof Button>) {
   return (
     <Button
+      color="secondary"
       size="icon"
       variant="outline"
       {...props}

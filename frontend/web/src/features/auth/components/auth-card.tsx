@@ -30,7 +30,7 @@ export const AuthCard = memo(
         <ThemesDropdownMenu>
           <ThemesTrigger
             className="rounded-lg border border-t-0 border-r-0 dark:bg-background"
-            variant="soft"
+            variant="outline"
           />
         </ThemesDropdownMenu>
       </div>
