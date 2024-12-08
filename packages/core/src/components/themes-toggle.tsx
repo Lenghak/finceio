@@ -1,13 +1,4 @@
 "use client";
-import {
-  LaptopMinimalIcon,
-  Moon,
-  MoonStarIcon,
-  Sun,
-  SunMediumIcon,
-} from "lucide-react";
-import { useTheme } from "next-themes";
-
 import { Button } from "@packages/shadcn/components/button";
 import {
   DropdownMenu,
@@ -15,36 +6,55 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@packages/shadcn/components/dropdown-menu";
+import { IconDeviceLaptop, IconMoonStars, IconSun } from "@tabler/icons-react";
+import { useTheme } from "next-themes";
+import type { ComponentPropsWithRef } from "react";
 
-export function ThemesToggle() {
+export function ThemesDropdownMenu({
+  children,
+  ...props
+}: ComponentPropsWithRef<typeof DropdownMenu>) {
   const { setTheme } = useTheme();
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild={true}>
-        <Button
-          size="icon"
-          variant="outline"
-        >
-          <Sun className="dark:-rotate-90 h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:scale-0" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
+    <DropdownMenu {...props}>
+      <DropdownMenuTrigger
+        {...props}
+        asChild={true}
+      >
+        {children}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          <SunMediumIcon />
+          <IconSun />
           <span>Light</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <MoonStarIcon />
+          <IconMoonStars />
           <span>Dark</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          <LaptopMinimalIcon />
+          <IconDeviceLaptop />
           <span>System</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+  );
+}
+
+export function ThemesTrigger({
+  ...props
+}: ComponentPropsWithRef<typeof Button>) {
+  return (
+    <Button
+      color="secondary"
+      size="icon"
+      variant="outline"
+      {...props}
+    >
+      <IconSun className="dark:-rotate-90 h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:scale-0" />
+      <IconMoonStars className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+      <span className="sr-only">Toggle theme</span>
+    </Button>
   );
 }
