@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-export default Million.next({
-  turbo: false,
-})(nextConfig);
+export default process.env.NODE_ENV === "development"
+  ? Million.next({
+      turbo: false,
+    })(nextConfig)
+  : nextConfig;
