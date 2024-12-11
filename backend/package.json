@@ -43,7 +43,7 @@
   "name": "backend",
   "private": true,
   "scripts": {
-    "build": "nest build",
+    "build": "",
     "start": "nest start",
     "start:debug": "nest start --debug --watch",
     "start:dev": "nest start --watch",

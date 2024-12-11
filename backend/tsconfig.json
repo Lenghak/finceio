@@ -14,6 +14,10 @@
     "noImplicitAny": false,
     "outDir": "./dist",
     "paths": {
+      "@apps/*": ["./apps/*"],
+      "@common/*": ["./common/*"],
+      "@contexts/*": ["./contexts/*"],
+      "@modules/*": ["./modules/*"],
       "~/*": ["./*"],
       "~encore/*": ["./encore.gen/*"]
     },
