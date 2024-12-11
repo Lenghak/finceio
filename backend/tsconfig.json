@@ -8,7 +8,8 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": false,
     "incremental": true,
-    "module": "commonjs",
+    "module": "Preserve",
+    "moduleResolution": "bundler",
     "noFallthroughCasesInSwitch": false,
     "noImplicitAny": false,
     "outDir": "./dist",
@@ -20,7 +21,6 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strictBindCallApply": false,
-    "strictNullChecks": false,
-    "target": "ES2021"
+    "strictNullChecks": false
   }
 }
