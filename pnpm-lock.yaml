@@ -164,7 +164,7 @@ importers:
         version: 4.6.13
       ky:
         specifier: ^1.7.2
-        version: 1.7.2
+        version: 1.7.3
       lucide-react:
         specifier: latest
         version: 0.468.0(react@19.0.0)
@@ -3604,8 +3604,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  effect@3.11.6:
-    resolution: {integrity: sha512-RcgLM69PKk+Nl3uQ61Es/mTchUeL5xqx4w2SfEgvZCM2SISJIFQVNHCJWGuGWgz/F/XcBQQJKevsdhbCn22ApA==}
+  effect@3.11.7:
+    resolution: {integrity: sha512-laj+TCxWGn0eOv6jNmS9vavMO01Z4vvRr7v5airaOUfE7Zr5PrHiECpiI5HRvOewxa1im/4EcOvRodOZ1S2Y7Q==}
 
   ejs@3.1.10:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
@@ -4766,8 +4766,8 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
-  ky@1.7.2:
-    resolution: {integrity: sha512-OzIvbHKKDpi60TnF9t7UUVAF1B4mcqc02z5PIvrm08Wyb+yOcz63GRvEuVxNT18a9E1SrNouhB4W2NNLeD7Ykg==}
+  ky@1.7.3:
+    resolution: {integrity: sha512-Sz49ZWR/BjNOq+2UK1k9ONZUVq8eyuCj30Zgc8VrRNtFlTBZduzuvehUd5kjQF6/Fms3Ir3EYqzJryw9tRvsSw==}
     engines: {node: '>=18'}
 
   language-subtag-registry@0.3.23:
@@ -7414,7 +7414,7 @@ snapshots:
       ast-types: 0.14.2
       cli-high: 0.4.3
       diff: 5.2.0
-      effect: 3.11.6
+      effect: 3.11.7
       nanoid: 5.0.9
       recast: 0.23.9
       xycolors: 0.1.2
@@ -9775,7 +9775,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  effect@3.11.6:
+  effect@3.11.7:
     dependencies:
       fast-check: 3.23.1
 
@@ -11323,7 +11323,7 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  ky@1.7.2: {}
+  ky@1.7.3: {}
 
   language-subtag-registry@0.3.23: {}
 
