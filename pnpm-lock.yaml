@@ -233,11 +233,11 @@ importers:
         specifier: ^8.4.49
         version: 8.4.49
       tailwindcss:
-        specifier: 4.0.0-beta.4
-        version: 4.0.0-beta.4
+        specifier: 4.0.0-beta.6
+        version: 4.0.0-beta.6
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@4.0.0-beta.4)
+        version: 1.0.7(tailwindcss@4.0.0-beta.6)
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -273,11 +273,11 @@ importers:
         specifier: ^19.0.0
         version: 19.0.2(@types/react@19.0.1)
       tailwindcss:
-        specifier: 4.0.0-beta.4
-        version: 4.0.0-beta.4
+        specifier: 4.0.0-beta.6
+        version: 4.0.0-beta.6
       tailwindcss-animate:
         specifier: ^x.x.x
-        version: 1.0.7(tailwindcss@4.0.0-beta.4)
+        version: 1.0.7(tailwindcss@4.0.0-beta.6)
 
   packages/eslint:
     devDependencies:
@@ -335,11 +335,11 @@ importers:
         specifier: ^19.0.0
         version: 19.0.2(@types/react@19.0.1)
       tailwindcss:
-        specifier: 4.0.0-beta.4
-        version: 4.0.0-beta.4
+        specifier: 4.0.0-beta.6
+        version: 4.0.0-beta.6
       tailwindcss-animate:
         specifier: ^x.x.x
-        version: 1.0.7(tailwindcss@4.0.0-beta.4)
+        version: 1.0.7(tailwindcss@4.0.0-beta.6)
 
   packages/plate: {}
 
@@ -479,7 +479,7 @@ importers:
         version: 2.5.5
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@4.0.0-beta.4)
+        version: 1.0.7(tailwindcss@4.0.0-beta.6)
       vaul:
         specifier: ^1.1.1
         version: 1.1.1(@types/react-dom@19.0.2(@types/react@19.0.1))(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -503,8 +503,8 @@ importers:
         specifier: ^8.4.49
         version: 8.4.49
       tailwindcss:
-        specifier: 4.0.0-beta.4
-        version: 4.0.0-beta.4
+        specifier: 4.0.0-beta.6
+        version: 4.0.0-beta.6
 
   packages/typescript: {}
 
@@ -5993,9 +5993,6 @@ packages:
 
   tailwindcss@4.0.0-beta.3:
     resolution: {integrity: sha512-Cem7SF6OYcijYA1ZOGmuZHxk704iOxsRboFCXIpSJSR0XFft/NNz93Yoo0kHZIGNlqZmnQItI7JUSdR++Y9hZQ==}
-
-  tailwindcss@4.0.0-beta.4:
-    resolution: {integrity: sha512-mkjpwMyaHCa3L5HmRjYyY8w8D+7brxwbM7YQxH8QeEFtCURd5fvdHIC9TEpIaL1X49vhl8cuOFY6Nhi6sCsI5w==}
 
   tailwindcss@4.0.0-beta.6:
     resolution: {integrity: sha512-eCCuMk3H65w4J/QWkjxfeWoBSKbCD3E6Uj2LA6Xkkl4eMa1MXuwVpIU1RXcLIp+BVsXGEZMP7i7uJig7KxfAXQ==}
@@ -12562,13 +12559,11 @@ snapshots:
 
   tailwind-merge@2.5.5: {}
 
-  tailwindcss-animate@1.0.7(tailwindcss@4.0.0-beta.4):
+  tailwindcss-animate@1.0.7(tailwindcss@4.0.0-beta.6):
     dependencies:
-      tailwindcss: 4.0.0-beta.4
+      tailwindcss: 4.0.0-beta.6
 
   tailwindcss@4.0.0-beta.3: {}
-
-  tailwindcss@4.0.0-beta.4: {}
 
   tailwindcss@4.0.0-beta.6: {}
 
