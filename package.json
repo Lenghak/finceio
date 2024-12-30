@@ -2,15 +2,15 @@
   "author": "Lenghak Hok",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@commitlint/cli": "^19.6.0",
+    "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@commitlint/format": "^19.5.0",
-    "@commitlint/prompt-cli": "^19.6.0",
+    "@commitlint/prompt-cli": "^19.6.1",
     "@commitlint/read": "^19.5.0",
     "@packages/typescript": "workspace:*",
     "@tailwindcss/cli": "4.0.0-beta.3",
     "husky": "^9.1.7",
-    "lint-staged": "^15.2.11",
+    "lint-staged": "^15.3.0",
     "turbo": "^2.3.3",
     "typescript": "^5.7.2"
   },
