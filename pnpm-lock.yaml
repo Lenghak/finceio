@@ -236,11 +236,11 @@ importers:
         specifier: ^8.4.49
         version: 8.4.49
       tailwindcss:
-        specifier: 4.0.0-beta.4
-        version: 4.0.0-beta.4
+        specifier: 4.0.0-beta.6
+        version: 4.0.0-beta.6
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@4.0.0-beta.4)
+        version: 1.0.7(tailwindcss@4.0.0-beta.6)
       typescript:
         specifier: ^5.7.2
         version: 5.7.2
@@ -257,8 +257,8 @@ importers:
         specifier: latest
         version: 0.469.0(react@19.0.0)
       next-themes:
-        specifier: 0.4.3
-        version: 0.4.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.4.4
+        version: 0.4.4(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -460,8 +460,8 @@ importers:
         specifier: ^19.0.0
         version: 19.0.0
       react-day-picker:
-        specifier: 9.4.1
-        version: 9.4.1(react@19.0.0)
+        specifier: 9.4.3
+        version: 9.4.3(react@19.0.0)
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
@@ -482,7 +482,7 @@ importers:
         version: 2.6.0
       tailwindcss-animate:
         specifier: ^1.0.7
-        version: 1.0.7(tailwindcss@4.0.0-beta.4)
+        version: 1.0.7(tailwindcss@4.0.0-beta.6)
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.2(@types/react@19.0.2))(@types/react@19.0.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -506,8 +506,8 @@ importers:
         specifier: ^8.4.49
         version: 8.4.49
       tailwindcss:
-        specifier: 4.0.0-beta.4
-        version: 4.0.0-beta.4
+        specifier: 4.0.0-beta.6
+        version: 4.0.0-beta.6
 
   packages/typescript: {}
 
@@ -5415,8 +5415,8 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
-  react-day-picker@9.4.1:
-    resolution: {integrity: sha512-eyNjKQ2lFHby42K2itlMNMSpp6+A5m+wbXB31xFaufnplpam274AZ1G2NuBjhnyiehpS+4gJZVILJN54e9Xvhw==}
+  react-day-picker@9.4.3:
+    resolution: {integrity: sha512-kQmn7lBR6fHCjaDhW6ByzTMeZUgsBSvIKJLaUKq5xTuJcg2UqHiFAjrPLk/owQS/NzsnSgyGL/bhoi0Z7g+r3w==}
     engines: {node: '>=18'}
     peerDependencies:
       react: '>=16.8.0'
@@ -5951,6 +5951,9 @@ packages:
 
   tailwindcss@4.0.0-beta.4:
     resolution: {integrity: sha512-mkjpwMyaHCa3L5HmRjYyY8w8D+7brxwbM7YQxH8QeEFtCURd5fvdHIC9TEpIaL1X49vhl8cuOFY6Nhi6sCsI5w==}
+
+  tailwindcss@4.0.0-beta.6:
+    resolution: {integrity: sha512-eCCuMk3H65w4J/QWkjxfeWoBSKbCD3E6Uj2LA6Xkkl4eMa1MXuwVpIU1RXcLIp+BVsXGEZMP7i7uJig7KxfAXQ==}
 
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -9908,7 +9911,7 @@ snapshots:
       eslint: 9.17.0(jiti@2.4.2)
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint@9.17.0(jiti@2.4.2)))(eslint@9.17.0(jiti@2.4.2))
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint@9.17.0(jiti@2.4.2)))(eslint@9.17.0(jiti@2.4.2)))(eslint@9.17.0(jiti@2.4.2))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0)(eslint@9.17.0(jiti@2.4.2))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.17.0(jiti@2.4.2))
       eslint-plugin-react: 7.37.3(eslint@9.17.0(jiti@2.4.2))
       eslint-plugin-react-hooks: 5.1.0(eslint@9.17.0(jiti@2.4.2))
@@ -9944,7 +9947,7 @@ snapshots:
       is-glob: 4.0.3
       stable-hash: 0.0.4
     optionalDependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint@9.17.0(jiti@2.4.2)))(eslint@9.17.0(jiti@2.4.2)))(eslint@9.17.0(jiti@2.4.2))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0)(eslint@9.17.0(jiti@2.4.2))
     transitivePeerDependencies:
       - supports-color
 
@@ -9959,7 +9962,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint@9.17.0(jiti@2.4.2)))(eslint@9.17.0(jiti@2.4.2)))(eslint@9.17.0(jiti@2.4.2)):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.2(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0)(eslint@9.17.0(jiti@2.4.2)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -11872,7 +11875,7 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-day-picker@9.4.1(react@19.0.0):
+  react-day-picker@9.4.3(react@19.0.0):
     dependencies:
       '@date-fns/tz': 1.2.0
       date-fns: 4.1.0
@@ -12525,9 +12528,15 @@ snapshots:
     dependencies:
       tailwindcss: 4.0.0-beta.4
 
+  tailwindcss-animate@1.0.7(tailwindcss@4.0.0-beta.6):
+    dependencies:
+      tailwindcss: 4.0.0-beta.6
+
   tailwindcss@4.0.0-beta.3: {}
 
   tailwindcss@4.0.0-beta.4: {}
+
+  tailwindcss@4.0.0-beta.6: {}
 
   tapable@2.2.1: {}
 
