@@ -3,14 +3,14 @@
     "clsx": "^2.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^2.5.5"
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@packages/typescript": "workspace:*",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "tailwindcss": "4.0.0-beta.6",
-    "tailwindcss-animate": "^x.x.x"
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "tailwindcss": "4.0.0-beta.4",
+    "tailwindcss-animate": "^1.0.7"
   },
   "exports": {
     "./components/*": "./src/components/*.tsx",
